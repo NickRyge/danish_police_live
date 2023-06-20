@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":6.2,
+  "0-100 mph":14.8,
+  "0-120 mph":30.6,
+  "0-200 km/h":24.6,
+  "0-60 mph":5.8,
+  "100-0 km/h":34.3,
+  "100-200 km/h":18.4,
+  "60-0 mph":104.9,
+  "60-100 mph":8.9,
+  "60-120 mph":23.9,
+  "Body Style":"Wagon",
+  "BoundingBox":[
+    [
+      -0.69,
+      -2.05,
+      -0.225
+    ],
+    [
+      1.35,
+      2.62,
+      1.29
+    ]
+  ],
+  "Braking G":1.145,
+  "Config Type":"Police",
+  "Configuration":"854 Politi patruljevogn (A)",
+  "Description":"Danish standard police unit",
+  "Drivetrain":"AWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":33,
+  "Performance Class":"6",
+  "Population":50,
+  "Power":232,
+  "PowerPeakRPM":"4050 - 4550",
+  "Propulsion":"ICE",
+  "Top Speed":69.03080847,
+  "Torque":455,
+  "TorquePeakRPM":"1450 - 3100",
+  "Transmission":"Automatic",
+  "Value":47350,
+  "Weight":1660,
+  "Weight/Power":7.155172414,
+  "defaultPaintName1":"Pearl White"
+}

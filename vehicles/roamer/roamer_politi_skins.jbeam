@@ -1,0 +1,12 @@
+{
+//Skins
+"roamer_skin_politi_patrol": {
+   "information":{
+       "authors":"NickRyge",
+       "name":"Danish police unit",
+       "value":250,
+   }
+   "slotType" : "paint_design",
+   "globalSkin" : "politi_patrol",
+},
+}

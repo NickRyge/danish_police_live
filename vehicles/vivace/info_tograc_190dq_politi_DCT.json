@@ -1,0 +1,44 @@
+{
+  "0-100 km/h":6.6,
+  "0-100 mph":18.5,
+  "0-120 mph":0,
+  "0-200 km/h":38.9,
+  "0-60 mph":6.2,
+  "100-0 km/h":34.5,
+  "100-200 km/h":32.3,
+  "60-0 mph":104.6,
+  "60-100 mph":12.2,
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.798,
+      -0.263
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Braking G":1.141,
+  "Config Type":"Police",
+  "Configuration":"Tograc 190dq Politi patruljevogn (DCT)",
+  "Description":"Sport crossover Danish police patrol car, for the slightly more suspension-travel-demanding situations and more rural parts of the country.",
+  "Drivetrain":"AWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":32,
+  "Performance Class":"0",
+  "Population":9000,
+  "Power":192,
+  "PowerPeakRPM":"3500 - 4000",
+  "Propulsion":"ICE",
+  "Top Speed":58.85724094,
+  "Torque":405,
+  "TorquePeakRPM":"1650 - 3300",
+  "Transmission":"DCT",
+  "Value":34200,
+  "Weight":1640,
+  "Weight/Power":8.541666667,
+  "defaultPaintName1":"Bleu France"
+}

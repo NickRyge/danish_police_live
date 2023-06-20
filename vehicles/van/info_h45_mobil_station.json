@@ -1,0 +1,43 @@
+{
+  "0-100 km/h":12.9,
+  "0-60 mph":12.1,
+  "100-0 km/h":63.1,
+  "60-0 mph":195.7,
+  "Body Style":"Box Truck",
+  "BoundingBox":[
+    [
+      -0.86,
+      -1.35,
+      -0.4103
+    ],
+    [
+      1.96,
+      5.56,
+      2.6
+    ]
+  ],
+  "Braking G":0.623,
+  "Config Type":"Police",
+  "Configuration":"Danish Police H45 Mobile police station upfit (A)",
+  "Description":"Heavy duty upfit H45 equipped as a boxtruck for use as a Danish Mobile police station. Equipped with a large Diesel engine and special LED flashers all round.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"NA",
+  "Off-Road Score":34,
+  "Performance Class":"2",
+  "Population":9000,
+  "Power":258,
+  "PowerPeakRPM":"4250 - 4800",
+  "Propulsion":"ICE",
+  "Top Speed":42.63851739,
+  "Torque":465,
+  "TorquePeakRPM":"2000 - 3850",
+  "Transmission":"Automatic",
+  "Value":24000,
+  "Weight":3475,
+  "Weight/Power":13.46899225,
+  "Years":{
+    "max":2005,
+    "min":1993
+  }
+}

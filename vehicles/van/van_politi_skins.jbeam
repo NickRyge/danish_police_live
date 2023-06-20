@@ -1,0 +1,32 @@
+{
+//Skins
+"van_skin_politi_patrol": {
+   "information":{
+       "authors":"NickRyge",
+       "name":"Danish police unit",
+       "value":250,
+   }
+   "slotType" : "paint_design",
+   "globalSkin" : "politi_patrol",
+},
+
+"van_skin_politistation": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Danish mobile police station",
+        "value":250,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "politi_station",
+},
+
+"cargobox_skin_politistation_box": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Danish mobile police station",
+        "value":250,
+    }
+    "slotType" : "skin_van_cargobox",
+    "globalSkin" : "politi_station_box",
+},
+}

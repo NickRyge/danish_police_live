@@ -1,0 +1,45 @@
+{
+  "0-100 km/h":6.5,
+  "0-100 mph":16.2,
+  "0-120 mph":0,
+  "0-200 km/h":30.3,
+  "0-60 mph":6.2,
+  "100-0 km/h":32.7,
+  "100-200 km/h":23.8,
+  "60-0 mph":98.8,
+  "60-100 mph":10,
+  "60-120 mph":0,
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.233
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Braking G":1.203,
+  "Config Type":"Police",
+  "Configuration":"Vivace 190Sd Politi hundevogn / K9 (DCT)",
+  "Description":"Sporty FWD diesel-driven K9 car from the Danish police. Features 190ps and sporty suspension, but has a distinct lag of dogs.",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":27,
+  "Performance Class":"0",
+  "Population":4000,
+  "Power":194,
+  "PowerPeakRPM":"3500 - 4000",
+  "Propulsion":"ICE",
+  "Top Speed":62.5688581,
+  "Torque":405,
+  "TorquePeakRPM":"1700 - 3350",
+  "Transmission":"DCT",
+  "Value":28900,
+  "Weight":1515,
+  "Weight/Power":7.809278351,
+  "defaultPaintName1":"Noir Profond"
+}

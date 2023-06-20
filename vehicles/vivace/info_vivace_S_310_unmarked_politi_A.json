@@ -1,0 +1,45 @@
+{
+  "0-100 km/h":5.6,
+  "0-100 mph":11.2,
+  "0-120 mph":0,
+  "0-200 km/h":17.4,
+  "0-60 mph":5.3,
+  "100-0 km/h":32.1,
+  "100-200 km/h":11.8,
+  "60-0 mph":99.6,
+  "60-100 mph":5.8,
+  "60-120 mph":0,
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.858,
+      -0.243
+    ],
+    [
+      1.17,
+      2.489,
+      1.267
+    ]
+  ],
+  "Braking G":1.226,
+  "Config Type":"Police",
+  "Configuration":"Vivace S Politi unmarked (DCT)",
+  "Description":"Unmarked Danish unmarked highway-patrol (færdselspolitiet) car with 310ps and AWD to keep up with the faster criminals",
+  "Drivetrain":"AWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"Turbo",
+  "Off-Road Score":27,
+  "Performance Class":"0",
+  "Population":10,
+  "Power":310,
+  "PowerPeakRPM":"5550 - 6300",
+  "Propulsion":"ICE",
+  "Top Speed":73.07972373,
+  "Torque":405,
+  "TorquePeakRPM":"2200 - 5500",
+  "Transmission":"DCT",
+  "Value":37600,
+  "Weight":1520,
+  "Weight/Power":4.903225806,
+  "defaultPaintName1":"Blanc Lunaire"
+}

@@ -1,0 +1,86 @@
+{
+  "van.skin.politi_patrol" : {
+    "name" : "van.skin.politi_patrol",
+    "mapTo" : "van.skin.politi_patrol",
+    "class" : "Material",
+    "persistentId" : "b9919442-87f6-4798-ae60-56e20645f785",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/van/van_main_ao.data.png",
+        "baseColorMap": "/vehicles/van/van_main_b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor":0.1,
+        "metallicMap": "/vehicles/van/van_main_m.data.png",
+        "normalMap": "vehicles/van/van_main_nm.normal.png",
+        "roughnessMap": "/vehicles/van/van_main_r.data.png",
+        "useAnisotropic": true
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/van/van_main_ao.data.png",
+        "useAnisotropic": true,
+        "diffuseMapUseUV": 1,
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor":0.33,
+        "metallicFactor": 0.95,
+        "roughnessFactor": 0.7,
+        "metallicMapUseUV": 1,
+        "roughnessMapUseUV": 1,
+        "metallicMap": "/vehicles/van/politi/skin/metallic.png",
+        "roughnessMap": "/vehicles/van/politi/skin/rough.png",
+        "clearCoatMap": "/vehicles/van/van_main_cc.data.png",
+        "normalMap": "/vehicles/van/van_main_nm.normal.png",
+        "opacityMap": "/vehicles/van/van_main_c.data.png",
+        "baseColorMap": "vehicles/van/politi/skin/politi_patrol.png",
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+  "van.skin.politi_station" : {
+    "name" : "van.skin.politi_station",
+    "mapTo" : "van.skin.politi_station",
+    "class" : "Material",
+    "persistentId" : "38c3bd1a-65b9-4d23-86d5-1689115b78e9",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/van/van_main_ao.data.png",
+        "baseColorMap": "/vehicles/van/van_main_b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor":0.1,
+        "metallicMap": "/vehicles/van/van_main_m.data.png",
+        "normalMap": "vehicles/van/van_main_nm.normal.png",
+        "roughnessMap": "/vehicles/van/van_main_r.data.png",
+        "useAnisotropic": true
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/van/van_main_ao.data.png",
+        "useAnisotropic": true,
+        "diffuseMapUseUV": 1,
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor":0.33,
+        "metallicFactor": 0.1,
+        "roughnessFactor": 0.7,
+        "roughnessMapUseUV": 1,
+        "roughnessMap": "/vehicles/van/politi/skin/rough_cargobox_skin_car.png",
+        "clearCoatMap": "/vehicles/van/van_main_cc.data.png",
+        "normalMap": "/vehicles/van/van_main_nm.normal.png",
+        "opacityMap": "/vehicles/van/van_main_c.data.png",
+        "baseColorMap": "vehicles/van/politi/skin/cargobox_skin_car.png",
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+}

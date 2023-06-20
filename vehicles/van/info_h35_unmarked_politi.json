@@ -1,0 +1,49 @@
+{
+  "0-100 km/h":9,
+  "0-100 mph":23.9,
+  "0-200 km/h":75.4,
+  "0-60 mph":8.4,
+  "100-0 km/h":60.7,
+  "100-200 km/h":66.4,
+  "60-0 mph":187.9,
+  "60-100 mph":15.5,
+  "Body Style":"Van",
+  "BoundingBox":[
+    [
+      -0.68,
+      -1.4,
+      -0.4103
+    ],
+    [
+      1.78,
+      4.175,
+      1.73
+    ]
+  ],
+  "Braking G":0.647,
+  "Config Type":"Police",
+  "Configuration":"H35 XT AWD Unmarked Danish Police (A)",
+  "Description":"H35 AWD Danish Police Unmarked version with heavy duty frame, AWD and slightly sportier suspension than the standard for improved handling.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":35,
+  "Performance Class":"3",
+  "Population":7000,
+  "Power":298,
+  "PowerPeakRPM":4400,
+  "Propulsion":"ICE",
+  "Top Speed":55.80563085,
+  "Torque":515,
+  "TorquePeakRPM":"2350 - 3950",
+  "Transmission":"Automatic",
+  "Value":18600,
+  "Weight":2665,
+  "Weight/Power":8.94295302,
+  "Years":{
+    "max":2017,
+    "min":2006
+  },
+  "defaultPaintName1":"Champagne",
+  "defaultPaintName2":"Quicksilver"
+}
