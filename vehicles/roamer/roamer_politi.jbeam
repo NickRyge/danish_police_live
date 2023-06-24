@@ -1,7 +1,7 @@
 {
 "roamer_politi": {
     "information":{
-        "authors":"BeamNGxNickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"Danish Police Lights",
         "value":1300,
     },
@@ -156,7 +156,7 @@
 
 "roof_beacons": {
     "information":{
-        "authors":"BeamNGxNickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"Danish police triple roof beacons",
         "value":1300,
     },
@@ -407,7 +407,7 @@
 
 "roamer_politi_rear_beacon": {
     "information":{
-        "authors":"NickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"rear light",
         "value":100,
     },
@@ -544,7 +544,7 @@
 //Why? Because I couldn't be bothered to copy it back where it belongs.
 "roamer_politi_extra_beacon": {
     "information":{
-        "authors":"NickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"Unmarked roof beacon",
         "value":100,
     },
@@ -693,7 +693,7 @@
 
 "roamer_politi_front_bumper": {
     "information":{
-        "authors":"NickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"front grille",
         "value":50,
     },
@@ -737,7 +737,7 @@
 
 "roamer_politi_rear_bumper": {
     "information":{
-        "authors":"NickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"rear body lights",
         "value":50,
     },
@@ -768,7 +768,7 @@
 
 "roamer_politi_rear_windows": {
     "information":{
-        "authors":"NickRyge",
+        "authors":"NickRyge,MagnusLind",
         "name":"rear window lights",
         "value":50,
     },
