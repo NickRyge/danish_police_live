@@ -77,6 +77,59 @@
                     ],
                     ],
 
+                ["New pattern", [
+                    ["electric", "value", "duration"],
+
+						["white_r", 1, 0.1],
+                        ["white_r", 0, 0.02],
+                        ["white_r", 1, 0.1],
+						["white_r", 0, 0.02],
+                        ["white_r", 1, 0.2],
+                        ["white_r", 0, 0.44]
+						
+						["white_l", 0, 0.44],
+						["white_l", 1, 0.1],
+                        ["white_l", 0, 0.02],
+                        ["white_l", 1, 0.1],
+						["white_l", 0, 0.02],
+                        ["white_l", 1, 0.2],
+
+		                ["blue_r", 0, 0.30],
+						["blue_r", 1, 0.1],
+                        ["blue_r", 0, 0.02],
+                        ["blue_r", 1, 0.1],
+                        ["blue_r", 0, 0.17]
+    
+	                    ["blue_l", 0, 0.47]
+						["blue_l", 1, 0.1],
+                        ["blue_l", 0, 0.02],
+                        ["blue_l", 1, 0.1],
+
+						
+						["roofflasherFL", 0, 0.3],
+                        ["roofflasherFL", 1, 0.1],
+                        ["roofflasherFL", 0, 0.02],
+                        ["roofflasherFL", 1, 0.1],
+                        ["roofflasherFL", 0, 0.02],
+                        ["roofflasherFL", 1, 0.1],
+						
+						["roofflasherFR", 0, 0.3],
+                        ["roofflasherFR", 1, 0.1],
+                        ["roofflasherFR", 0, 0.02],
+                        ["roofflasherFR", 1, 0.1],
+                        ["roofflasherFR", 0, 0.02],
+                        ["roofflasherFR", 1, 0.1],
+					
+						["roofflasherR", 0, 0.3],
+                        ["roofflasherR", 1, 0.1],
+                        ["roofflasherR", 0, 0.02],
+                        ["roofflasherR", 1, 0.1],
+                        ["roofflasherR", 0, 0.02],
+                        ["roofflasherR", 1, 0.1],
+						
+                    ],
+                    ],
+
                 //Blinking mode for Mr. Bauer
                 ["Still flash", [
                     ["electric", "value", "duration"],
