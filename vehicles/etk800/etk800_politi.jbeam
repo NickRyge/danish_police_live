@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Danish Police Lights",
-        "value":1300,
+        "value":100,
     },
     "slotType" : "etk800_lightbar",
     "slots": [
@@ -233,23 +233,14 @@
     ],
     "glowMap":{
 
-            "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
-            "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
-						
-            "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    
         },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
 		//Oriented in left to right for the deform groups. Sorry.
-        {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-		["generic_flasher_led_R", ["etk800_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-        {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_L", ["etk800_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-
         //TODO: Find breakgroup for trunk lights or whatever...
         {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_TRNK_R", ["etk800_tailgate"], [], {"pos":{"x": -0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
@@ -274,12 +265,12 @@
     ],
 
     "glowMap":{
+	
+		"mod_beacon_light_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "mod_beacon_glass_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 		
-			"mod_beacon_light_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "mod_beacon_glass_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-			
-			"mod_beacon_light_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},                
-            "mod_beacon_glass_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+		"mod_beacon_light_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},                
+        "mod_beacon_glass_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 			
         },
     "props": [
@@ -532,20 +523,20 @@
     },
     "slotType" : "roof_light_type",
     "glowMap":{
-          "mod_lightbar_l1r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2r_2":               {"simpleFunction":"", "off":"invis", "on":""},
-          "mod_lightbar_l2r_3":               {"simpleFunction":"", "off":"invis", "on":""},
-          "mod_lightbar_l3r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l4r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l5r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l1l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2l_2":               {"simpleFunction":"", "off":"invis", "on":""},
-          "mod_lightbar_l2l_3":               {"simpleFunction":"", "off":"invis", "on":""},
-          "mod_lightbar_l3l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l4l":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l5l":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l1r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l2r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l2r_2":               {"simpleFunction":"", "off":"invis", "on":""},
+        "mod_lightbar_l2r_3":               {"simpleFunction":"", "off":"invis", "on":""},
+        "mod_lightbar_l3r":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l4r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l5r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l1l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l2l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l2l_2":               {"simpleFunction":"", "off":"invis", "on":""},
+        "mod_lightbar_l2l_3":               {"simpleFunction":"", "off":"invis", "on":""},
+        "mod_lightbar_l3l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l4l":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        "mod_lightbar_l5l":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
     },
 },
 
@@ -605,10 +596,9 @@
 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-
         ["light_bar_mount_hi", ["etk800_body"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.367}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.08, "y":1.15, "z":0.95}}],
-        
         ["light_bar_LED_US_body", ["etk_lightbar_blue"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.375}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.12,   "z":0.75}}],
+
         {"deformGroup":"lightbar_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["light_bar_LED_US_lights", ["etk_lightbar_blue"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.375}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.12, "z":0.75}}],
 
@@ -617,28 +607,28 @@
         {"deformGroup":""},
     ],
     "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         {"group":"etk_lightbar_blue"},
-         {"selfCollision":true},
-         {"collision":true},
-         {"nodeWeight":0.70},
-         {"frictionCoef":0.7},
-         {"nodeMaterial":"|NM_METAL"},
-         ["etk_lightbar_blue_1",      0.0, 0.28, 1.45],
-         ["etk_lightbar_blue_2",      0.0, 0.28, 1.41],
-         ["etk_lightbar_blue_3",      0.0, 0.48, 1.45],
-         ["etk_lightbar_blue_4",      0.0, 0.48, 1.41],
+        ["id", "posX", "posY", "posZ"],
+        {"group":"etk_lightbar_blue"},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight":0.70},
+        {"frictionCoef":0.7},
+        {"nodeMaterial":"|NM_METAL"},
+        ["etk_lightbar_blue_1",      0.0, 0.28, 1.45],
+        ["etk_lightbar_blue_2",      0.0, 0.28, 1.41],
+        ["etk_lightbar_blue_3",      0.0, 0.48, 1.45],
+        ["etk_lightbar_blue_4",      0.0, 0.48, 1.41],
 
-         ["etk_lightbar_blue_1l",    0.55, 0.28, 1.45],
-         ["etk_lightbar_blue_2l",    0.55, 0.28, 1.41],
-         ["etk_lightbar_blue_3l",    0.55, 0.48, 1.45],
-         ["etk_lightbar_blue_4l",    0.55, 0.48, 1.41],
+        ["etk_lightbar_blue_1l",    0.55, 0.28, 1.45],
+        ["etk_lightbar_blue_2l",    0.55, 0.28, 1.41],
+        ["etk_lightbar_blue_3l",    0.55, 0.48, 1.45],
+        ["etk_lightbar_blue_4l",    0.55, 0.48, 1.41],
 
-         ["etk_lightbar_blue_1r",   -0.55, 0.28, 1.45],
-         ["etk_lightbar_blue_2r",   -0.55, 0.28, 1.41],
-         ["etk_lightbar_blue_3r",   -0.55, 0.48, 1.45],
-         ["etk_lightbar_blue_4r",   -0.55, 0.48, 1.41],
-         {"group":""}
+        ["etk_lightbar_blue_1r",   -0.55, 0.28, 1.45],
+        ["etk_lightbar_blue_2r",   -0.55, 0.28, 1.41],
+        ["etk_lightbar_blue_3r",   -0.55, 0.48, 1.45],
+        ["etk_lightbar_blue_4r",   -0.55, 0.48, 1.41],
+        {"group":""}
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -720,62 +710,55 @@
         //To body
         ["etk_lightbar_blue_2l","rf1l"],
         ["etk_lightbar_blue_2l","rf2l"],
-        //["etk_lightbar_blue_2l","rf1"],
-        //["etk_lightbar_blue_2l","rf2"],
+
         ["etk_lightbar_blue_4l","rf1l"],
         ["etk_lightbar_blue_4l","rf2l"],
-        //["etk_lightbar_blue_4l","rf1"],
         ["etk_lightbar_blue_4l","rf2"],
 
         ["etk_lightbar_blue_1l","rf1l"],
         ["etk_lightbar_blue_1l","rf2l"],
         ["etk_lightbar_blue_1l","rf1"],
-        //["etk_lightbar_blue_1l","rf2"],
+
         ["etk_lightbar_blue_3l","rf1l"],
         ["etk_lightbar_blue_3l","rf2l"],
         ["etk_lightbar_blue_3l","rf3"],
-        //["etk_lightbar_blue_3l","rf2"],
 
         ["etk_lightbar_blue_2r","rf1r"],
         ["etk_lightbar_blue_2r","rf2r"],
-        //["etk_lightbar_blue_2r","rf1"],
-        //["etk_lightbar_blue_2r","rf2"],
+
         ["etk_lightbar_blue_4r","rf1r"],
         ["etk_lightbar_blue_4r","rf2r"],
-        //["etk_lightbar_blue_4r","rf1"],
         ["etk_lightbar_blue_4r","rf2"],
 
         ["etk_lightbar_blue_1r","rf1r"],
         ["etk_lightbar_blue_1r","rf2r"],
         ["etk_lightbar_blue_1r","rf1"],
-        //["etk_lightbar_blue_1r","rf2"],
+
         ["etk_lightbar_blue_3r","rf1r"],
         ["etk_lightbar_blue_3r","rf2r"],
         ["etk_lightbar_blue_3r","rf3"],
-        //["etk_lightbar_blue_3r","rf2"],
         {"breakGroup":""},
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
     ],
     "quads": [
-          ["id1:","id2:","id3:","id4:"],
-          {"group":"etk_lightbar_blue"},
-          {"dragCoef":10},
-          ["etk_lightbar_blue_3l","etk_lightbar_blue_4l","etk_lightbar_blue_4","etk_lightbar_blue_3"],
-          ["etk_lightbar_blue_1l","etk_lightbar_blue_3l","etk_lightbar_blue_3","etk_lightbar_blue_1"],
-          ["etk_lightbar_blue_1l","etk_lightbar_blue_2l","etk_lightbar_blue_4l","etk_lightbar_blue_3l"],
-          ["etk_lightbar_blue_1","etk_lightbar_blue_2","etk_lightbar_blue_2l","etk_lightbar_blue_1l"],
-          ["etk_lightbar_blue_4l","etk_lightbar_blue_2l","etk_lightbar_blue_2","etk_lightbar_blue_4"],
+        ["id1:","id2:","id3:","id4:"],
+        {"group":"etk_lightbar_blue"},
+        {"dragCoef":10},
+        ["etk_lightbar_blue_3l","etk_lightbar_blue_4l","etk_lightbar_blue_4","etk_lightbar_blue_3"],
+        ["etk_lightbar_blue_1l","etk_lightbar_blue_3l","etk_lightbar_blue_3","etk_lightbar_blue_1"],
+        ["etk_lightbar_blue_1l","etk_lightbar_blue_2l","etk_lightbar_blue_4l","etk_lightbar_blue_3l"],
+        ["etk_lightbar_blue_1","etk_lightbar_blue_2","etk_lightbar_blue_2l","etk_lightbar_blue_1l"],
+        ["etk_lightbar_blue_4l","etk_lightbar_blue_2l","etk_lightbar_blue_2","etk_lightbar_blue_4"],
 
-          ["etk_lightbar_blue_3","etk_lightbar_blue_4","etk_lightbar_blue_4r","etk_lightbar_blue_3r"],
-          ["etk_lightbar_blue_1","etk_lightbar_blue_3","etk_lightbar_blue_3r","etk_lightbar_blue_1r"],
-          ["etk_lightbar_blue_3r","etk_lightbar_blue_4r","etk_lightbar_blue_2r","etk_lightbar_blue_1r"],
-          ["etk_lightbar_blue_1r","etk_lightbar_blue_2r","etk_lightbar_blue_2","etk_lightbar_blue_1"],
-          ["etk_lightbar_blue_4","etk_lightbar_blue_2","etk_lightbar_blue_2r","etk_lightbar_blue_4r"],
-          {"group":""}
+        ["etk_lightbar_blue_3","etk_lightbar_blue_4","etk_lightbar_blue_4r","etk_lightbar_blue_3r"],
+        ["etk_lightbar_blue_1","etk_lightbar_blue_3","etk_lightbar_blue_3r","etk_lightbar_blue_1r"],
+        ["etk_lightbar_blue_3r","etk_lightbar_blue_4r","etk_lightbar_blue_2r","etk_lightbar_blue_1r"],
+        ["etk_lightbar_blue_1r","etk_lightbar_blue_2r","etk_lightbar_blue_2","etk_lightbar_blue_1"],
+        ["etk_lightbar_blue_4","etk_lightbar_blue_2","etk_lightbar_blue_2r","etk_lightbar_blue_4r"],
+        {"group":""}
     ]
-    },
-
+},
 
 
 "etk800_politi_rear_w": {
@@ -786,8 +769,8 @@
     },
     "slotType" : "extra_light",
     "glowMap":{			
-			"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+		"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 
         },
     "props": [
@@ -920,12 +903,12 @@
     "slotType" : "extra_light",
 
     "glowMap":{			
-			"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-            
-            "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        },
+		"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+        
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -981,62 +964,62 @@
         {"group":""},
     ],
     "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":601000,"beamDamp":60},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-            {"deformLimitExpansion":1.1},
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":601000,"beamDamp":60},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
 
-            //Main shape 
-            {"deformGroup":"beaconlight_break"},
-            ["bl1r","bl1l"],
-            ["bl2r","bl2l"],
-            ["bl1r","bl2r"],
-            ["bl1l","bl2l"],
+        //Main shape 
+        {"deformGroup":"beaconlight_break"},
+        ["bl1r","bl1l"],
+        ["bl2r","bl2l"],
+        ["bl1r","bl2r"],
+        ["bl1l","bl2l"],
 
-            ["bl1r","bl2l"],
-            ["bl1l","bl2r"],
+        ["bl1r","bl2l"],
+        ["bl1l","bl2r"],
 
-            ["bl1r","bl3"],
-            ["bl2r","bl3"],
-            ["bl1l","bl3"],
-            ["bl2l","bl3"],
+        ["bl1r","bl3"],
+        ["bl2r","bl3"],
+        ["bl1l","bl3"],
+        ["bl2l","bl3"],
 
 
 
-             //To body
-            {"deformLimitExpansion":""},
-            {"beamSpring":301000,"beamDamp":60},
-            {"beamDeform":4000,"beamStrength":8000},
-          
-            //Right
-            {"deformGroup":"beaconlight_break"},
+         //To body
+        {"deformLimitExpansion":""},
+        {"beamSpring":301000,"beamDamp":60},
+        {"beamDeform":4000,"beamStrength":8000},
+        
+        //Right
+        {"deformGroup":"beaconlight_break"},
 
-            {"breakGroup":"light_attach_c"},
+        {"breakGroup":"light_attach_c"},
 
-            ["bl2r","rf2"],
-            ["bl3","rf2"],
-            ["bl2l","rf2"],
+        ["bl2r","rf2"],
+        ["bl3","rf2"],
+        ["bl2l","rf2"],
 
-            ["bl3","rf3r"],
-            ["bl2r","rf3r"],
-            ["bl1r","rf3r"],
+        ["bl3","rf3r"],
+        ["bl2r","rf3r"],
+        ["bl1r","rf3r"],
 
-            ["bl1r","rf4"],
-            ["bl3","rf4"],
-            ["bl1l","rf4"],
+        ["bl1r","rf4"],
+        ["bl3","rf4"],
+        ["bl1l","rf4"],
 
-            ["bl3","rf3l"],
-            ["bl2l","rf3l"],
-            ["bl1l","rf3l"],
+        ["bl3","rf3l"],
+        ["bl2l","rf3l"],
+        ["bl1l","rf3l"],
 
-            ["bl1r","rf7"],
-            ["bl2l","rf7"],
-            ["bl2r","rf7"],
-            ["bl1l","rf7"],
-            ["bl3","rf7"],
-            {"breakGroup":""},
-            {"deformGroup":""},
+        ["bl1r","rf7"],
+        ["bl2l","rf7"],
+        ["bl2r","rf7"],
+        ["bl1l","rf7"],
+        ["bl3","rf7"],
+        {"breakGroup":""},
+        {"deformGroup":""},
 
     ],
     "triangles": [
@@ -1067,8 +1050,8 @@
     "slotType" : "roof_light",
 
     "glowMap":{			
-			"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+		"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -1123,91 +1106,91 @@
     ],
 
     "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":601000,"beamDamp":60},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-            {"deformLimitExpansion":1.1},
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":601000,"beamDamp":60},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
 
 
-            //Main shape left
-            {"deformGroup":"beaconlight_break_l"},
-            ["lbl1r","lbl1l"],
-            ["lbl2r","lbl2l"],
-            ["lbl1r","lbl2r"],
-            ["lbl1l","lbl2l"],
+        //Main shape left
+        {"deformGroup":"beaconlight_break_l"},
+        ["lbl1r","lbl1l"],
+        ["lbl2r","lbl2l"],
+        ["lbl1r","lbl2r"],
+        ["lbl1l","lbl2l"],
 
-            ["lbl1r","lbl2l"],
-            ["lbl1l","lbl2r"],
+        ["lbl1r","lbl2l"],
+        ["lbl1l","lbl2r"],
 
-            ["lbl1r","lbl3"],
-            ["lbl2r","lbl3"],
-            ["lbl1l","lbl3"],
-            ["lbl2l","lbl3"],
-            {"deformGroup":""},
-            
+        ["lbl1r","lbl3"],
+        ["lbl2r","lbl3"],
+        ["lbl1l","lbl3"],
+        ["lbl2l","lbl3"],
+        {"deformGroup":""},
         
-            //To body
-            {"deformLimitExpansion":""},
-            {"beamSpring":301000,"beamDamp":60},
-            {"beamDeform":4000,"beamStrength":8000},
-          
+    
+        //To body
+        {"deformLimitExpansion":""},
+        {"beamSpring":301000,"beamDamp":60},
+        {"beamDeform":4000,"beamStrength":8000},
+        
 
-            //Left
-            {"deformGroup":"beaconlight_break_l"},
+        //Left
+        {"deformGroup":"beaconlight_break_l"},
 
-            //This to avoid removing the beams that hold the light
-            ["lbl3","lbl2l"],
-            ["lbl3","lbl2r"],
-            ["lbl3","lbl1l"],
-            ["lbl3","lbl1r"],
+        //This to avoid removing the beams that hold the light
+        ["lbl3","lbl2l"],
+        ["lbl3","lbl2r"],
+        ["lbl3","lbl1l"],
+        ["lbl3","lbl1r"],
 
-            {"breakGroup":"light_attach_l"},
+        {"breakGroup":"light_attach_l"},
 
-            ["lbl2r","rf1l"],
-            ["lbl3","rf1l"],
-            ["lbl1r","rf1l"],
-            ["lbl2l","rf1l"],
+        ["lbl2r","rf1l"],
+        ["lbl3","rf1l"],
+        ["lbl1r","rf1l"],
+        ["lbl2l","rf1l"],
 
-            ["lbl2r","rf1"],
-            ["lbl3","rf1"],
-            ["lbl2l","rf1"],
-            ["lbl1l","rf1"],
+        ["lbl2r","rf1"],
+        ["lbl3","rf1"],
+        ["lbl2l","rf1"],
+        ["lbl1l","rf1"],
 
-            ["lbl1r","rf2"],
-            ["lbl3","rf2"],
-            ["lbl2l","rf2"],
-            ["lbl1l","rf2"],
+        ["lbl1r","rf2"],
+        ["lbl3","rf2"],
+        ["lbl2l","rf2"],
+        ["lbl1l","rf2"],
 
-            ["lbl1r","rf2l"],
-            ["lbl3","rf2l"],
-            ["lbl2r","rf2l"],
-            ["lbl1l","rf2l"],
+        ["lbl1r","rf2l"],
+        ["lbl3","rf2l"],
+        ["lbl2r","rf2l"],
+        ["lbl1l","rf2l"],
 
-            ["lbl1r","f2l"],
-            ["lbl2l","f2l"],
-            ["lbl2r","f2l"],
-            ["lbl1l","f2l"],
-            ["lbl3","f2l"],
-            {"breakGroup":""},
-            {"deformGroup":""},
+        ["lbl1r","f2l"],
+        ["lbl2l","f2l"],
+        ["lbl2r","f2l"],
+        ["lbl1l","f2l"],
+        ["lbl3","f2l"],
+        {"breakGroup":""},
+        {"deformGroup":""},
 
-            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
     "triangles": [
-            ["id1:","id2:","id3:"],
-            {"dragCoef":2},
+        ["id1:","id2:","id3:"],
+        {"dragCoef":2},
 
-            //left
-            {"group":"etk800_lightbar_l"},
-            
-            ["lbl3","lbl2r","lbl1r"],
-            ["lbl3","lbl2l","lbl2r"],
-            ["lbl3","lbl1l","lbl2l"],
-            ["lbl3","lbl1r","lbl1l"],
-            ["lbl1r","lbl2r","lbl2l"],
-            ["lbl1r","lbl2l","lbl1l"],
-            {"group":""},
+        //left
+        {"group":"etk800_lightbar_l"},
+        
+        ["lbl3","lbl2r","lbl1r"],
+        ["lbl3","lbl2l","lbl2r"],
+        ["lbl3","lbl1l","lbl2l"],
+        ["lbl3","lbl1r","lbl1l"],
+        ["lbl1r","lbl2r","lbl2l"],
+        ["lbl1r","lbl2l","lbl1l"],
+        {"group":""},
 
     ],
 },
@@ -1220,7 +1203,10 @@
         "value":50,
     },
     "slotType" : "bumper_light_front",
-    "glowMap":{			
+    "glowMap":{
+        
+        "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+        "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
 
 		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
@@ -1256,18 +1242,24 @@
     "slotType" : "bumper_light_front",
     "glowMap":{			
         
-		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+	    "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-			
-		"generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    
+	    "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
 		
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
+
+        {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+		["generic_flasher_led_R", ["etk800_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+        {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_L", ["etk800_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
         {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_FR", ["etk800_bumper_F"], [], {"pos":{"x": -0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
@@ -1297,10 +1289,44 @@
 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		["generic_flasher_led_BR", ["etk800_bumper_R"], [], {"pos":{"x": -0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":6, "z":-109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         ["generic_flasher_led_BL", ["etk800_bumper_R"], [], {"pos":{"x": 0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":-6, "z":109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+
+    ],
+},
+
+"etk800_politi_rear_bumper_k9": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"K9 new rear lights",
+        "value":50,
+    },
+    "slotType" : "bumper_light_rear",
+    "glowMap":{			
+
+        "generic_flasher_led_BL":                   {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR":                   {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+       
+        "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    },
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        //These should be "generic_flasher_led_BR/L" but are changed to comply with the hackjob. 
+		["generic_flasher_led_BR_R", ["etk800_body"], [], {"pos":{"x": -0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":15, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["etk800_body"], [], {"pos":{"x":  0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":-15, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+
+        //This is a bit of a hackjob and should have it's own objects assigned correctly in the .dae file.
+        ["generic_flasher_led_BR", ["etk800_bumper_R"], [], {"pos":{"x": -0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z":-180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+        ["generic_flasher_led_BL", ["etk800_bumper_R"], [], {"pos":{"x":  0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z": 180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+
+		["generic_flasher_led_BR_R", ["etk800_bumper_R"], [], {"pos":{"x": -0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0,  "z":-166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["etk800_bumper_R"], [], {"pos":{"x":  0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0, "z":166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
     ],
