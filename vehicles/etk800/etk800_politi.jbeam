@@ -10,7 +10,7 @@
         ["type", "default", "description"],
         ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
         ["bumper_light_front","etk800_politi_bumper_normal", "bumper type for bumper flashers"],
-        ["bumper_light_rear","etk800_politi_rear_bumper", "bumper type for rear bumper flashers"],
+        ["bumper_light_rear","etk800_politi_rear_bumper", "Type for rear flashers"],
         ["roof_light","roof_beacons", "Roof lights"],
 
         
@@ -565,9 +565,10 @@
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
-        ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-        ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-        ["lightbar2_l"    , "POINTLIGHT"        , "etk_lightbar_blue_1", "etk_lightbar_blue_2", "etk_lightbar_blue_3", {"x":-125, "y":-90, "z":265} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
+        ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+        ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+        ["lightbar2_l"    , "POINTLIGHT"        , "etk_lightbar_blue_3", "etk_lightbar_blue_4", "etk_lightbar_blue_1", {"x":80, "y":-90, "z":220} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"lightbar_break"}],
+        ["lightbar2_l"    , "POINTLIGHT"        , "etk_lightbar_blue_1", "etk_lightbar_blue_2", "etk_lightbar_blue_3", {"x":80, "y":-85, "z":115} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"lightbar_break"}],
 
 
     ],
@@ -612,8 +613,8 @@
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
-        ["lightbar_l"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-        ["lightbar_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+        ["lightbar_l"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+        ["lightbar_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
         //["lightbar_l"    , "POINTLIGHT"        , "etk_lightbar_blue_1", "etk_lightbar_blue_2", "etk_lightbar_blue_3", {"x":-125, "y":-90, "z":265} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
 
     ],
@@ -1339,6 +1340,25 @@
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":100,
+            "lightBrightness":0.6,
+            "lightRange":15,
+            "lightColor":{"r":0, "g":25, "b":255, "a":255},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.04,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        
+        ["lightbar2_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+        ["lightbar2_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+  
+    
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1462,7 +1482,28 @@
         "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
     },
-
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":100,
+            "lightBrightness":0.6,
+            "lightRange":15,
+            "lightColor":{"r":0, "g":25, "b":255, "a":255},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.04,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        
+        ["lightbar2_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-90, "y":-0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        ["lightbar2_l"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        ["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+    
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
