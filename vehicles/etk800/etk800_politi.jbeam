@@ -86,7 +86,7 @@
                         ["lightbar_l", 0, 0.02],
                         ["lightbar_l", 1, 0.1],
 
-
+                        //k9 lights
 						["lightbar2_r", 1, 0.1],
                         ["lightbar2_r", 0, 0.02],
                         ["lightbar2_r", 1, 0.1],
@@ -98,7 +98,7 @@
                         ["lightbar2_l", 1, 0.1],
 						
                     ],
-                    ],
+                ],
 
                 ["New pattern", [
                     ["electric", "value", "duration"],
@@ -159,9 +159,27 @@
 						["lightbar_l", 1, 0.1],
                         ["lightbar_l", 0, 0.02],
                         ["lightbar_l", 1, 0.1],
+
+
+                        //k9 lights
+						["lightbar2_r", 1, 0.1],
+                        ["lightbar2_r", 0, 0.02],
+                        ["lightbar2_r", 1, 0.1],
+                        ["lightbar2_r", 0, 0.2],
+                        ["lightbar2_r", 1, 0.2],
+                        ["lightbar2_r", 0, 0.2],
+                        ["lightbar2_r", 0, 0.1],
+    
+	                    ["lightbar2_l", 0, 0.2],
+						["lightbar2_l", 1, 0.1],
+                        ["lightbar2_l", 0, 0.02],
+                        ["lightbar2_l", 1, 0.1],
+	                    ["lightbar2_l", 0, 0.2],
+						["lightbar2_l", 1, 0.2],
+                        ["lightbar2_l", 1, 0.1],
 						
                     ],
-                    ],
+                ],
 
                 //Blinking mode for Mr. Bauer
                 ["Still flash", [
@@ -212,8 +230,19 @@
 						["lightbar_l", 1, 0.1],
                         ["lightbar_l", 0, 0.03],
                         ["lightbar_l", 1, 0.1],
+
+                        //k9 lights
+						["lightbar2_r", 1, 0.3],
+                        ["lightbar2_r", 0, 0.3],
+                        //["lightbar2_r", 1, 0.03],
+                        ["lightbar2_r", 0, 0.1],
+    
+	                    ["lightbar2_l", 0, 0.3],
+						["lightbar2_l", 1, 0.3],
+                        //["lightbar2_l", 0, 0.03],
+                        ["lightbar2_l", 1, 0.1],
                     ],
-                    ],
+                ],
 
 
                 //Steady mode for Mr. Bauer
@@ -237,9 +266,15 @@
                         ["lightbar_r", 1, 1],
     
 	                    ["lightbar_l", 1, 1],
+
+                        //k9 lights
+                        ["lightbar2_r", 1, 0.1],
+
+                        ["lightbar2_l", 1, 0.1],
+
                     ],
-                    ],
-					],
+                ],
+			],
         }],
     ],
     "glowMap":{
@@ -561,7 +596,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
@@ -610,7 +645,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
@@ -1269,7 +1304,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1289,7 +1324,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
@@ -1347,7 +1382,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1367,7 +1402,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
@@ -1426,7 +1461,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1486,7 +1521,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1516,7 +1551,6 @@
 },
 
 
-
 "etk800_politi_rear_bumper": {
     "information":{
         "authors":"NickRyge",
@@ -1543,7 +1577,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1590,7 +1624,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1646,7 +1680,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1702,7 +1736,7 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         
@@ -1742,30 +1776,30 @@
         "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
          
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":70,
+            "lightBrightness":0.6,
+            "lightRange":10,
+            "lightColor":{"r":0, "g":25, "b":255, "a":255},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-        "props": [
-            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
         
-            {
-                "lightInnerAngle":0,
-                "lightOuterAngle":70,
-                "lightBrightness":0.6,
-                "lightRange":10,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
-                "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
-                "flareScale":0.04,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
-            },
-            
-            ["blue_r"    , "POINTLIGHT"        , "rf1l", "rf4", "p10l", {"x":120, "y":30, "z":-20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            ["blue_l"    , "POINTLIGHT"        , "rf1r", "rf4", "p10r", {"x":-120, "y":30, "z":20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            
-            ["blue_l"    , "POINTLIGHT"        , "rf4l", "rf3l", "p10l", {"x":-120, "y":30, "z":-30} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
-            ["blue_r"    , "POINTLIGHT"        , "rf4r", "rf3r", "p10r", {"x":120, "y":30, "z":25} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
-        ],
+        ["blue_r"    , "POINTLIGHT"        , "rf1l", "rf4", "p10l", {"x":120, "y":30, "z":-20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        ["blue_l"    , "POINTLIGHT"        , "rf1r", "rf4", "p10r", {"x":-120, "y":30, "z":20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        
+        ["blue_l"    , "POINTLIGHT"        , "rf4l", "rf3l", "p10l", {"x":-120, "y":30, "z":-30} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+        ["blue_r"    , "POINTLIGHT"        , "rf4r", "rf3r", "p10r", {"x":120, "y":30, "z":25} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
