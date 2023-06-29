@@ -10,6 +10,16 @@
    "globalSkin" : "politi_patrol",
 },
 
+"etk800_skin_politi_patrol_new": {
+   "information":{
+       "authors":"NickRyge",
+       "name":"Danish new police unit",
+       "value":250,
+   },
+   "slotType" : "paint_design",
+   "globalSkin" : "politi_patrol_new",
+},
+
 "etk800_skin_politi_dog": {
    "information":{
        "authors":"NickRyge",
@@ -18,5 +28,5 @@
    },
    "slotType" : "paint_design",
    "globalSkin" : "politi_dog",
-},
+}
 }
