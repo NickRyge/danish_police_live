@@ -12,6 +12,7 @@
         ["bumper_light_front","etk800_politi_bumper_normal", "bumper type for bumper flashers"],
         ["bumper_light_rear","etk800_politi_rear_bumper", "Type for rear flashers"],
         ["roof_light","roof_beacons", "Roof lights"],
+        ["mirror_light","", "Side mirror lights"]
 
         
         //Nuh-uh, not yet.
@@ -315,6 +316,76 @@
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		
     ],
+},
+
+
+"etk800_politi_mirror_lights": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"mirror lights",
+        "value":50,
+    },
+    "slotType" : "mirror_light",
+    "slots": [
+        ["type", "default", "description"],
+        ["mirror_light_type","etk800_politi_mirror_type_k9", "Light pattern type",{"coreSlot":true}]
+    ],
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //The breakgroups don't work, probably because the mirrors have no deform groups. No idea.
+        ["mod_beacon_base_mr",  ["etk800_mirror_R"], [], {"pos":{"x": -0.83, "y":-0.4689, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.9}}],
+        {"breakGroup":"mirror_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        ["mod_beacon_light_mr", ["etk800_mirror_R"], [], {"pos":{"x": -0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+        {"breakGroup":"mirror_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        ["mod_beacon_glass_mr", ["etk800_mirror_R"], [], {"pos":{"x": -0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+
+        ["mod_beacon_base_ml",  ["etk800_mirror_L"], [], {"pos":{"x": 0.83, "y":-0.4689, "z":0.949},   "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.9}}],
+        ["mod_beacon_light_ml", ["etk800_mirror_L"], [], {"pos":{"x": 0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+        ["mod_beacon_glass_ml", ["etk800_mirror_L"], [], {"pos":{"x": 0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+        
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+},
+
+
+"etk800_politi_mirror_type_patrol": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"mirror lights type patrol",
+        "value":0
+    },
+    "slotType" : "mirror_light_type",
+    "glowMap":{
+        
+        "mod_beacon_light_mr":                    {"simpleFunction":"blue_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+        "mod_beacon_glass_mr":                    {"simpleFunction":"blue_r", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+
+        "mod_beacon_light_ml":                    {"simpleFunction":"blue_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+        "mod_beacon_glass_ml":                    {"simpleFunction":"blue_l", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+
+    }
+},
+
+
+"etk800_politi_mirror_type_k9": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"mirror lights type K9",
+        "value":0
+    },
+    "slotType" : "mirror_light_type",
+    "glowMap":{
+        
+        "mod_beacon_light_mr":                    {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+        "mod_beacon_glass_mr":                    {"simpleFunction":"lightbar2_r", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+
+        "mod_beacon_light_ml":                    {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full   "},
+        "mod_beacon_glass_ml":                    {"simpleFunction":"lightbar2_l", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+
+    }
 },
 
 
@@ -629,6 +700,7 @@
 
     ],
 },
+
 
 "patrol_lights": {
     "information":{
@@ -1616,6 +1688,7 @@
     ],
 },
 
+
 "etk800_politi_rear_bumper_k9_wagon": {
     "information":{
         "authors":"NickRyge",
@@ -1671,6 +1744,7 @@
 
     ],
 },
+
 
 "etk800_politi_rear_bumper_k9_sedan": {
     "information":{
@@ -1832,5 +1906,5 @@
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
     ],
-},
+}
 }
