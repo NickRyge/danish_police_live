@@ -75,6 +75,7 @@
                         ["roofflasherR", 1, 0.10],
                         ["roofflasherR", 0, 0.14],
 
+                        //lightbar
                         ["lightbar_r", 0, 0.1],
 						["lightbar_r", 1, 0.1],
                         ["lightbar_r", 0, 0.02],
@@ -85,6 +86,9 @@
 						["lightbar_l", 1, 0.1],
                         ["lightbar_l", 0, 0.02],
                         ["lightbar_l", 1, 0.1],
+
+                        ["lightbar_cl", 0, 0.1],
+                        ["lightbar_cr", 0, 0.1],
 
                         //k9 lights
 						["lightbar2_r", 1, 0.1],
@@ -150,16 +154,26 @@
                         ["roofflasherR", 0, 0.02],
                         ["roofflasherR", 1, 0.2],
 
+                        //lightbar
 	                    ["lightbar_r", 0, 0.42],
-						["lightbar_r", 1, 0.1],
+					    ["lightbar_r", 1, 0.1],
                         ["lightbar_r", 0, 0.02],
                         ["lightbar_r", 1, 0.1],
     
 	                    ["lightbar_l", 0, 0.42],
-						["lightbar_l", 1, 0.1],
+					    ["lightbar_l", 1, 0.1],
                         ["lightbar_l", 0, 0.02],
                         ["lightbar_l", 1, 0.1],
 
+                        ["lightbar_cl", 1, 0.1],
+                        ["lightbar_cl", 0, 0.01],
+                        ["lightbar_cl", 1, 0.1],
+                        ["lightbar_cl", 0, 0.21],
+						
+						["lightbar_cr", 0, 0.21],
+						["lightbar_cr", 1, 0.1],
+                        ["lightbar_cr", 0, 0.01],
+                        ["lightbar_cr", 1, 0.1],
 
                         //k9 lights
 						["lightbar2_r", 1, 0.1],
@@ -231,6 +245,9 @@
                         ["lightbar_l", 0, 0.03],
                         ["lightbar_l", 1, 0.1],
 
+                        ["lightbar_cl", 0, 0.1],
+                        ["lightbar_cr", 0, 0.1],
+
                         //k9 lights
 						["lightbar2_r", 1, 0.3],
                         ["lightbar2_r", 0, 0.3],
@@ -266,6 +283,9 @@
                         ["lightbar_r", 1, 1],
     
 	                    ["lightbar_l", 1, 1],
+
+                        ["lightbar_cl", 0, 0.1],
+                        ["lightbar_cr", 0, 0.1],
 
                         //k9 lights
                         ["lightbar2_r", 1, 0.1],
@@ -619,14 +639,14 @@
     "slotType" : "roof_light_type",
     "glowMap":{
           "mod_lightbar_l1r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2r":                 {"simpleFunction":"", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+          "mod_lightbar_l2r":                 {"simpleFunction":"lightbar_cr", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
           "mod_lightbar_l2r_2":               {"simpleFunction":"", "off":"invis", "on":""},
           "mod_lightbar_l2r_3":               {"simpleFunction":"", "off":"invis", "on":""},
           "mod_lightbar_l3r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
           "mod_lightbar_l4r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
           "mod_lightbar_l5r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
           "mod_lightbar_l1l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
-          "mod_lightbar_l2l":                 {"simpleFunction":"", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+          "mod_lightbar_l2l":                 {"simpleFunction":"lightbar_cl", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
           "mod_lightbar_l2l_2":               {"simpleFunction":"", "off":"invis", "on":""},
           "mod_lightbar_l2l_3":               {"simpleFunction":"", "off":"invis", "on":""},
           "mod_lightbar_l3l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
