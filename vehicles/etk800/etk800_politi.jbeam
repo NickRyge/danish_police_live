@@ -12,7 +12,8 @@
         ["bumper_light_front","etk800_politi_bumper_normal", "bumper type for bumper flashers"],
         ["bumper_light_rear","etk800_politi_rear_bumper", "Type for rear flashers"],
         ["roof_light","roof_beacons", "Roof lights"],
-        ["mirror_light","", "Side mirror lights"]
+        ["mirror_light","", "Side mirror lights"],
+        ["trunk_lights", "etk800_trunklights_wagon", "Trunk lights"]
 
         
         //Nuh-uh, not yet.
@@ -297,7 +298,17 @@
                 ]
 			]
         }]
-    ],
+    ]
+},
+
+
+"etk800_trunklights_wagon": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Wagon trunklights",
+        "value":10
+    },
+    "slotType" : "trunk_lights",
     "glowMap":{
 
         "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
@@ -307,15 +318,39 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-		//Oriented in left to right for the deform groups. Sorry.
-        //TODO: Find breakgroup for trunk lights or whatever...
+		//I don't know whether it makes any sense to provide any breakgroups as additional beams with no strength perhaps?
         {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_TRNK_R", ["etk800_tailgate"], [], {"pos":{"x": -0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_TRNK_L", ["etk800_tailgate"], [], {"pos":{"x": 0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-    ],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+},
+
+
+"etk800_trunklights_sedan": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Sedan trunklights",
+        "value":10
+    },
+    "slotType" : "trunk_lights",
+    "glowMap":{
+
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    
+        },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+		//I don't know whether it makes any sense to provide any breakgroups as additional beams with no strength perhaps?
+        {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_R", ["etk800_trunk"], [], {"pos":{"x": -0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_L", ["etk800_trunk"], [], {"pos":{"x": 0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 },
 
 
@@ -1072,10 +1107,7 @@
 
     "glowMap":{			
 		"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-        
-        "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -1098,13 +1130,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-        {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_R", ["etk800_trunk"], [], {"pos":{"x": -0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_L", ["etk800_trunk"], [], {"pos":{"x": 0.34, "y":2.22, "z":0.7152}, "rot":{"x":78, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		
         ["mod_beacon_base", ["etk800_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.01, "z":1.3655}, "rot":{"x":-6.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
         {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},

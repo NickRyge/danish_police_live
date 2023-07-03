@@ -37,7 +37,7 @@
         },
 
 
-        ["shithead"    , "SPOTLIGHT"        , "rf2", "rf2r", "rf3", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":1}     , {"x":0, "y":0.0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":-0.5, "y":0, "z":0.5},"deformGroup":"beaconlight_break_l"}],
+        ["camLight"    , "SPOTLIGHT"        , "rf2", "rf2r", "rf3", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":1}     , {"x":0, "y":0.0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":-0.5, "y":0, "z":0.5},"deformGroup":"beaconlight_break_l"}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
