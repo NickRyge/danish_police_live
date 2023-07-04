@@ -1,0 +1,1779 @@
+{
+    "lansdale_politi": {
+        "information":{
+            "authors":"BeamNGxNickRyge",
+            "name":"Danish Police Lights",
+            "value":100
+        },
+        "slotType" : "lansdale_roof_accessory",
+        "slots": [
+            ["type", "default", "description"],
+            ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
+            ["bumper_light_front","lansdale_politi_bumper_normal", "bumper type for bumper flashers"],
+            ["bumper_light_rear","lansdale_politi_rear_bumper", "Type for rear flashers"],
+            ["roof_light","roof_beacons", "Roof lights"],
+            ["mirror_light","", "Side mirror lights"],
+            ["trunk_lights", "lansdale_trunklights_wagon", "Trunk lights"]
+        ],
+        "soundscape": [
+            ["name", "src"],
+            {"node:":"f15"},
+        ],
+        //Should be split into several lightbar mode types instead of this customization mishmash
+        "controller": [
+            ["fileName"],
+            ["lightbar", {
+                "defaultModeIndex": 1,
+                "modes": [
+                    ["name", "config"],
+                    ["Default", [
+                        ["electric", "value", "duration"],
+    
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.2],
+                            ["white_r", 0, 0.44],
+                            
+                            ["white_l", 0, 0.44],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.2],
+    
+                            ["blue_r", 0, 0.30],
+                            ["blue_r", 1, 0.1],
+                            ["blue_r", 0, 0.02],
+                            ["blue_r", 1, 0.1],
+                            ["blue_r", 0, 0.17],
+        
+                            ["blue_l", 0, 0.47],
+                            ["blue_l", 1, 0.1],
+                            ["blue_l", 0, 0.02],
+                            ["blue_l", 1, 0.1],
+    
+                            
+                            ["roofflasherFL", 1, 0.10],
+                            ["roofflasherFL", 0, 0.04],
+                            ["roofflasherFL", 1, 0.10],
+                            ["roofflasherFL", 0, 0.30],
+                            
+                            ["roofflasherFR", 0, 0.08],
+                            ["roofflasherFR", 1, 0.10],
+                            ["roofflasherFR", 0, 0.04],
+                            ["roofflasherFR", 1, 0.10],
+                            ["roofflasherFR", 0, 0.22],
+                            
+                            ["roofflasherR", 0, 0.16],
+                            ["roofflasherR", 1, 0.10],
+                            ["roofflasherR", 0, 0.04],
+                            ["roofflasherR", 1, 0.10],
+                            ["roofflasherR", 0, 0.14],
+    
+                            //lightbar
+                            ["lightbar_r", 0, 0.1],
+                            ["lightbar_r", 1, 0.1],
+                            ["lightbar_r", 0, 0.02],
+                            ["lightbar_r", 1, 0.1],
+                            ["lightbar_r", 0, 0.32],
+        
+                            ["lightbar_l", 0, 0.42],
+                            ["lightbar_l", 1, 0.1],
+                            ["lightbar_l", 0, 0.02],
+                            ["lightbar_l", 1, 0.1],
+    
+                            ["lightbar_cl", 0, 0.1],
+                            ["lightbar_cr", 0, 0.1],
+    
+                            //k9 lights
+                            ["lightbar2_r", 1, 0.1],
+                            ["lightbar2_r", 0, 0.02],
+                            ["lightbar2_r", 1, 0.1],
+                            ["lightbar2_r", 0, 0.2],
+        
+                            ["lightbar2_l", 0, 0.2],
+                            ["lightbar2_l", 1, 0.1],
+                            ["lightbar2_l", 0, 0.02],
+                            ["lightbar2_l", 1, 0.1],
+                            
+                        ],
+                    ],
+    
+                    ["New pattern", [
+                        ["electric", "value", "duration"],
+    
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.2],
+                            ["white_r", 0, 0.44],
+                            
+                            ["white_l", 0, 0.44],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.2],
+    
+                            ["blue_r", 0, 0.30],
+                            ["blue_r", 1, 0.1],
+                            ["blue_r", 0, 0.02],
+                            ["blue_r", 1, 0.1],
+                            ["blue_r", 0, 0.17],
+        
+                            ["blue_l", 0, 0.47],
+                            ["blue_l", 1, 0.1],
+                            ["blue_l", 0, 0.02],
+                            ["blue_l", 1, 0.1],
+    
+                            
+                            ["roofflasherFL", 0, 0.3],
+                            ["roofflasherFL", 1, 0.05],
+                            ["roofflasherFL", 0, 0.02],
+                            ["roofflasherFL", 1, 0.05],
+                            ["roofflasherFL", 0, 0.02],
+                            ["roofflasherFL", 1, 0.2],
+                            
+                            ["roofflasherFR", 0, 0.3],
+                            ["roofflasherFR", 1, 0.05],
+                            ["roofflasherFR", 0, 0.02],
+                            ["roofflasherFR", 1, 0.05],
+                            ["roofflasherFR", 0, 0.02],
+                            ["roofflasherFR", 1, 0.2],
+                        
+                            ["roofflasherR", 0, 0.3],
+                            ["roofflasherR", 1, 0.05],
+                            ["roofflasherR", 0, 0.02],
+                            ["roofflasherR", 1, 0.05],
+                            ["roofflasherR", 0, 0.02],
+                            ["roofflasherR", 1, 0.2],
+    
+                            //lightbar
+                            ["lightbar_r", 0, 0.42],
+                            ["lightbar_r", 1, 0.1],
+                            ["lightbar_r", 0, 0.02],
+                            ["lightbar_r", 1, 0.1],
+        
+                            ["lightbar_l", 0, 0.42],
+                            ["lightbar_l", 1, 0.1],
+                            ["lightbar_l", 0, 0.02],
+                            ["lightbar_l", 1, 0.1],
+    
+                            ["lightbar_cl", 1, 0.1],
+                            ["lightbar_cl", 0, 0.01],
+                            ["lightbar_cl", 1, 0.1],
+                            ["lightbar_cl", 0, 0.21],
+                            
+                            ["lightbar_cr", 0, 0.21],
+                            ["lightbar_cr", 1, 0.1],
+                            ["lightbar_cr", 0, 0.01],
+                            ["lightbar_cr", 1, 0.1],
+    
+                            //k9 lights
+                            ["lightbar2_r", 1, 0.1],
+                            ["lightbar2_r", 0, 0.02],
+                            ["lightbar2_r", 1, 0.1],
+                            ["lightbar2_r", 0, 0.2],
+                            ["lightbar2_r", 1, 0.2],
+                            ["lightbar2_r", 0, 0.2],
+                            ["lightbar2_r", 0, 0.1],
+        
+                            ["lightbar2_l", 0, 0.2],
+                            ["lightbar2_l", 1, 0.1],
+                            ["lightbar2_l", 0, 0.02],
+                            ["lightbar2_l", 1, 0.1],
+                            ["lightbar2_l", 0, 0.2],
+                            ["lightbar2_l", 1, 0.2],
+                            ["lightbar2_l", 1, 0.1],
+                            
+                        ],
+                    ],
+    
+                    //Blinking mode for Mr. Bauer
+                    ["Still flash", [
+                        ["electric", "value", "duration"],
+    
+                            ["white_r", 0, 0.3],
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.03],
+                            ["white_r", 1, 0.1],
+                            
+                            
+                            ["white_l", 0, 0.3],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.03],
+                            ["white_l", 1, 0.1],
+    
+                            ["blue_r", 0, 0.3],
+                            ["blue_r", 1, 0.1],
+                            ["blue_r", 0, 0.03],
+                            ["blue_r", 1, 0.1],
+    
+                            ["blue_l", 0, 0.3],
+                            ["blue_l", 1, 0.1],
+                            ["blue_l", 0, 0.03],
+                            ["blue_l", 1, 0.1],
+                            
+                            ["roofflasherFL", 0, 0.3],
+                            ["roofflasherFL", 1, 0.1],
+                            ["roofflasherFL", 0, 0.03],
+                            ["roofflasherFL", 1, 0.1],
+                            
+                            ["roofflasherFR", 0, 0.3],
+                            ["roofflasherFR", 1, 0.1],
+                            ["roofflasherFR", 0, 0.03],
+                            ["roofflasherFR", 1, 0.1],
+                        
+                            ["roofflasherR", 0, 0.3],
+                            ["roofflasherR", 1, 0.1],
+                            ["roofflasherR", 0, 0.03],
+                            ["roofflasherR", 1, 0.1],
+    
+                            ["lightbar_r", 0, 0.3],
+                            ["lightbar_r", 1, 0.1],
+                            ["lightbar_r", 0, 0.03],
+                            ["lightbar_r", 1, 0.1],
+        
+                            ["lightbar_l", 0, 0.3],
+                            ["lightbar_l", 1, 0.1],
+                            ["lightbar_l", 0, 0.03],
+                            ["lightbar_l", 1, 0.1],
+    
+                            ["lightbar_cl", 0, 0.1],
+                            ["lightbar_cr", 0, 0.1],
+    
+                            //k9 lights
+                            ["lightbar2_r", 1, 0.3],
+                            ["lightbar2_r", 0, 0.3],
+                            //["lightbar2_r", 1, 0.03],
+                            ["lightbar2_r", 0, 0.1],
+        
+                            ["lightbar2_l", 0, 0.3],
+                            ["lightbar2_l", 1, 0.3],
+                            //["lightbar2_l", 0, 0.03],
+                            ["lightbar2_l", 1, 0.1],
+                        ]
+                    ],
+    
+    
+                    //Steady mode for Mr. Bauer
+                    ["Steady", [
+                        ["electric", "value", "duration"],
+    
+                            ["white_r", 0, 1],
+                            
+                            ["white_l", 0, 1],
+    
+                            ["blue_r", 1, 1],
+    
+                            ["blue_l", 1, 1],
+                            
+                            ["roofflasherFL", 1, 1],
+                            
+                            ["roofflasherFR", 1, 1],
+                        
+                            ["roofflasherR", 1, 1],
+    
+                            ["lightbar_r", 1, 1],
+        
+                            ["lightbar_l", 1, 1],
+    
+                            ["lightbar_cl", 0, 0.1],
+                            ["lightbar_cr", 0, 0.1],
+    
+                            //k9 lights
+                            ["lightbar2_r", 1, 0.1],
+    
+                            ["lightbar2_l", 1, 0.1],
+    
+                        ]
+                    ]
+                ]
+            }]
+        ]
+    },
+    
+    //F
+    "lansdale_trunklights_wagon": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Wagon trunklights",
+            "value":10
+        },
+        "slotType" : "trunk_lights",
+        "glowMap":{
+    
+            "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+            },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            //I don't know whether it makes any sense to provide any breakgroups as additional beams with no strength perhaps?
+            {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_TRNK_R", ["lansdale_tailgate"], [], {"pos":{"x": -0.22, "y":2.43, "z":0.393}, "rot":{"x":85, "y":22, "z":22}, "scale":{"x":1.8, "y":0.6, "z":0.6}}],
+            {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_TRNK_L", ["lansdale_tailgate"], [], {"pos":{"x": 0.22, "y":2.43, "z":0.393}, "rot":{"x":85, "y":-22, "z":-22}, "scale":{"x":1.8, "y":0.6, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        ]
+    },
+    
+    
+    "lansdale_politi_mirror_lights": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"mirror lights",
+            "value":50,
+        },
+        "slotType" : "mirror_light",
+        "slots": [
+            ["type", "default", "description"],
+            ["mirror_light_type","lansdale_politi_mirror_type_k9", "Light pattern type",{"coreSlot":true}]
+        ],
+    
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            //The breakgroups don't work, probably because the mirrors have no deform groups. No idea.
+            ["mod_beacon_base_mr",  ["lansdale_mirror_R"], [], {"pos":{"x": -0.83, "y":-0.4689, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.9}}],
+            {"breakGroup":"mirror_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_light_mr", ["lansdale_mirror_R"], [], {"pos":{"x": -0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+            {"breakGroup":"mirror_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_glass_mr", ["lansdale_mirror_R"], [], {"pos":{"x": -0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+            ["mod_beacon_base_ml",  ["lansdale_mirror_L"], [], {"pos":{"x": 0.83, "y":-0.4689, "z":0.949},   "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.9}}],
+            ["mod_beacon_light_ml", ["lansdale_mirror_L"], [], {"pos":{"x": 0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+            ["mod_beacon_glass_ml", ["lansdale_mirror_L"], [], {"pos":{"x": 0.8309, "y":-0.4705, "z":0.949}, "rot":{"x":115, "y":-90, "z":0}, "scale":{"x":0.2, "y":0.2, "z":0.3}}],
+            
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_mirror_type_patrol": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"mirror lights type patrol",
+            "value":0
+        },
+        "slotType" : "mirror_light_type",
+        "glowMap":{
+            
+            "mod_beacon_light_mr":                    {"simpleFunction":"blue_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+            "mod_beacon_glass_mr":                    {"simpleFunction":"blue_r", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+    
+            "mod_beacon_light_ml":                    {"simpleFunction":"blue_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+            "mod_beacon_glass_ml":                    {"simpleFunction":"blue_l", "off":"policeparts_glass_white", "on":"policeparts_glass_white"}
+    
+        }
+    },
+    
+    
+    "lansdale_politi_mirror_type_k9": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"mirror lights type K9",
+            "value":0
+        },
+        "slotType" : "mirror_light_type",
+        "glowMap":{
+            
+            "mod_beacon_light_mr":                    {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+            "mod_beacon_glass_mr":                    {"simpleFunction":"lightbar2_r", "off":"policeparts_glass_white", "on":"policeparts_glass_white"},
+    
+            "mod_beacon_light_ml":                    {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
+            "mod_beacon_glass_ml":                    {"simpleFunction":"lightbar2_l", "off":"policeparts_glass_white", "on":"policeparts_glass_white"}
+    
+        }
+    },
+    
+    //F
+    "roof_beacons": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Danish police triple roof beacons",
+            "value":100,
+        },
+        "slotType" : "roof_light",
+        "slots": [
+            ["type", "default", "description"],
+            ["extra_light","lansdale_politi_rear_w", "rear-most roof light",{"coreSlot":true}],
+        ],
+    
+        "glowMap":{
+        
+            "mod_beacon_light_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "mod_beacon_glass_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+            
+            "mod_beacon_light_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},                
+            "mod_beacon_glass_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+                
+            },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":10,
+                "lightRange":30,
+                "lightBrightness": 1,
+                "lightColor":{"r":10, "g":10, "b":255, "a":200},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.01,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+            ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
+            
+                {
+            "lightInnerAngle":0,
+            "lightOuterAngle":60,
+            "lightColor":{"r":255, "g":255, "b":240, "a":255},
+            "lightAttenuation":{"x":10, "y":1, "z":1},
+            "lightCastShadows":true,
+            "lightRange":200,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
+            "texSize":254,
+            "shadowSoftness":0.4,
+        },
+    
+    
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            
+            //Oriented in left to right for the deform groups. Sorry.
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},		
+            ["mod_beacon_base_fr",  ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["mod_beacon_light_fr", ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_glass_fr", ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            
+            ["mod_beacon_base_fl",  ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["mod_beacon_light_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_glass_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+         "nodes": [
+            ["id", "posX", "posY", "posZ"],
+                
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.50},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+                
+            //right - using offset because its easier
+            {"group":"lansdale_lightbar_r"},
+            ["rbl1l", -0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.08}}],
+            ["rbl2l", -0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.083}}],
+            ["rbl3",  -0.41, 0.0, 1.72],
+            ["rbl1r", -0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.083}}],
+            ["rbl2r", -0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.090}}],
+            {"group":""},
+    
+            //left
+            //I know the node names are mirrored. Sue me.
+            {"group":"lansdale_lightbar_l"},
+            ["lbl1l", 0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.08}}],
+            ["lbl2l", 0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.083}}],
+            ["lbl3",  0.41, 0.0, 1.72],
+            ["lbl1r", 0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.083}}],
+            ["lbl2r", 0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.09}}],
+            {"group":""},
+        ],
+    
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":601000,"beamDamp":60},
+              {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+                {"deformLimitExpansion":1.1},
+    
+                //Main shape right
+                {"deformGroup":"beaconlight_break_r"},
+                ["rbl1r","rbl1l"],
+                ["rbl2r","rbl2l"],
+                ["rbl1r","rbl2r"],
+                ["rbl1l","rbl2l"],
+    
+                ["rbl1r","rbl2l"],
+                ["rbl1l","rbl2r"],
+    
+                ["rbl1r","rbl3"],
+                ["rbl2r","rbl3"],
+                ["rbl1l","rbl3"],
+                ["rbl2l","rbl3"],
+                {"deformGroup":""},
+    
+                //Main shape left
+                {"deformGroup":"beaconlight_break_l"},
+                ["lbl1r","lbl1l"],
+                ["lbl2r","lbl2l"],
+                ["lbl1r","lbl2r"],
+                ["lbl1l","lbl2l"],
+    
+                ["lbl1r","lbl2l"],
+                ["lbl1l","lbl2r"],
+    
+                ["lbl1r","lbl3"],
+                ["lbl2r","lbl3"],
+                ["lbl1l","lbl3"],
+                ["lbl2l","lbl3"],
+                {"deformGroup":""},
+                
+            
+                //To body
+                {"deformLimitExpansion":""},
+                {"beamSpring":301000,"beamDamp":60},
+                {"beamDeform":4000,"beamStrength":8000},
+              
+                //Right
+                {"deformGroup":"beaconlight_break_r"},
+    
+                //This to avoid removing the beams that hold the light
+                ["rbl3","rbl2l"],
+                ["rbl3","rbl2r"],
+                ["rbl3","rbl1l"],
+                ["rbl3","rbl1r"],
+    
+                {"breakGroup":"light_attach_r"},
+    
+                ["rbl2r","rf1r"],
+                ["rbl3", "rf1r"],
+                ["rbl1r","rf1r"],
+                ["rbl2l","rf1r"],
+    
+                ["rbl2r","rf1"],
+                ["rbl3", "rf1"],
+                ["rbl2l","rf1"],
+                ["rbl1l","rf1"],
+    
+                ["rbl1r","rf3"],
+                ["rbl3", "rf3"],
+                ["rbl2l","rf3"],
+                ["rbl1l","rf3"],
+                 
+                //For some reason rf2 is insanely unstable
+                //A single point ensures the breakgroup and doesnt cause too much bugginess
+                ["rbl3", "rf2"],
+    
+                ["rbl1r","rf2r"],
+                ["rbl3", "rf2r"],
+                ["rbl2r","rf2r"],
+                ["rbl1l","rf2r"],
+    
+                ["rbl1r","f2r"],
+                ["rbl2l","f2r"],
+                ["rbl2r","f2r"],
+                ["rbl1l","f2r"],
+                ["rbl3", "f2r"],
+                {"breakGroup":""},
+                {"deformGroup":""},
+    
+    
+    
+                //Left
+                {"deformGroup":"beaconlight_break_l"},
+    
+                //This to avoid removing the beams that hold the light
+                ["lbl3","lbl2l"],
+                ["lbl3","lbl2r"],
+                ["lbl3","lbl1l"],
+                ["lbl3","lbl1r"],
+    
+                {"breakGroup":"light_attach_l"},
+    
+                ["lbl2r","rf1l"],
+                ["lbl3","rf1l"],
+                ["lbl1r","rf1l"],
+                ["lbl2l","rf1l"],
+    
+                ["lbl2r","rf1"],
+                ["lbl3","rf1"],
+                ["lbl2l","rf1"],
+                ["lbl1l","rf1"],
+    
+                ["lbl1r","rf3"],
+                ["lbl3", "rf3"],
+                ["lbl2l","rf3"],
+                ["lbl1l","rf3"],
+
+                //For some reason rf2 is insanely unstable
+                //A single point ensures the breakgroup and doesnt cause too much bugginess
+                ["lbl3", "rf2"],
+    
+                ["lbl1r","rf2l"],
+                ["lbl3","rf2l"],
+                ["lbl2r","rf2l"],
+                ["lbl1l","rf2l"],
+    
+                ["lbl1r","f2l"],
+                ["lbl2l","f2l"],
+                ["lbl2r","f2l"],
+                ["lbl1l","f2l"],
+                ["lbl3","f2l"],
+                {"breakGroup":""},
+                {"deformGroup":""},
+    
+    
+    
+                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                {"dragCoef":2},
+    
+                //left
+                {"group":"lansdale_lightbar_l"},
+                
+                ["lbl3","lbl2r","lbl1r"],
+                ["lbl3","lbl2l","lbl2r"],
+                ["lbl3","lbl1l","lbl2l"],
+                ["lbl3","lbl1r","lbl1l"],
+                ["lbl1r","lbl2r","lbl2l"],
+                ["lbl1r","lbl2l","lbl1l"],
+                {"group":""},
+    
+                //right
+                {"group":"lansdale_lightbar_r"},
+                ["rbl3","rbl2r","rbl1r"],
+                ["rbl3","rbl2l","rbl2r"],
+                ["rbl3","rbl1l","rbl2l"],
+                ["rbl3","rbl1r","rbl1l"],
+                ["rbl1r","rbl2r","rbl2l"],
+                ["rbl1r","rbl2l","rbl1l"],
+    
+    
+                {"group":""},
+        ],
+    },
+    
+    
+    "k9_lights": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"K9 type lights",
+            "value":0,
+        },
+        "slotType" : "roof_light_type",
+        "glowMap":{
+            "mod_lightbar_l1r":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l2r":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l2r_2":               {"simpleFunction":"", "off":"invis", "on":""},
+            "mod_lightbar_l2r_3":               {"simpleFunction":"", "off":"invis", "on":""},
+            "mod_lightbar_l3r":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l4r":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l5r":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l1l":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l2l":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l2l_2":               {"simpleFunction":"", "off":"invis", "on":""},
+            "mod_lightbar_l2l_3":               {"simpleFunction":"", "off":"invis", "on":""},
+            "mod_lightbar_l3l":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l4l":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+            "mod_lightbar_l5l":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        },
+        "props": [
+            ["func"      , "mesh"            , "idRef:", "idX:", "idY:"          , "baseRotation"        , "rotation"               , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            //Skewed slightly left to avoid the light shining onto the dashboard in cockpit cam
+            ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+            ["lightbar2_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "etk_lightbar_blue_3", "etk_lightbar_blue_4", "etk_lightbar_blue_1", {"x":80, "y":-90, "z":220} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"lightbar_break"}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "etk_lightbar_blue_1", "etk_lightbar_blue_2", "etk_lightbar_blue_3", {"x":80, "y":-85, "z":115} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"lightbar_break"}],
+    
+    
+        ],
+    },
+    
+    
+    "patrol_lights": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"New patrol type lights",
+            "value":0,
+        },
+        "slotType" : "roof_light_type",
+        "glowMap":{
+              "mod_lightbar_l1r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l2r":                 {"simpleFunction":"lightbar_cr", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l2r_2":               {"simpleFunction":"", "off":"invis", "on":""},
+              "mod_lightbar_l2r_3":               {"simpleFunction":"", "off":"invis", "on":""},
+              "mod_lightbar_l3r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l4r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l5r":                 {"simpleFunction":"lightbar_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l1l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l2l":                 {"simpleFunction":"lightbar_cl", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l2l_2":               {"simpleFunction":"", "off":"invis", "on":""},
+              "mod_lightbar_l2l_3":               {"simpleFunction":"", "off":"invis", "on":""},
+              "mod_lightbar_l3l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l4l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+              "mod_lightbar_l5l":                 {"simpleFunction":"lightbar_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_medium"},
+        },
+        "props": [
+            ["func"      , "mesh"            , "idRef:", "idX:", "idY:"          , "baseRotation"        , "rotation"               , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["lightbar_l"    , "POINTLIGHT"        , "etk_lightbar_blue_4l", "etk_lightbar_blue_3l", "etk_lightbar_blue_2l", {"x":80, "y":-40, "z":220} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+            ["lightbar_r"    , "POINTLIGHT"        , "etk_lightbar_blue_3r", "etk_lightbar_blue_4r", "etk_lightbar_blue_1r", {"x":80, "y":-110, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"lightbar_break"}],
+            //["lightbar_l"    , "POINTLIGHT"        , "etk_lightbar_blue_1", "etk_lightbar_blue_2", "etk_lightbar_blue_3", {"x":-125, "y":-90, "z":265} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
+    
+        ],
+    },
+    
+    
+    "roof_lightbar": {
+        "information":{
+            "authors":"NickRyge, BeamNG",
+            "name":"Danish police light bar",
+            "value":100,
+        },
+        "slotType" : "roof_light",
+        "slots": [
+            ["type", "default", "description"],
+            ["roof_light_type","patrol_lights", "roof light type",{"coreSlot":true}],
+        ],
+    
+    
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["light_bar_mount_hi", ["lansdale_body"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.367}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.08, "y":1.15, "z":0.95}}],
+            ["light_bar_LED_US_body", ["etk_lightbar_blue"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.375}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.12,   "z":0.75}}],
+    
+            {"deformGroup":"lightbar_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["light_bar_LED_US_lights", ["etk_lightbar_blue"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.375}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.12, "z":0.75}}],
+    
+            {"deformGroup":"lightbar_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["light_bar_LED_US_glass_blue", ["etk_lightbar_blue"], [], {"pos":{"x": 0.0, "y":0.36, "z":1.375}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15,  "z":0.75}}],
+            {"deformGroup":""},
+        ],
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"group":"etk_lightbar_blue"},
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.70},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+            ["etk_lightbar_blue_1",      0.0, 0.28, 1.45],
+            ["etk_lightbar_blue_2",      0.0, 0.28, 1.41],
+            ["etk_lightbar_blue_3",      0.0, 0.48, 1.45],
+            ["etk_lightbar_blue_4",      0.0, 0.48, 1.41],
+    
+            ["etk_lightbar_blue_1l",    0.55, 0.28, 1.45],
+            ["etk_lightbar_blue_2l",    0.55, 0.28, 1.41],
+            ["etk_lightbar_blue_3l",    0.55, 0.48, 1.45],
+            ["etk_lightbar_blue_4l",    0.55, 0.48, 1.41],
+    
+            ["etk_lightbar_blue_1r",   -0.55, 0.28, 1.45],
+            ["etk_lightbar_blue_2r",   -0.55, 0.28, 1.41],
+            ["etk_lightbar_blue_3r",   -0.55, 0.48, 1.45],
+            ["etk_lightbar_blue_4r",   -0.55, 0.48, 1.41],
+            {"group":""}
+        ],
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            {"beamSpring":701000,"beamDamp":60},
+            {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+            //Main shape
+            {"deformationTriggerRatio":0.02},
+            {"deformGroup":"lightbar_break"},
+            //Anti-wiggle addition
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_4r"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_3r"],
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_4r"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_3l"],
+        
+            ["etk_lightbar_blue_1","etk_lightbar_blue_2"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_3","etk_lightbar_blue_4"],
+            ["etk_lightbar_blue_4","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_1","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_4"],
+    
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_2l"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_3l"],
+            ["etk_lightbar_blue_3l","etk_lightbar_blue_4l"],
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_1l"],
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_3l"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_4l"],
+    
+            ["etk_lightbar_blue_1r","etk_lightbar_blue_2r"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_3r"],
+            ["etk_lightbar_blue_3r","etk_lightbar_blue_4r"],
+            ["etk_lightbar_blue_4r","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_1r","etk_lightbar_blue_3r"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_4r"],
+    
+            ["etk_lightbar_blue_1r","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_2"],
+            ["etk_lightbar_blue_3r","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_4r","etk_lightbar_blue_4"],
+    
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_2"],
+            ["etk_lightbar_blue_3l","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_4"],
+    
+            //Center to left cross-beams
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_3l","etk_lightbar_blue_4"],
+            ["etk_lightbar_blue_3","etk_lightbar_blue_1l"],
+            ["etk_lightbar_blue_3l","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_1","etk_lightbar_blue_2l"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_1l"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_4"],
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_2"],
+    
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_2l","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_4","etk_lightbar_blue_1l"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_3l"],
+    
+            //Center to right cross-beams
+            ["etk_lightbar_blue_4r","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_3r","etk_lightbar_blue_4"],
+            ["etk_lightbar_blue_3","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_3r","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_1","etk_lightbar_blue_2r"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_4"],
+            ["etk_lightbar_blue_4r","etk_lightbar_blue_2"],
+    
+            ["etk_lightbar_blue_4r","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_2r","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_4","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_2","etk_lightbar_blue_3r"],
+            {"beamSpring":401000,"beamDamp":60},
+            {"beamDeform":5000,"beamStrength":12000},
+            {"deformationTriggerRatio":0.02},
+            //To body
+            ["etk_lightbar_blue_2l","rf1l"],
+            ["etk_lightbar_blue_2l","rf2l"],
+    
+            ["etk_lightbar_blue_4l","rf1l"],
+            ["etk_lightbar_blue_4l","rf2l"],
+            ["etk_lightbar_blue_4l","rf2"],
+    
+            ["etk_lightbar_blue_1l","rf1l"],
+            ["etk_lightbar_blue_1l","rf2l"],
+            ["etk_lightbar_blue_1l","rf1"],
+    
+            ["etk_lightbar_blue_3l","rf1l"],
+            ["etk_lightbar_blue_3l","rf2l"],
+            ["etk_lightbar_blue_3l","rf3"],
+    
+            ["etk_lightbar_blue_2r","rf1r"],
+            ["etk_lightbar_blue_2r","rf2r"],
+    
+            ["etk_lightbar_blue_4r","rf1r"],
+            ["etk_lightbar_blue_4r","rf2r"],
+            ["etk_lightbar_blue_4r","rf2"],
+    
+            ["etk_lightbar_blue_1r","rf1r"],
+            ["etk_lightbar_blue_1r","rf2r"],
+            ["etk_lightbar_blue_1r","rf1"],
+    
+            ["etk_lightbar_blue_3r","rf1r"],
+            ["etk_lightbar_blue_3r","rf2r"],
+            ["etk_lightbar_blue_3r","rf3"],
+            {"breakGroup":""},
+    
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
+        ],
+        "quads": [
+            ["id1:","id2:","id3:","id4:"],
+            {"group":"etk_lightbar_blue"},
+            {"dragCoef":10},
+            ["etk_lightbar_blue_3l","etk_lightbar_blue_4l","etk_lightbar_blue_4","etk_lightbar_blue_3"],
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_3l","etk_lightbar_blue_3","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_1l","etk_lightbar_blue_2l","etk_lightbar_blue_4l","etk_lightbar_blue_3l"],
+            ["etk_lightbar_blue_1","etk_lightbar_blue_2","etk_lightbar_blue_2l","etk_lightbar_blue_1l"],
+            ["etk_lightbar_blue_4l","etk_lightbar_blue_2l","etk_lightbar_blue_2","etk_lightbar_blue_4"],
+    
+            ["etk_lightbar_blue_3","etk_lightbar_blue_4","etk_lightbar_blue_4r","etk_lightbar_blue_3r"],
+            ["etk_lightbar_blue_1","etk_lightbar_blue_3","etk_lightbar_blue_3r","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_3r","etk_lightbar_blue_4r","etk_lightbar_blue_2r","etk_lightbar_blue_1r"],
+            ["etk_lightbar_blue_1r","etk_lightbar_blue_2r","etk_lightbar_blue_2","etk_lightbar_blue_1"],
+            ["etk_lightbar_blue_4","etk_lightbar_blue_2","etk_lightbar_blue_2r","etk_lightbar_blue_4r"],
+            {"group":""}
+        ]
+    },
+    
+    
+    "lansdale_politi_rear_w": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"rear light wagon",
+            "value":0,
+        },
+        "slotType" : "extra_light",
+        "glowMap":{			
+            "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+    
+            },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":10,
+                "lightRange":30,
+                "lightBrightness": 1,
+                "lightColor":{"r":10, "g":10, "b":255, "a":200},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.01,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
+            
+    
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["mod_beacon_base",  ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.65}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["mod_beacon_light", ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.65}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_glass", ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.65}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            
+    
+        ],
+         "nodes": [
+             ["id", "posX", "posY", "posZ"],
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.50},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+                
+            //right - using offset because its easier
+            {"group":"lansdale_lightbar_c"},
+            ["bl1l",  0.09, 1.65, 1.72, {"nodeOffset":{"x":-0.0, "y":0.09, "z":-0.06}}],
+            ["bl2l",  0.09, 1.65, 1.72, {"nodeOffset":{"x":-0.0, "y":-0.09, "z":-0.06}}],
+            ["bl3",   0,    1.65, 1.74],
+            ["bl1r", -0.09, 1.65, 1.72, {"nodeOffset":{"x":0.0, "y":0.09, "z":-0.06}}],
+            ["bl2r", -0.09, 1.65, 1.72, {"nodeOffset":{"x":0.0, "y":-0.09, "z":-0.06}}],
+            {"group":""},
+        ],
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            {"beamSpring":601000,"beamDamp":60},
+            {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+            {"deformLimitExpansion":1.1},
+    
+            //Main shape 
+            {"deformGroup":"beaconlight_break"},
+            ["bl1r","bl1l"],
+            ["bl2r","bl2l"],
+            ["bl1r","bl2r"],
+            ["bl1l","bl2l"],
+    
+            ["bl1r","bl2l"],
+            ["bl1l","bl2r"],
+    
+            ["bl1r","bl3"],
+            ["bl2r","bl3"],
+            ["bl1l","bl3"],
+            ["bl2l","bl3"],
+    
+            //To body -------------
+            {"deformLimitExpansion":""},
+            {"beamSpring":301000,"beamDamp":60},
+            {"beamDeform":4000,"beamStrength":8000},
+              
+            {"deformGroup":"beaconlight_break"},
+    
+    
+            {"breakGroup":"light_attach_c"},
+    
+            ["bl2r","rf4"],
+            ["bl3","rf4"],
+            ["bl2l","rf4"],
+    
+            ["bl3","rf5r"],
+            ["bl2r","rf5r"],
+            ["bl1r","rf5r"],
+    
+            ["bl1r","rf6"],
+            ["bl3","rf6"],
+            ["bl1l","rf6"],
+    
+            ["bl3","rf5l"],
+            ["bl2l","rf5l"],
+            ["bl1l","rf5l"],
+    
+            ["bl1r","r1"],
+            ["bl2l","r1"],
+            ["bl2r","r1"],
+            ["bl1l","r1"],
+            ["bl3", "r1"],
+
+            ["bl3", "rf5"],
+
+            {"breakGroup":""},
+            {"deformGroup":""},
+        ],
+        "triangles": [
+            ["id1:", "id2:", "id3"],
+            {"dragCoef":2},
+    
+            {"group":"lansdale_lightbar_c"},
+                
+            ["bl3","bl2r","bl1r"],
+            ["bl3","bl2l","bl2r"],
+            ["bl3","bl1l","bl2l"],
+            ["bl3","bl1r","bl1l"],
+            ["bl1r","bl2r","bl2l"],
+            ["bl1r","bl2l","bl1l"],
+            {"group":""},
+        ],
+    },
+    
+    
+    //This is the beacon for the unmarked variant
+    "lansdale_politi_extra_beacon": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Unmarked extra roof beacon",
+            "value":100,
+        },
+        "slotType" : "roof_light",
+    
+        "glowMap":{			
+            "mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+            },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":10,
+                "lightRange":30,
+                "lightBrightness": 0.5,
+                "lightColor":{"r":0, "g":10, "b":255, "a":0},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.01,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
+            
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            
+            
+            ["mod_beacon_base_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["mod_beacon_light_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            ["mod_beacon_glass_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+         "nodes": [
+            ["id", "posX", "posY", "posZ"],
+                
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.76},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+                
+    
+            //left
+            //I know the node names are mirrored. Sue me.
+            {"group":"lansdale_lightbar_l"},
+            ["lbl1l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.08}}],
+            ["lbl2l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.083}}],
+            ["lbl3", 0.385, 0.115, 1.47],
+            ["lbl1r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.083}}],
+            ["lbl2r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.09}}],
+            {"group":""},
+        ],
+    
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            {"beamSpring":601000,"beamDamp":60},
+            {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+            {"deformLimitExpansion":1.1},
+    
+    
+            //Main shape left
+            {"deformGroup":"beaconlight_break_l"},
+            ["lbl1r","lbl1l"],
+            ["lbl2r","lbl2l"],
+            ["lbl1r","lbl2r"],
+            ["lbl1l","lbl2l"],
+    
+            ["lbl1r","lbl2l"],
+            ["lbl1l","lbl2r"],
+    
+            ["lbl1r","lbl3"],
+            ["lbl2r","lbl3"],
+            ["lbl1l","lbl3"],
+            ["lbl2l","lbl3"],
+            {"deformGroup":""},
+            
+        
+            //To body
+            {"deformLimitExpansion":""},
+            {"beamSpring":301000,"beamDamp":60},
+            {"beamDeform":4000,"beamStrength":8000},
+            
+    
+            //Left
+            {"deformGroup":"beaconlight_break_l"},
+    
+            //This to avoid removing the beams that hold the light
+            ["lbl3","lbl2l"],
+            ["lbl3","lbl2r"],
+            ["lbl3","lbl1l"],
+            ["lbl3","lbl1r"],
+    
+            {"breakGroup":"light_attach_l"},
+    
+            ["lbl2r","rf1l"],
+            ["lbl3","rf1l"],
+            ["lbl1r","rf1l"],
+            ["lbl2l","rf1l"],
+    
+            ["lbl2r","rf1"],
+            ["lbl3","rf1"],
+            ["lbl2l","rf1"],
+            ["lbl1l","rf1"],
+    
+            ["lbl1r","rf2"],
+            ["lbl3","rf2"],
+            ["lbl2l","rf2"],
+            ["lbl1l","rf2"],
+    
+            ["lbl1r","rf2l"],
+            ["lbl3","rf2l"],
+            ["lbl2r","rf2l"],
+            ["lbl1l","rf2l"],
+    
+            ["lbl1r","f2l"],
+            ["lbl2l","f2l"],
+            ["lbl2r","f2l"],
+            ["lbl1l","f2l"],
+            ["lbl3","f2l"],
+            {"breakGroup":""},
+            {"deformGroup":""},
+    
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+        "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":2},
+    
+            //left
+            {"group":"lansdale_lightbar_l"},
+            
+            ["lbl3","lbl2r","lbl1r"],
+            ["lbl3","lbl2l","lbl2r"],
+            ["lbl3","lbl1l","lbl2l"],
+            ["lbl3","lbl1r","lbl1l"],
+            ["lbl1r","lbl2r","lbl2l"],
+            ["lbl1r","lbl2l","lbl1l"],
+            {"group":""},
+    
+        ],
+    },
+    
+    
+    "lansdale_politi_bumper_normal": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Standard / sport",
+            "value":50,
+        },
+        "slotType" : "bumper_light_front",
+        "glowMap":{
+            
+            "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+            "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+    
+            "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+                
+            "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            
+            },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+            //Blue
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            
+            //White
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":20,
+                "lightBrightness":0.2,
+                "lightRange":15,
+                "lightColor":{"r":230, "g":255, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_bumper_xcsport": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"xcSport",
+            "value":50,
+        },
+        "slotType" : "bumper_light_front",
+        "glowMap":{	
+            "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+            "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+            
+            "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+            "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+            //Blue
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            
+            //White
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":20,
+                "lightBrightness":0.2,
+                "lightRange":15,
+                "lightColor":{"r":230, "g":255, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_bumper_k9_normal": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"K9 style normal bumper lights",
+            "value":50,
+        },
+        "slotType" : "bumper_light_front",
+        "glowMap":{
+            "generic_flasher_led_L":                   {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_R":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},			
+            
+            "generic_flasher_led_FL":                  {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+            "generic_flasher_led_FLL":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["lightbar2_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+      
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            //["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            //["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_bumper_k9_xcsport": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"K9 style xcsport bumper lights",
+            "value":50,
+        },
+        "slotType" : "bumper_light_front",
+        "glowMap":{
+            "generic_flasher_led_L":                   {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_R":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},			
+            
+            "generic_flasher_led_FL":                  {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+            "generic_flasher_led_FLL":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+            
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["lightbar2_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
+      
+        
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            //["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            
+            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            //["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_rear_bumper": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"rear bumper lights",
+            "value":50,
+        },
+        "slotType" : "bumper_light_rear",
+        "glowMap":{			
+    
+            "generic_flasher_led_BL":                   {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR":                   {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-100, "y":20, "z":40} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["blue_r"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":100, "y":20, "z":-40} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            //["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":6, "z":-109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x": 0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":-6, "z":109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+    },
+    
+    
+    "lansdale_politi_rear_bumper_k9_wagon": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"K9 wagon rear lights",
+            "value":50,
+        },
+        "slotType" : "bumper_light_rear",
+        "glowMap":{			
+    
+            "generic_flasher_led_BL":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+           
+            "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["lightbar2_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-90, "y":-0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            //These should be "generic_flasher_led_BR/L" but are changed to comply with the hackjob. 
+            ["generic_flasher_led_BR_R", ["lansdale_body"], [], {"pos":{"x": -0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":15, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_body"], [], {"pos":{"x":  0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":-15, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+    
+            //This is a bit of a hackjob and should have it's own objects assigned correctly in the .dae file.
+            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z":-180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x":  0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z": 180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+    
+            ["generic_flasher_led_BR_R", ["lansdale_bumper_R"], [], {"pos":{"x": -0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0,  "z":-166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_bumper_R"], [], {"pos":{"x":  0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0, "z":166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+    },
+    
+    
+    "lansdale_politi_rear_bumper_k9_sedan": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"K9 sedan rear lights",
+            "value":50,
+        },
+        "slotType" : "bumper_light_rear",
+        "glowMap":{			
+    
+            "generic_flasher_led_BL":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+           
+            "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":100,
+                "lightBrightness":0.6,
+                "lightRange":15,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["lightbar2_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-90, "y":-0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["lightbar2_l"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+        
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            //These should be "generic_flasher_led_BR/L" but are changed to comply with the hackjob. 
+            ["generic_flasher_led_BR_R", ["lansdale_body"], [], {"pos":{"x":  -0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":4, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_body"], [], {"pos":{"x":   0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":-4, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+    
+            //This is a bit of a hackjob and should have it's own objects assigned correctly in the .dae file.
+            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z":-180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x":  0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z": 180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
+    
+            ["generic_flasher_led_BR_R", ["lansdale_bumper_R"], [], {"pos":{"x": -0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0,  "z":-166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_bumper_R"], [], {"pos":{"x":  0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0, "z":166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+    },
+    
+    
+    "lansdale_politi_rear_side_w": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"rear side lights wagon (unmarked)",
+            "value":50,
+        },
+        "slotType" : "bumper_light_rear",
+        "glowMap":{
+            "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    
+            "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":70,
+                "lightBrightness":0.6,
+                "lightRange":10,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_r"    , "POINTLIGHT"        , "t1l", "t1", "t2ll", {"x":120, "y":30, "z":-20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["blue_l"    , "POINTLIGHT"        , "t1r", "t1", "t2rr", {"x":-120, "y":30, "z":20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            
+            ["blue_l"    , "POINTLIGHT"        , "rf6l", "rf5l", "p11l", {"x":-120, "y":30, "z":-30} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+            ["blue_r"    , "POINTLIGHT"        , "rf6r", "rf5r", "p11r", {"x":120, "y":30, "z":25} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            
+            ["generic_flasher_led_BR", ["lansdale_body"], [], {"pos":{"x": -0.685, "y":1.295, "z":1.0445}, "rot":{"x":0, "y":6, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BL", ["lansdale_body"], [], {"pos":{"x": 0.685, "y":1.295, "z":1.0445}, "rot":{"x":0, "y":-6, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+    
+            ["generic_flasher_led_BR_R", ["lansdale_tailgate"], [], {"pos":{"x": -0.3, "y":1.76, "z":1.215}, "rot":{"x":0, "y":-2, "z":-180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_tailgate"], [], {"pos":{"x": 0.3, "y":1.76, "z":1.215}, "rot":{"x":0, "y":2, "z":180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+    
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ],
+    },
+    
+    
+    "lansdale_politi_rear_side_s": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"rear side lights sedan (unmarked)",
+            "value":50,
+        },
+        "slotType" : "bumper_light_rear",
+        "glowMap":{			
+            "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+    
+            "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+             
+        },
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":70,
+                "lightBrightness":0.6,
+                "lightRange":10,
+                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_r"    , "POINTLIGHT"        , "rf1l", "rf4", "p10l", {"x":120, "y":30, "z":-20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            ["blue_l"    , "POINTLIGHT"        , "rf1r", "rf4", "p10r", {"x":-120, "y":30, "z":20} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
+            
+            ["blue_l"    , "POINTLIGHT"        , "rf4l", "rf3l", "p10l", {"x":-120, "y":30, "z":-30} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+            ["blue_r"    , "POINTLIGHT"        , "rf4r", "rf3r", "p10r", {"x":120, "y":30, "z":25} , {"x":0, "y":100, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.2, "z":-0.05},"deformGroup":""}],
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            
+            ["generic_flasher_led_BR", ["lansdale_body"], [], {"pos":{"x": -0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":4, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BL", ["lansdale_body"], [], {"pos":{"x":  0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":-4, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+    
+            ["generic_flasher_led_BR_R", ["lansdale_body"], [], {"pos":{"x": -0.3, "y":1.3, "z":1.275}, "rot":{"x":0, "y":-2, "z":-180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_body"], [], {"pos":{"x": 0.3, "y":1.3, "z":1.275}, "rot":{"x":0, "y":2, "z":180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    
+        ],
+    }
+    }
