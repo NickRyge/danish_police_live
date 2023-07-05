@@ -9,7 +9,7 @@
         "slots": [
             ["type", "default", "description"],
             ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
-            ["bumper_light_front","lansdale_politi_bumper_normal", "bumper type for bumper flashers"],
+            ["bumper_light_front","lansdale_politi_bumper_early", "bumper type for bumper flashers"],
             ["bumper_light_rear","lansdale_politi_rear_bumper", "Type for rear flashers"],
             ["roof_light","roof_beacons", "Roof lights"],
             ["mirror_light","", "Side mirror lights"],
@@ -1233,10 +1233,10 @@
     },
     
     
-    "lansdale_politi_bumper_normal": {
+    "lansdale_politi_bumper_early": {
         "information":{
             "authors":"NickRyge",
-            "name":"Standard / sport",
+            "name":"Early",
             "value":50,
         },
         "slotType" : "bumper_light_front",
@@ -1254,6 +1254,11 @@
             },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+            
+            //I am not happy with the placement of these lights. 
+            //They need to be changed, but it takes a while to do, and is 
+            //downprioritised as a result.
+
             //Blue
             {
                 "lightInnerAngle":0,
@@ -1294,44 +1299,50 @@
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_grille"], [], {"pos":{"x": -0.111, "y":-2.333, "z":0.555}, "rot":{"x":-5, "y":0, "z":-5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_grille"], [], {"pos":{"x": 0.111, "y":-2.333, "z":0.555}, "rot":{"x":-5, "y":0, "z":5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.315, "y":-2.418, "z":0.44}, "rot":{"x":0, "y":0, "z":-11}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.918, "y":-1.94, "z":0.445}, "rot":{"x":0.5, "y":-2, "z":-78}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
             
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.315, "y":-2.418, "z":0.44}, "rot":{"x":0, "y":0, "z":11}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.918, "y":-1.94, "z":0.445}, "rot":{"x":0.5, "y":2, "z":78}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
         ],
     },
     
     
-    "lansdale_politi_bumper_xcsport": {
+    "lansdale_politi_bumper_late": {
         "information":{
             "authors":"NickRyge",
-            "name":"xcSport",
-            "value":50,
+            "name":"late standard",
+            "value":50
         },
         "slotType" : "bumper_light_front",
-        "glowMap":{	
+        "glowMap":{
+            
             "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
             "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
-            
+
             "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        
+                
             "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             
-        },
+            },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+            
+            //I am not happy with the placement of these lights. 
+            //They need to be changed, but it takes a while to do, and is 
+            //downprioritised as a result.
+
             //Blue
             {
                 "lightInnerAngle":0,
@@ -1372,46 +1383,50 @@
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
-    
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.2, "y":-2.29, "z":0.65}, "rot":{"x":-26, "y":2, "z":-5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.2, "y":-2.29, "z":0.65}, "rot":{"x":-26, "y":-2, "z":5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.29, "y":-2.418, "z":0.4}, "rot":{"x":6, "y":0, "z":-10}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.905, "y":-1.99, "z":0.455}, "rot":{"x":3, "y":-10, "z":-76}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
             
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-        ],
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.29, "y":-2.418, "z":0.4}, "rot":{"x":6, "y":0, "z":10}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.905, "y":-1.99, "z":0.455}, "rot":{"x":3, "y":10, "z":76}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        ]
     },
-    
-    
-    "lansdale_politi_bumper_k9_normal": {
+
+    "lansdale_politi_bumper_late_high": {
         "information":{
             "authors":"NickRyge",
-            "name":"K9 style normal bumper lights",
-            "value":50,
+            "name":"late high-end",
+            "value":50
         },
         "slotType" : "bumper_light_front",
         "glowMap":{
-            "generic_flasher_led_L":                   {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_R":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},			
             
-            "generic_flasher_led_FL":                  {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_FR":                  {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        
-            "generic_flasher_led_FLL":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_FRR":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+            "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+
+            "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+                
+            "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             
-        },
+            },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-        
+            
+            //I am not happy with the placement of these lights. 
+            //They need to be changed, but it takes a while to do, and is 
+            //downprioritised as a result.
+
+            //Blue
             {
                 "lightInnerAngle":0,
                 "lightOuterAngle":100,
@@ -1426,52 +1441,75 @@
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
             
-            ["lightbar2_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-            ["lightbar2_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-      
+            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            
+            //White
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":20,
+                "lightBrightness":0.2,
+                "lightRange":15,
+                "lightColor":{"r":230, "g":255, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
-    
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.25, "y":-2.29, "z":0.5}, "rot":{"x":-26, "y":2, "z":-5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.25, "y":-2.29, "z":0.5}, "rot":{"x":-26, "y":-2, "z":5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            //["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.29, "y":-2.418, "z":0.4}, "rot":{"x":6, "y":0, "z":-10}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.905, "y":-1.99, "z":0.455}, "rot":{"x":3, "y":-10, "z":-76}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
             
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            //["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.4, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.85, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-        ],
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.29, "y":-2.418, "z":0.4}, "rot":{"x":6, "y":0, "z":10}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.905, "y":-1.99, "z":0.455}, "rot":{"x":3, "y":10, "z":76}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        ]
     },
-    
-    
-    "lansdale_politi_bumper_k9_xcsport": {
+
+    "lansdale_politi_bumper_late_custom": {
         "information":{
             "authors":"NickRyge",
-            "name":"K9 style xcsport bumper lights",
-            "value":50,
+            "name":"late custom",
+            "value":50
         },
         "slotType" : "bumper_light_front",
         "glowMap":{
-            "generic_flasher_led_L":                   {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_R":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright"},			
             
-            "generic_flasher_led_FL":                  {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_FR":                  {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        
-            "generic_flasher_led_FLL":                 {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_FRR":                 {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_L":                    {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+            "generic_flasher_led_R":                    {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_bright"},
+
+            "generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+                
+            "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             
-        },
+            },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
             
+            //I am not happy with the placement of these lights. 
+            //They need to be changed, but it takes a while to do, and is 
+            //downprioritised as a result.
+
+            //Blue
             {
                 "lightInnerAngle":0,
                 "lightOuterAngle":100,
@@ -1486,29 +1524,46 @@
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
             
-            ["lightbar2_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-            ["lightbar2_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-      
-        
+            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            
+            //White
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":20,
+                "lightBrightness":0.2,
+                "lightRange":15,
+                "lightColor":{"r":230, "g":255, "b":255, "a":255},
+                "flareName":"vehicleBrakeLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+    
+            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
+            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
-    
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
-            {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.1, "z":0.71}, "rot":{"x":-15, "y":90, "z":0}, "scale":{"x":2, "y":1, "z":0.7}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_R", ["lansdale_bumper_F"], [], {"pos":{"x": -0.2, "y":-2.215, "z":0.65}, "rot":{"x":-2, "y":2, "z":-5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
+            {"deformGroup":"flasher_special_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            ["generic_flasher_led_L", ["lansdale_bumper_F"], [], {"pos":{"x": 0.2, "y":-2.215, "z":0.65}, "rot":{"x":-2, "y":-2, "z":5}, "scale":{"x":1.5, "y":0.7, "z":0.6}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            //["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":-21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":8, "z":-57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_FR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.29, "y":-2.41, "z":0.4}, "rot":{"x":-1, "y":0, "z":-5}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FRR", ["lansdale_bumper_F"], [], {"pos":{"x": -0.87, "y":-2.02, "z":0.455}, "rot":{"x":1, "y":1, "z":-72}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
             
             {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            //["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.368, "y":-2.212, "z":0.52}, "rot":{"x":0, "y":0, "z":21}, "scale":{"x":2, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.855, "y":-1.77, "z":0.627}, "rot":{"x":-1, "y":-8, "z":57}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-        ],
+            ["generic_flasher_led_FL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.29, "y":-2.41, "z":0.4}, "rot":{"x":-1, "y":0, "z":5}, "scale":{"x":2, "y":0.7, "z":0.6}}],
+            ["generic_flasher_led_FLL", ["lansdale_bumper_F"], [], {"pos":{"x": 0.87, "y":-2.02, "z":0.455}, "rot":{"x":1, "y":-1, "z":72}, "scale":{"x":1.8, "y":0.7, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        ]
     },
     
     
@@ -1524,6 +1579,9 @@
             "generic_flasher_led_BL":                   {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             "generic_flasher_led_BR":                   {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             
+            "generic_flasher_led_BR_L":                   {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+            "generic_flasher_led_BR_R":                   {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+
         },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
@@ -1550,125 +1608,14 @@
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":6, "z":-109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x": 0.838, "y":1.95, "z":0.5}, "rot":{"x":2, "y":-6, "z":109}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    
-        ],
-    },
-    
-    
-    "lansdale_politi_rear_bumper_k9_wagon": {
-        "information":{
-            "authors":"NickRyge",
-            "name":"K9 wagon rear lights",
-            "value":50,
-        },
-        "slotType" : "bumper_light_rear",
-        "glowMap":{			
-    
-            "generic_flasher_led_BL":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_BR":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-           
-            "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        },
-        "props": [
-            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-        
-            {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
-                "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
-                "flareScale":0,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
-            },
+            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.89, "y":2.32, "z":0.504}, "rot":{"x":-1, "y":-2, "z":-108}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x": 0.89, "y":2.32, "z":0.504}, "rot":{"x":-1, "y":2, "z":108}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
             
-            ["lightbar2_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-90, "y":-0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            ["lightbar2_l"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            ["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-        
-        ],
-        "flexbodies": [
-            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["generic_flasher_led_BR_R", ["lansdale_tailgate"], [], {"pos":{"x": -0.17, "y":2.5265, "z":0.75}, "rot":{"x":5, "y":-90, "z":-180}, "scale":{"x":1.8, "y":0.6, "z":0.6}}],
+            ["generic_flasher_led_BR_L", ["lansdale_tailgate"], [], {"pos":{"x": 0.17, "y":2.5265, "z":0.75}, "rot":{"x":5, "y":90, "z":180}, "scale":{"x":1.8, "y":0.6, "z":0.6}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-            //These should be "generic_flasher_led_BR/L" but are changed to comply with the hackjob. 
-            ["generic_flasher_led_BR_R", ["lansdale_body"], [], {"pos":{"x": -0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":15, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_BR_L", ["lansdale_body"], [], {"pos":{"x":  0.584, "y":1.4, "z":1.207}, "rot":{"x":-3, "y":-15, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-    
-            //This is a bit of a hackjob and should have it's own objects assigned correctly in the .dae file.
-            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z":-180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
-            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x":  0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z": 180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
-    
-            ["generic_flasher_led_BR_R", ["lansdale_bumper_R"], [], {"pos":{"x": -0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0,  "z":-166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_BR_L", ["lansdale_bumper_R"], [], {"pos":{"x":  0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0, "z":166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    
-        ],
-    },
-    
-    
-    "lansdale_politi_rear_bumper_k9_sedan": {
-        "information":{
-            "authors":"NickRyge",
-            "name":"K9 sedan rear lights",
-            "value":50,
-        },
-        "slotType" : "bumper_light_rear",
-        "glowMap":{			
-    
-            "generic_flasher_led_BL":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_BR":                   {"simpleFunction":"lightbar2_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-           
-            "generic_flasher_led_BR_L":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "generic_flasher_led_BR_R":                {"simpleFunction":"lightbar2_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        },
-        "props": [
-            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-        
-            {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
-                "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
-                "flareScale":0,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
-            },
-            
-            ["lightbar2_l"    , "POINTLIGHT"        , "rb3l", "rb2l", "rb3ll", {"x":-90, "y":-0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            ["lightbar2_l"    , "POINTLIGHT"        , "rb3r", "rb2r", "rb3rr", {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-            ["lightbar2_r"    , "POINTLIGHT"        , "rb3", "rb2", "rb3r", {"x":90, "y":30, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":""}],
-        
-        ],
-        "flexbodies": [
-            ["mesh", "[group]:", "nonFlexMaterials"],
-    
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-            //These should be "generic_flasher_led_BR/L" but are changed to comply with the hackjob. 
-            ["generic_flasher_led_BR_R", ["lansdale_body"], [], {"pos":{"x":  -0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":4, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_BR_L", ["lansdale_body"], [], {"pos":{"x":   0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":-4, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-    
-            //This is a bit of a hackjob and should have it's own objects assigned correctly in the .dae file.
-            ["generic_flasher_led_BR", ["lansdale_bumper_R"], [], {"pos":{"x": -0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z":-180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
-            ["generic_flasher_led_BL", ["lansdale_bumper_R"], [], {"pos":{"x":  0.17, "y":2.337, "z":0.636}, "rot":{"x":-25, "y":0, "z": 180}, "scale":{"x":1.8, "y":0.4, "z":0.35}}],
-    
-            ["generic_flasher_led_BR_R", ["lansdale_bumper_R"], [], {"pos":{"x": -0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0,  "z":-166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            ["generic_flasher_led_BR_L", ["lansdale_bumper_R"], [], {"pos":{"x":  0.5, "y":2.325, "z":0.50}, "rot":{"x":-3, "y":0, "z":166.8}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    
-        ],
+        ]
     },
     
     

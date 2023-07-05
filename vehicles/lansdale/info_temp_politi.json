@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":8.5,
+  "0-100 mph":24.7,
+  "0-60 mph":7.8,
+  "100-0 km/h":42.5,
+  "60-0 mph":131.1,
+  "60-100 mph":16.9,
+  "Body Style":"SUV",
+  "BoundingBox":[
+    [
+      -0.55,
+      -1.47,
+      -0.3269
+    ],
+    [
+      1.65,
+      3.58,
+      1.44
+    ]
+  ],
+  "Braking G":0.924,
+  "Config Type":"Police",
+  "Configuration":"Danish Police 4WD (A) (Facelift)",
+  "Description":"Danish 4x4 patrol SUV for ruggid terrain. A custom police unit only deployed on secluded islands with frequent floodings or snowy terrain.",
+  "Drivetrain":"4WD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":46,
+  "Performance Class":"4",
+  "Population":13000,
+  "Power":233,
+  "PowerPeakRPM":"4100 - 4900",
+  "Propulsion":"ICE",
+  "Top Speed":54.90027889,
+  "Torque":425,
+  "TorquePeakRPM":"3000 - 3800",
+  "Transmission":"Automatic",
+  "Value":12000,
+  "Weight":2200,
+  "Weight/Power":9.442060086,
+  "Years":{
+    "max":2005,
+    "min":1999
+  },
+  "defaultPaintName1":"White"
+}
