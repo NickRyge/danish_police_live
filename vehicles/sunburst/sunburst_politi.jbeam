@@ -9,7 +9,7 @@
     "slots": [
         ["type", "default", "description"],
         ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
-		["extra_light","sunburst_politi_intermediate_rear", "rear roof light"{"coreSlot":true}],
+		["extra_light","sunburst_politi_intermediate_rear", "rear roof light", {"coreSlot":true}],
         ["bumper_light","sunburst_politi_intermediate_bumper", "bumper type for bumper flashers"],
     ],
     "soundscape": [
@@ -31,7 +31,7 @@
                         ["white_r", 1, 0.1],
 						["white_r", 0, 0.02],
                         ["white_r", 1, 0.2],
-                        ["white_r", 0, 0.44]
+                        ["white_r", 0, 0.44],
 						
 						["white_l", 0, 0.44],
 						["white_l", 1, 0.1],
@@ -44,9 +44,9 @@
 						["blue_r", 1, 0.1],
                         ["blue_r", 0, 0.02],
                         ["blue_r", 1, 0.1],
-                        ["blue_r", 0, 0.17]
+                        ["blue_r", 0, 0.17],
     
-	                    ["blue_l", 0, 0.47]
+	                    ["blue_l", 0, 0.47],
 						["blue_l", 1, 0.1],
                         ["blue_l", 0, 0.02],
                         ["blue_l", 1, 0.1],
@@ -55,13 +55,13 @@
 						["roofflasherFL", 1, 0.10],
                         ["roofflasherFL", 0, 0.04],
                         ["roofflasherFL", 1, 0.10],
-                        ["roofflasherFL", 0, 0.30]
+                        ["roofflasherFL", 0, 0.30],
 						
 						["roofflasherFR", 0, 0.08],
 						["roofflasherFR", 1, 0.10],
                         ["roofflasherFR", 0, 0.04],
                         ["roofflasherFR", 1, 0.10],
-                        ["roofflasherFR", 0, 0.22]
+                        ["roofflasherFR", 0, 0.22],
 						
 						["roofflasherR", 0, 0.16],
 						["roofflasherR", 1, 0.10],
@@ -125,17 +125,17 @@
 
 		                ["blue_r", 0, 1],
 
-	                    ["blue_l", 0, 1]
+	                    ["blue_l", 0, 1],
 						
 						["roofflasherFL", 1, 1],
 						
 						["roofflasherFR", 1, 1],
 					
 						["roofflasherR", 1, 1],
-                    ],
-                    ],
-					],
-        }],
+                    ]
+                    ]
+					]
+        }]
     ],
     "glowMap":{
 
@@ -656,7 +656,7 @@
                         ["roofflasherR", 1, 0.1],
                         ["roofflasherR", 0, 0.03],
                         ["roofflasherR", 1, 0.1],
-                    ],
+                    ]
                     ],
                     
                 //Steady mode for Mr. Bauer
@@ -669,17 +669,17 @@
 
 		                ["blue_r", 1, 1],
 
-	                    ["blue_l", 1, 1]
+	                    ["blue_l", 1, 1],
 						
 						["roofflasherFL", 1, 1],
 						
 						["roofflasherFR", 1, 1],
 					
 						["roofflasherR", 1, 1],
-                    ],
-                    ],
-					],
-        }],
+                    ]
+                    ]
+					]
+        }]
     ],
     "glowMap":{
 
