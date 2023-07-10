@@ -460,19 +460,11 @@
             
         //right - using offset because its easier
         {"group":"etk800_lightbar_c"},
-<<<<<<< HEAD
         ["bl1l", 0.09, 0.85, 1.47, {"nodeOffset":{"x":-0.0, "y":0.09, "z":-0.09}}],
         ["bl2l", 0.09, 0.85, 1.47, {"nodeOffset":{"x":-0.0, "y":-0.09, "z":-0.075}}],
         ["bl3", 0, 0.85, 1.45],
         ["bl1r", -0.09, 0.85, 1.47, {"nodeOffset":{"x":0.0, "y":0.09, "z":-0.09}}],
         ["bl2r", -0.09, 0.85, 1.47, {"nodeOffset":{"x":0.0, "y":-0.09, "z":-0.075}}],
-=======
-        ["bl1l", 0.09, 0.85, 1.45, {"nodeOffset":{"x":-0.0, "y":0.09, "z":-0.09}}],
-        ["bl2l", 0.09, 0.85, 1.45, {"nodeOffset":{"x":-0.0, "y":-0.09, "z":-0.075}}],
-        ["bl3", 0, 0.85, 1.45],
-        ["bl1r", -0.09, 0.85, 1.45, {"nodeOffset":{"x":0.0, "y":0.09, "z":-0.09}}],
-        ["bl2r", -0.09, 0.85, 1.45, {"nodeOffset":{"x":0.0, "y":-0.09, "z":-0.075}}],
->>>>>>> de7935afad9bb1a4efb187486fd1bd54914ed765
         {"group":""},
     ],
     "beams": [
@@ -525,19 +517,11 @@
             ["bl2l","rf3l"],
             ["bl1l","rf3l"],
 
-<<<<<<< HEAD
             ["bl1r","f3l"],
             ["bl2l","f3l"],
             ["bl2r","f3l"],
             ["bl1l","f3l"],
             ["bl3","f3l"],
-=======
-            ["bl1r","rf7"],
-            ["bl2l","rf7"],
-            ["bl2r","rf7"],
-            ["bl1l","rf7"],
-            ["bl3","rf7"],
->>>>>>> de7935afad9bb1a4efb187486fd1bd54914ed765
             {"breakGroup":""},
             {"deformGroup":""},
 
@@ -591,7 +575,7 @@
                         ["white_r", 1, 0.1],
 						["white_r", 0, 0.02],
                         ["white_r", 1, 0.2],
-                        ["white_r", 0, 0.44]
+                        ["white_r", 0, 0.44],
 						
 						["white_l", 0, 0.44],
 						["white_l", 1, 0.1],
@@ -604,9 +588,9 @@
 						["blue_r", 1, 0.1],
                         ["blue_r", 0, 0.02],
                         ["blue_r", 1, 0.1],
-                        ["blue_r", 0, 0.17]
+                        ["blue_r", 0, 0.17],
     
-	                    ["blue_l", 0, 0.47]
+	                    ["blue_l", 0, 0.47],
 						["blue_l", 1, 0.1],
                         ["blue_l", 0, 0.02],
                         ["blue_l", 1, 0.1],
@@ -615,13 +599,13 @@
 						["roofflasherFL", 1, 0.10],
                         ["roofflasherFL", 0, 0.04],
                         ["roofflasherFL", 1, 0.10],
-                        ["roofflasherFL", 0, 0.30]
+                        ["roofflasherFL", 0, 0.30],
 						
 						["roofflasherFR", 0, 0.08],
 						["roofflasherFR", 1, 0.10],
                         ["roofflasherFR", 0, 0.04],
                         ["roofflasherFR", 1, 0.10],
-                        ["roofflasherFR", 0, 0.22]
+                        ["roofflasherFR", 0, 0.22],
 						
 						["roofflasherR", 0, 0.16],
 						["roofflasherR", 1, 0.10],
@@ -630,7 +614,7 @@
                         ["roofflasherR", 0, 0.14]
 						
 						
-                    ],
+                    ]
                     ],
 
                 //Blinking mode for Mr. Bauer
