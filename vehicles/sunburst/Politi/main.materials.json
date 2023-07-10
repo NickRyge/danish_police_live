@@ -154,9 +154,9 @@
     ]
   },
   
- "policeparts_lights_blue_on_test": {
-    "name": "policeparts_lights_blue_on_test",
-    "mapTo": "policeparts_lights_blue_on_test",
+ "policeparts_lights_blue_on_bright": {
+    "name": "policeparts_lights_blue_on_bright",
+    "mapTo": "policeparts_lights_blue_on_bright",
     "class": "Material",
     "persistentId": "743e620a-c635-4924-a0a0-8e34e9e77fc7",
     "Stages": [
@@ -165,8 +165,8 @@
         "emissive": true,
         "emissiveFactor": [
           0,
-          500.84313822,
-          8000.4509811
+          450,
+          8000
         ],
         "emissiveMap": "/vehicles/common/police_parts/police_parts_lights_G.data.png",
         "metallicFactor": 0.5,
@@ -181,9 +181,67 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "policeparts_lights_white_on_test": {
-    "name": "policeparts_lights_white_on_test",
-    "mapTo": "policeparts_lights_white_on_test",
+
+
+  "policeparts_lights_blue_on_bright_full": {
+    "name": "policeparts_lights_blue_on_bright_full",
+    "mapTo": "policeparts_lights_blue_on_bright_full",
+    "class": "Material",
+    "persistentId": "743e620a-c635-4924-a0a0-8e34e9e77fc7",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/police_parts/police_parts_lights_b.color.png",
+        "emissive": true,
+        "emissiveFactor": [
+          0,
+          100,
+          10000
+        ],
+        "emissiveMap": "/vehicles/etk800/politi/police_parts_lights_G_new.data.png",
+        "metallicFactor": 0.2,
+        "metallicMap": "/vehicles/common/police_parts/police_parts_lights_m.data.png",
+        "normalMap": "/vehicles/common/police_parts/police_parts_lights_nm.normal.png",
+        "roughnessMap": "/vehicles/common/police_parts/police_parts_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+
+  "policeparts_lights_blue_on_medium": {
+    "name": "policeparts_lights_blue_on_medium",
+    "mapTo": "policeparts_lights_blue_on_medium",
+    "class": "Material",
+    "persistentId": "743e620a-c635-4924-a0a0-8e34e9e77fc7",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/police_parts/police_parts_lights_b.color.png",
+        "emissive": true,
+        "emissiveFactor": [
+          0,
+          500,
+          6000
+        ],
+        "emissiveMap": "/vehicles/common/police_parts/police_parts_lights_G.data.png",
+        "metallicFactor": 0.5,
+        "metallicMap": "/vehicles/common/police_parts/police_parts_lights_m.data.png",
+        "normalMap": "/vehicles/common/police_parts/police_parts_lights_nm.normal.png",
+        "roughnessMap": "/vehicles/common/police_parts/police_parts_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "policeparts_lights_white_on_bright": {
+    "name": "policeparts_lights_white_on_bright",
+    "mapTo": "policeparts_lights_white_on_bright",
     "class": "Material",
     "persistentId": "743e620a-c635-4924-a0a0-8e34e9e77fc6",
     "Stages": [
@@ -206,6 +264,42 @@
       {}
     ],
     "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "policeparts_glass_blue_test": {
+    "name": "policeparts_glass_blue_test",
+    "mapTo": "policeparts_glass_blue_test",
+    "class": "Material",
+    "persistentId": "acfa08dc-083f-4e61-80a6-2f1e1e5862c0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.358316004,
+          0.56853199,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/police_parts/police_parts_glass_b.color.png",
+        "emissiveFactor": [
+          9.99999997e-7,
+          9.99999997e-7,
+          9.99999997e-7
+        ],
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/common/police_parts/police_parts_glass_nm.normal.png",
+        "opacityMap": "/vehicles/common/police_parts/police_parts_glass_op.data.png",
+        "roughnessFactor": 0.400000006,
+        "roughnessMap": "/vehicles/common/police_parts/police_parts_glass_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 42,
+    "dynamicCubemap": true,
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
     "version": 1.5
   }
 }
