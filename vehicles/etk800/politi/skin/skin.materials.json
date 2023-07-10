@@ -30,7 +30,7 @@
         "clearCoatMap": "/vehicles/etk800/etk800_main_cc.data.png",
         "normalMap": "/vehicles/etk800/etk800_n.dds",
         "opacityMap": "/vehicles/etk800/etk800_main_c.data.png",
-        "baseColorMap": "vehicles/etk800/politi/skin/politi_patrol.png",
+        "baseColorMap": "vehicles/etk800/politi/skin/politi_patrol.png"
       },
       {},
       {}
@@ -72,7 +72,7 @@
         "clearCoatMap": "/vehicles/etk800/extra/etk800_extra_cc.data.png",
         "normalMap": "vehicles/etk800/extra/etk800_extra_nm.normal.png",
         "opacityMap": "/vehicles/etk800/extra/etk800_extra_c.data.png",
-        "baseColorMap": "vehicles/etk800/politi/skin/politi_patrol_sedan.png",
+        "baseColorMap": "vehicles/etk800/politi/skin/politi_patrol_sedan.png"
       },
       {},
       {}
@@ -113,7 +113,7 @@
         "clearCoatMap": "/vehicles/etk800/etk800_main_cc.data.png",
         "normalMap": "/vehicles/etk800/etk800_n.dds",
         "opacityMap": "/vehicles/etk800/etk800_main_c.data.png",
-        "baseColorMap": "vehicles/etk800/politi/skin/politi_dog.png",
+        "baseColorMap": "vehicles/etk800/politi/skin/politi_dog.png"
       },
       {},
       {}
@@ -154,7 +154,50 @@
         "clearCoatMap": "/vehicles/etk800/extra/etk800_extra_cc.data.png",
         "normalMap": "vehicles/etk800/extra/etk800_extra_nm.normal.png",
         "opacityMap": "/vehicles/etk800/extra/etk800_extra_c.data.png",
-        "baseColorMap": "vehicles/etk800/politi/skin/politi_dog.png",
+        "baseColorMap": "vehicles/etk800/politi/skin/politi_dog.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+  "etk800.skin.politi_patrol_new" : {
+    "name" : "etk800.skin.politi_patrol_new",
+    "mapTo" : "etk800.skin.politi_patrol_new",
+    "class" : "Material",
+    "persistentId" : "b9919442-87f6-4798-ae60-56e20645f785",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/etk800/etk800_main_ao.data.png",
+        "baseColorMap": "/vehicles/etk800/etk800_main_b.color.png",
+        "metallicMap": "/vehicles/etk800/etk800_main_m.data.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 1,
+        "normalMap": "vehicles/etk800/etk800_n.dds",
+        "roughnessMap": "/vehicles/etk800/etk800_main_r.data.png",
+        "useAnisotropic": true
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/etk800/etk800_main_ao.data.png",
+        "useAnisotropic": true,
+        "diffuseMapUseUV": 1,
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor":0.33,
+        "metallicFactor": 0.95,
+        "roughnessFactor": 0.7,
+        "metallicMapUseUV": 1,
+        "roughnessMapUseUV": 1,
+        "metallicMap": "/vehicles/etk800/politi/skin/metallic_new.png",
+        "roughnessMap": "/vehicles/etk800/politi/skin/rough_new.png",
+        "clearCoatMap": "/vehicles/etk800/etk800_main_cc.data.png",
+        "normalMap": "/vehicles/etk800/etk800_n.dds",
+        "opacityMap": "/vehicles/etk800/etk800_main_c.data.png",
+        "baseColorMap": "vehicles/etk800/politi/skin/politi_patrol_new.png"
       },
       {},
       {}
