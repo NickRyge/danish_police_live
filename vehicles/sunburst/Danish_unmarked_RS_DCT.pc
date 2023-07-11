@@ -1,6 +1,5 @@
 {
   "format":2,
-  "licenseName":"HNH-7995",
   "mainPartName":"sunburst",
   "model":"sunburst",
   "paints":[
@@ -44,13 +43,15 @@
   "parts":{
     "brakepad_F":"brakepad_F_semi_race",
     "brakepad_R":"brakepad_R_semi_race",
-    "bumper_light":"sunburst_politi_intermediate_bumper_sport",
-    "civil_light":"",
+    "bumper_light_front":"sunburst_politi_bumper_sport",
+    "bumper_light_rear":"sunburst_politi_rear_side",
     "gps":"",
     "licenseplate_design_2_1":"",
     "linelock":"",
+    "mirror_light":"",
     "n2o_system":"",
     "paint_design":"",
+    "roof_light":"",
     "skin_interior":"sunburst_skin_interior",
     "soundscape_horn":"soundscape_horn_3",
     "soundscape_siren":"soundscape_siren_18",
@@ -107,7 +108,7 @@
     "sunburst_lettering_trunk":"",
     "sunburst_licenseplate_F":"sunburst_licenseplate_F_EU",
     "sunburst_licenseplate_R":"sunburst_licenseplate_R_EU",
-    "sunburst_lightbar":"sunburst_politi_unmarked",
+    "sunburst_lightbar":"sunburst_politi",
     "sunburst_lip_F":"",
     "sunburst_lip_sideskirt":"",
     "sunburst_mirror_L":"sunburst_mirror_L",
@@ -153,6 +154,7 @@
     "sunburst_windshield":"sunburst_windshield",
     "tire_F_18x8":"tire_F_235_40_18_sport",
     "tire_R_18x8":"tire_R_235_40_18_sport",
+    "trunk_lights":"",
     "wheel_F_5":"hirochi_wheel_05a_18x8_F",
     "wheel_R_5":"hirochi_wheel_05a_18x8_R"
   },
