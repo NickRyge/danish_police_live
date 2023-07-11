@@ -404,7 +404,7 @@
     },
     "slotType" : "roof_light",
     "glowMap":{
-        "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 	
 		"mod_beacon_light_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
@@ -1421,11 +1421,11 @@
     },
     "slotType" : "bumper_light_rear",
     "glowMap":{			
-        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BL":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
 
-        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
          
     },
     "props": [
@@ -1454,14 +1454,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-		["generic_flasher_led_BR", ["sunburst_body"], [], {"pos":{"x": -0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":4, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        ["generic_flasher_led_BL", ["sunburst_body"], [], {"pos":{"x":  0.685, "y":1.295, "z":1.02}, "rot":{"x":5, "y":-4, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+		["generic_flasher_led_BR", ["sunburst_body"], [], {"pos":{"x": -0.39, "y":1.1, "z":1.246}, "rot":{"x":0, "y":-6, "z":-170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BL", ["sunburst_body"], [], {"pos":{"x": 0.39, "y":1.1, "z":1.246}, "rot":{"x":0, "y":6, "z":170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
 
-		["generic_flasher_led_BR_R", ["sunburst_body"], [], {"pos":{"x": -0.3, "y":1.3, "z":1.275}, "rot":{"x":0, "y":-2, "z":-180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        ["generic_flasher_led_BR_L", ["sunburst_body"], [], {"pos":{"x": 0.3, "y":1.3, "z":1.275}, "rot":{"x":0, "y":2, "z":180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-
-    ],
+		["generic_flasher_led_BR_R", ["sunburst_door_RR"], [], {"pos":{"x": -0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":20, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["sunburst_door_RL"], [], {"pos":{"x": 0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":-20, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 }
 }
