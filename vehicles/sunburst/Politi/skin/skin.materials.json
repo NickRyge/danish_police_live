@@ -1,0 +1,47 @@
+{
+  "sunburst.skin.politi_patrol" : {
+    "name" : "sunburst.skin.politi_patrol",
+    "mapTo" : "sunburst.skin.politi_patrol",
+    "class" : "Material",
+    "persistentId" : "b9919442-87f6-4798-ae60-56e20645f785",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/sunburst/sunburst_main_ao.data.png",
+        "baseColorMap": "/vehicles/sunburst/sunburst_main_b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor":0.1,
+        "metallicMap": "/vehicles/sunburst/sunburst_main_m.data.png",
+        "normalMap": "vehicles/sunburst/sunburst_n.dds",
+        "roughnessMap": "/vehicles/sunburst/sunburst_main_r.data.png",
+        "useAnisotropic": true
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/sunburst/sunburst_main_ao.color.png",
+        "useAnisotropic": true,
+        "diffuseMapUseUV": 1,
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor":0.33,
+        "metallicFactor": 0.95,
+        "roughnessFactor": 0.7,
+        "metallicMapUseUV": 1,
+        "roughnessMapUseUV": 1,
+        "metallicMap": "/vehicles/sunburst/politi/skin/metallic.png",
+        "roughnessMap": "/vehicles/sunburst/politi/skin/rough.png",
+
+
+        "clearCoatMap": "/vehicles/sunburst/sunburst_main_cc.data.png",
+        "normalMap": "/vehicles/sunburst/sunburst_main_n.normal.png",
+        "opacityMap": "/vehicles/sunburst/sunburst_main_o.data.png",
+        "baseColorMap": "vehicles/sunburst/politi/skin/politi_patrol.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "0-100 km/h":4.2,
+  "0-100 mph":9.8,
+  "0-120 mph":12.7,
+  "0-200 km/h":15.9,
+  "0-60 mph":4,
+  "100-0 km/h":31.7,
+  "100-200 km/h":11.7,
+  "60-0 mph":95.7,
+  "60-100 mph":5.7,
+  "60-120 mph":8.3,
+  "BoundingBox":[
+    [
+      -0.66,
+      -1.835,
+      -0.22
+    ],
+    [
+      1.28,
+      2.54,
+      1.26
+    ]
+  ],
+  "Braking G":1.239,
+  "Config Type":"Police",
+  "Configuration":"Danish police unmarked RS (DCT)",
+  "Description":"AWD Danish unmarked highway patrol unit based on the Sport RS AWD model. For catching the fastest of criminals.",
+  "Drivetrain":"AWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"Turbo",
+  "Off-Road Score":27,
+  "Performance Class":"8",
+  "Population":5,
+  "Power":298,
+  "PowerPeakRPM":"6150 - 6950",
+  "Propulsion":"ICE",
+  "Top Speed":73.33719218,
+  "Torque":375,
+  "TorquePeakRPM":"3500 - 5400",
+  "Transmission":"DCT",
+  "Value":38000,
+  "Weight":1435,
+  "Weight/Power":4.815436242,
+  "defaultPaintName1":"Pearl White"
+}
