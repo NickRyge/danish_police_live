@@ -197,7 +197,7 @@
           100,
           10000
         ],
-        "emissiveMap": "/vehicles/etk800/politi/police_parts_lights_G_new.data.png",
+        "emissiveMap": "/vehicles/common/politi/police_parts_lights_G_new.data.png",
         "metallicFactor": 0.2,
         "metallicMap": "/vehicles/common/police_parts/police_parts_lights_m.data.png",
         "normalMap": "/vehicles/common/police_parts/police_parts_lights_nm.normal.png",
