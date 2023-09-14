@@ -3,15 +3,16 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Danish Police Lights",
-        "value":1300,
+        "value":1300
     },
     "slotType" : "vivace_lightbar",
     "slots": [
         ["type", "default", "description"],
         ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
-		["extra_light_rear","vivace_politi_rear", "rear-most roof light"{"coreSlot":true}],
+		["extra_light_rear","vivace_politi_rear", "rear-most roof light",{"coreSlot":true}],
         ["bumper_light_front","vivace_politi_front_bumper_S_sport", "bumper type for front bumper flashers"],
         ["bumper_light_rear","vivace_politi_rear_bumper_wide", "bumper type for rear bumper flashers"],
+        ["trunk_lights", "vivace_politi_trunk_lights", "Trunk lights"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -138,17 +139,11 @@
         }],
     ],
     "glowMap":{
-
-
-			
 			"mod_beacon_light_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
             "mod_beacon_glass_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 			
 			"mod_beacon_light_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},                
             "mod_beacon_glass_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-                        
-            "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -186,14 +181,7 @@
         ["mod_beacon_light_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
         ["mod_beacon_glass_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-
-        {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_R", ["vivace_tailgate"], [], {"pos":{"x": -0.34, "y":1.98, "z":0.707}, "rot":{"x":83, "y":140, "z":140}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_L", ["vivace_tailgate"], [], {"pos":{"x": 0.34, "y":1.98, "z":0.707}, "rot":{"x":83, "y":-140, "z":-140}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ],
      "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -379,9 +367,8 @@
 
 
             {"group":""},
-    ],
+    ]
 },
-
 
 
 "vivace_politi_rear": {
@@ -523,9 +510,6 @@
 },
 
 
-
-
-
 "vivace_politi_unmarked": {
     "information":{
         "authors":"BeamNGxNickRyge",
@@ -537,7 +521,8 @@
         ["type", "default", "description"],
         ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
         ["bumper_light_front","vivace_politi_front_bumper_S_sport", "bumper type for bumper flashers"],
-        ["civil_light","", "Extra beacon"],
+        ["trunk_lights", "vivace_politi_trunk_lights", "Trunk lights"],
+        ["civil_light","", "Extra beacon"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -672,10 +657,9 @@
             "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 
             "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 
-            "generic_flasher_led_TRNK_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "generic_flasher_led_TRNK_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -709,17 +693,31 @@
 
 		["generic_flasher_led_BR_R", ["vivace_tailgate"], [], {"pos":{"x": -0.3, "y":1.58, "z":1.25}, "rot":{"x":0, "y":-2, "z":-180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         ["generic_flasher_led_BR_L", ["vivace_tailgate"], [], {"pos":{"x": 0.3, "y":1.58, "z":1.25}, "rot":{"x":0, "y":2, "z":180}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+},
 
+"vivace_politi_trunk_lights":{
+    "information":{
+        "authors":"NickRyge",
+        "name":"trunk lights",
+        "value":5
+    },
+    "slotType" : "trunk_lights",
+    "glowMap": {                                                                //Yikes, but it works
+        "generic_flasher_led_TRNK_L":                {"simpleFunction":{"tailgateCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_R":                {"simpleFunction":{"tailgateCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+    },
+    
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
         {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_TRNK_R", ["vivace_tailgate"], [], {"pos":{"x": -0.34, "y":1.98, "z":0.707}, "rot":{"x":83, "y":140, "z":140}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_TRNK_L", ["vivace_tailgate"], [], {"pos":{"x": 0.34, "y":1.98, "z":0.707}, "rot":{"x":83, "y":-140, "z":-140}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-    ],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 },
-
 
 //Why? Because I couldn't be bothered to copy it back where it belongs.
 "vivace_politi_extra_beacon": {
@@ -874,7 +872,6 @@
 },
 
 
-
 "vivace_politi_front_bumper_S_sport": {
     "information":{
         "authors":"NickRyge",
@@ -898,7 +895,45 @@
 		
         },
     "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //config BLUE
+        {
+		    "lightInnerAngle":10, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 2.5,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.2,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        ["blue_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.324, "y":0.614, "z":-0.004},"deformGroup":"beaconlight_break_r"}],
+        ["blue_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":-5.308, "y":-102.340, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.062, "y":1.803, "z":-0.368},"deformGroup":"beaconlight_break_r"}],
+        ["blue_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.324, "y":0.614, "z":-0.004},"deformGroup":"beaconlight_break_r"}],
+        ["blue_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-166.588, "y":102.322, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.062, "y":1.803, "z":0.368},"deformGroup":"beaconlight_break_r"}],
+    
+        //config WHITE
+        {
+		    "lightInnerAngle":10, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 0.6,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999}, //This actually does change the lights, but not really beyond 1.
+            "lightColor":{"r":230, "g":245, "b":255, "a":200},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.07,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        }, 
+        ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.605, "y":0.304, "z":-0.023},"deformGroup":"beaconlight_break_r"}],
+        ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.605, "y":0.304, "z":0.023},"deformGroup":"beaconlight_break_r"}],
+
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1078,6 +1113,7 @@
     ],
 },
 
+
 "vivace_politi_rear_bumper_standard": {
     "information":{
         "authors":"NickRyge",
@@ -1101,27 +1137,5 @@
         ["generic_flasher_led_BL", ["vivace_bumper_R"], [], {"pos":{"x": 0.86, "y":1.77, "z":0.6}, "rot":{"x":4, "y":-5, "z":112}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     ],
-},
-
-
-//Skins
-"vivace_skin_politi_patrol": {
-   "information":{
-       "authors":"NickRyge",
-       "name":"Danish police unit",
-       "value":250,
-   }
-   "slotType" : "paint_design",
-   "globalSkin" : "politi_patrol",
-},
-
-"vivace_skin_politi_dog": {
-   "information":{
-       "authors":"NickRyge",
-       "name":"Danish K9 police unit",
-       "value":250,
-   }
-   "slotType" : "paint_design",
-   "globalSkin" : "politi_dog",
-},
+}
 }
