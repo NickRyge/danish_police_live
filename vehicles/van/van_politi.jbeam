@@ -3,24 +3,41 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Danish Police Lights",
-        "value":100
+        "value":0
     },
     "slotType" : "van_lightbar",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
         ["bumper_light_front","van_politi_front_bumper", "bumper type for front bumper flashers"],
         ["bumper_light_rear","van_politi_rear_bumper", "bumper type for rear bumper flashers"],
         ["mirror_lights","van_politi_mirrors_small", "lights for the side mirrors"],
         ["roof_light","roof_beacons", "Roof lights"],
-        ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}] 
-    ],
-    "glowMap":{
-            "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}],
+        ["van_trunk_lights", "van_trunk_lights", "Openable door lights"]
+    ]
+},
+
+
+"van_trunk_lights": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"(Trunk) Openable doors light",
+        "value":10
+    },
+    "slotType" : "van_trunk_lights",
+    "glowMap":{                                                     //Prevents turning on when door is not opened.
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"rearRightDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"rearLeftDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_RR":               {"simpleFunction":{"rightFrontDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_LR":               {"simpleFunction":{"rightRearDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["generic_flasher_led_TRNK_R", ["van_reardoor_R"], [], {"pos":{"x": -0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":-0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        ["generic_flasher_led_TRNK_L", ["van_reardoor_L"], [], {"pos":{"x": 0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        ["generic_flasher_led_TRNK_RR", ["van_sidedoor_FR"], [], {"pos":{"x":-0.875, "y":0.8, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        ["generic_flasher_led_TRNK_LR", ["van_sidedoor_RR"], [], {"pos":{"x":-0.875, "y":0.9, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 },
 
@@ -562,11 +579,12 @@
     ],
 },
 
+
 "van_politi_mirrors_small": {
     "information":{
         "authors":"NickRyge",
         "name":"van normal mirrors",
-        "value":50,
+        "value":50
     },
     "slotType" : "mirror_lights",
     "glowMap":{			
@@ -640,7 +658,7 @@
     "information":{
         "authors":"NickRyge,MagnusLind",
         "name":"rear body lights",
-        "value":50,
+        "value":50
     },
     "slotType" : "bumper_light_rear",
     "glowMap":{			
@@ -648,7 +666,7 @@
         "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 		
         },
     "props": [
@@ -656,23 +674,19 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-
         ["generic_flasher_led_BR", ["van_body"], [], {"pos":{"x": -1.008, "y":2.8, "z":0.99}, "rot":{"x":0, "y":2, "z":-92}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_BL", ["van_body"], [], {"pos":{"x": 1.008, "y":2.8, "z":0.99}, "rot":{"x":0, "y":-2, "z":92}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_BR_R", ["van_reardoor_R"], [], {"pos":{"x": -0.7, "y":3.15, "z":0.99}, "rot":{"x":0, "y":0, "z":-178}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],        
-        ["generic_flasher_led_BR_L", ["van_reardoor_L"], [], {"pos":{"x": 0.70, "y":3.15, "z":0.99}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR_R", ["van_reardoor_R"], [], {"pos":{"x": -0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":-0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR_L", ["van_reardoor_L"], [], {"pos":{"x": 0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR", ["van_sidedoor_FR"], [], {"pos":{"x":-0.875, "y":0.8, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BL", ["van_sidedoor_RR"], [], {"pos":{"x":-0.875, "y":0.9, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-    ],
+        ["generic_flasher_led_BR_L", ["van_reardoor_L"], [], {"pos":{"x": 0.70, "y":3.15, "z":0.99}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1.8, "y":0.9, "z":0.7}}]
+    ]
 },
+
 
 "van_politi_rear_windows": {
     "information":{
         "authors":"NickRyge,MagnusLind",
         "name":"rear window lights",
-        "value":50,
+        "value":50
     },
     "slotType" : "bumper_light_rear",
     "glowMap":{			
@@ -680,7 +694,7 @@
         "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 		
         },
     "props": [
@@ -691,15 +705,13 @@
 
         ["generic_flasher_led_BR", ["van_body"], [], {"pos":{"x": -0.92, "y":2.75, "z":1.41}, "rot":{"x":0, "y":2, "z":-92}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_BL", ["van_body"], [], {"pos":{"x": 0.92, "y":2.75, "z":1.41}, "rot":{"x":0, "y":-2, "z":92}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR_R", ["van_reardoor_R"], [], {"pos":{"x": -0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":-0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR_L", ["van_reardoor_L"], [], {"pos":{"x": 0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_BR_R", ["van_reardoor_R"], [], {"pos":{"x": -0.65, "y":3.1, "z":1.407}, "rot":{"x":0, "y":0, "z":-178}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_BR_L", ["van_reardoor_L"], [], {"pos":{"x": 0.65, "y":3.1, "z":1.407}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BR", ["van_sidedoor_FR"], [], {"pos":{"x":-0.875, "y":0.8, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_BL", ["van_sidedoor_RR"], [], {"pos":{"x":-0.875, "y":0.9, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    ],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 },
+
+
 "van_politi_mobile_station": {
     "information":{
         "authors":"NickRyge,MagnusLind",
