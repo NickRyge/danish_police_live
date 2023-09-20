@@ -2,18 +2,10 @@
 "politi_pattern_standard": {
     "information":{
         "authors":"BeamNGxNickRyge",
-        "name":"Standard pattern + siren",
+        "name":"Standard pattern",
         "value":0
     },
     "slotType" : "politi_lights_pattern",
-    "slots": [
-        ["soundscape_siren","soundscape_siren_18", "Siren Audio"]
-    ],
-    "soundscape": [
-        ["name", "src"],
-        //affects siren location because siren soundscape part is loaded after
-        {"node:":"f15"}
-    ],
     "controller": [
         ["fileName"],
         ["lightbar", {

@@ -13,30 +13,53 @@
         ["mirror_lights","van_politi_mirrors_small", "lights for the side mirrors"],
         ["roof_light","roof_beacons", "Roof lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}],
-        ["van_trunk_lights", "van_trunk_lights", "Openable door lights"]
+        ["van_trunk_lights_rear", "van_trunk_lights_rear", "Rear door lights"],
+        ["van_trunk_lights_side", "van_trunk_lights_side", "Side door lights"],
+        ["soundscape_siren","soundscape_siren_18", "Siren Audio"]
+    ],
+    "soundscape": [
+        ["name", "src"],
+        //affects siren location because siren soundscape part is loaded after
+        {"node:":"b6l"}
     ]
 },
 
 
-"van_trunk_lights": {
+"van_trunk_lights_side": {
     "information":{
         "authors":"NickRyge",
-        "name":"(Trunk) Openable doors light",
-        "value":10
+        "name":"Rear door inside lights",
+        "value":5
     },
-    "slotType" : "van_trunk_lights",
+    "slotType" : "van_trunk_lights_side",
     "glowMap":{                                                     //Prevents turning on when door is not opened.
-        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"rearRightDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"rearLeftDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_TRNK_RR":               {"simpleFunction":{"rightFrontDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_TRNK_LR":               {"simpleFunction":{"rightRearDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["generic_flasher_led_TRNK_R", ["van_reardoor_R"], [], {"pos":{"x": -0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":-0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
-        ["generic_flasher_led_TRNK_L", ["van_reardoor_L"], [], {"pos":{"x": 0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_TRNK_RR", ["van_sidedoor_FR"], [], {"pos":{"x":-0.875, "y":0.8, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         ["generic_flasher_led_TRNK_LR", ["van_sidedoor_RR"], [], {"pos":{"x":-0.875, "y":0.9, "z":1.17}, "rot":{"x":90, "y":0, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+},
+
+
+"van_trunk_lights_rear": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Side door inside lights",
+        "value":5
+    },
+    "slotType" : "van_trunk_lights_rear",
+    "glowMap":{                                                     //Prevents turning on when door is not opened.
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"rearRightDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"rearLeftDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+},
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["generic_flasher_led_TRNK_R", ["van_reardoor_R"], [], {"pos":{"x": -0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":-0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
+        ["generic_flasher_led_TRNK_L", ["van_reardoor_L"], [], {"pos":{"x": 0.15, "y":3.04, "z":0.83}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.8, "y":0.9, "z":0.7}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 },
@@ -46,21 +69,18 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Danish police triple roof beacons",
-        "value":1300,
+        "value":1300
     },
-    "slots": [
-        ["type", "default", "description"],
-		["extra_light_rear","van_politi_rear_beacon", "rear-most roof light"{"coreSlot":true}],
-    ],
     "slotType" : "roof_light",
     "glowMap":{
-
 			"mod_beacon_light_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
             "mod_beacon_glass_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 			
 			"mod_beacon_light_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},                
             "mod_beacon_glass_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
 
+            "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -80,6 +100,7 @@
 
         ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
         ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
 
     ],
     "flexbodies": [
@@ -100,7 +121,14 @@
         ["mod_beacon_glass_fl", ["van_beacon_l"], [], {"pos":{"x": 0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
-
+        //rear
+        ["mod_beacon_base", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["mod_beacon_light", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        ["mod_beacon_glass", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+		
     ],
      "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -128,292 +156,214 @@
         ["lbl3",  0.455, -0.2, 2.16],
         ["lbl1r", 0.455, -0.2, 2.16, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.09}}],
         ["lbl2r", 0.455, -0.2, 2.16, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.09}}],
-        {"group":""},
-    ],
+        {"group":""}
 
-    "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":601000,"beamDamp":60},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-            {"deformLimitExpansion":1.1},
-
-            //Main shape right
-            {"deformGroup":"beaconlight_break_r"},
-            ["rbl1r","rbl1l"],
-            ["rbl2r","rbl2l"],
-            ["rbl1r","rbl2r"],
-            ["rbl1l","rbl2l"],
-
-            ["rbl1r","rbl2l"],
-            ["rbl1l","rbl2r"],
-
-            ["rbl1r","rbl3"],
-            ["rbl2r","rbl3"],
-            ["rbl1l","rbl3"],
-            ["rbl2l","rbl3"],
-            {"deformGroup":""},
-
-            //Main shape left
-            {"deformGroup":"beaconlight_break_l"},
-            ["lbl1r","lbl1l"],
-            ["lbl2r","lbl2l"],
-            ["lbl1r","lbl2r"],
-            ["lbl1l","lbl2l"],
-
-            ["lbl1r","lbl2l"],
-            ["lbl1l","lbl2r"],
-
-            ["lbl1r","lbl3"],
-            ["lbl2r","lbl3"],
-            ["lbl1l","lbl3"],
-            ["lbl2l","lbl3"],
-            {"deformGroup":""},
-            
-        
-            //To body
-            {"deformLimitExpansion":""},
-            {"beamSpring":301000,"beamDamp":60},
-            {"beamDeform":4000,"beamStrength":8000},
-          
-            //Right
-            {"deformGroup":"beaconlight_break_r"},
-
-            //This to avoid removing the beams that hold the light
-            ["rbl3","rbl2l"],
-            ["rbl3","rbl2r"],
-            ["rbl3","rbl1l"],
-            ["rbl3","rbl1r"],
-
-            {"breakGroup":"light_attach_r"},
-
-            ["rbl2r","rf1r"],
-            ["rbl3","rf1r"],
-            ["rbl1r","rf1r"],
-            ["rbl2l","rf1r"],
-
-            ["rbl2r","rf1"],
-            ["rbl3","rf1"],
-            ["rbl2l","rf1"],
-            ["rbl1l","rf1"],
-
-            ["rbl1r","rf2"],
-            ["rbl3","rf2"],
-            ["rbl2l","rf2"],
-            ["rbl1l","rf2"],
-
-            ["rbl1r","rf2r"],
-            ["rbl3","rf2r"],
-            ["rbl2r","rf2r"],
-            ["rbl1l","rf2r"],
-
-            ["rbl1r","f2r"],
-            ["rbl2l","f2r"],
-            ["rbl2r","f2r"],
-            ["rbl1l","f2r"],
-            ["rbl3","f2r"],
-            {"breakGroup":""},
-            {"deformGroup":""},
-
-
-
-            //Left
-            {"deformGroup":"beaconlight_break_l"},
-
-            //This to avoid removing the beams that hold the light
-            ["lbl3","lbl2l"],
-            ["lbl3","lbl2r"],
-            ["lbl3","lbl1l"],
-            ["lbl3","lbl1r"],
-
-            {"breakGroup":"light_attach_l"},
-
-            ["lbl2r","rf1l"],
-            ["lbl3","rf1l"],
-            ["lbl1r","rf1l"],
-            ["lbl2l","rf1l"],
-
-            ["lbl2r","rf1"],
-            ["lbl3","rf1"],
-            ["lbl2l","rf1"],
-            ["lbl1l","rf1"],
-
-            ["lbl1r","rf2"],
-            ["lbl3","rf2"],
-            ["lbl2l","rf2"],
-            ["lbl1l","rf2"],
-
-            ["lbl1r","rf2l"],
-            ["lbl3","rf2l"],
-            ["lbl2r","rf2l"],
-            ["lbl1l","rf2l"],
-
-            ["lbl1r","f2l"],
-            ["lbl2l","f2l"],
-            ["lbl2r","f2l"],
-            ["lbl1l","f2l"],
-            ["lbl3","f2l"],
-            {"breakGroup":""},
-            {"deformGroup":""},
-
-
-
-            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-    ],
-    "triangles": [
-            ["id1:","id2:","id3:"],
-            {"dragCoef":2},
-
-            //left
-            {"group":"van_lightbar_l"},
-            
-            ["lbl3","lbl2r","lbl1r"],
-            ["lbl3","lbl2l","lbl2r"],
-            ["lbl3","lbl1l","lbl2l"],
-            ["lbl3","lbl1r","lbl1l"],
-            ["lbl1r","lbl2r","lbl2l"],
-            ["lbl1r","lbl2l","lbl1l"],
-            {"group":""},
-
-            //right
-            {"group":"van_lightbar_r"},
-            ["rbl3","rbl2r","rbl1r"],
-            ["rbl3","rbl2l","rbl2r"],
-            ["rbl3","rbl1l","rbl2l"],
-            ["rbl3","rbl1r","rbl1l"],
-            ["rbl1r","rbl2r","rbl2l"],
-            ["rbl1r","rbl2l","rbl1l"],
-
-
-            {"group":""},
-    ],
-},
-
-
-"van_politi_rear_beacon": {
-    "information":{
-        "authors":"NickRyge",
-        "name":"rear light",
-        "value":100,
-    },
-    "slotType" : "extra_light_rear",
-
-    "glowMap":{			
-			"mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-        },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-		    "lightInnerAngle":0,
-            "lightOuterAngle":10,
-            "lightRange":30,
-            "lightBrightness": 0.5,
-            "lightColor":{"r":0, "g":10, "b":255, "a":0},
-            "flareName":"vehicleBrakeLightFlare",
-            "lightCastShadows":false,
-            "texSize":64,
-            "shadowSoftness":1,
-            "flareScale":0.01,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
-        },
-		
-		["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
-        
-    ],
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-		
-        ["mod_beacon_base", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-
-    ],
-    "nodes": [
-        ["id", "posX", "posY", "posZ"],
-        {"selfCollision":true},
-        {"collision":true},
-        {"nodeWeight":0.76},
-        {"frictionCoef":0.7},
-        {"nodeMaterial":"|NM_METAL"},
-            
-        //right - using offset because its easier
+        //rear
         {"group":"van_lightbar_c"},
         ["bl1l",  0.09, 2.6, 2.18, {"nodeOffset":{"x":-0.0, "y":0.09, "z":-0.08}}],
         ["bl2l",  0.09, 2.6, 2.18, {"nodeOffset":{"x":-0.0, "y":-0.09, "z":-0.08}}],
         ["bl3",      0, 2.6, 2.18],
         ["bl1r", -0.09, 2.6, 2.18, {"nodeOffset":{"x":0.0, "y":0.09, "z":-0.08}}],
         ["bl2r", -0.09, 2.6, 2.18, {"nodeOffset":{"x":0.0, "y":-0.09, "z":-0.08}}],
-        {"group":""},
+        {"group":""}
     ],
+
     "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":601000,"beamDamp":60},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-            {"deformLimitExpansion":1.1},
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":601000,"beamDamp":60},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
 
-            //Main shape 
-            {"deformGroup":"beaconlight_break"},
-            ["bl1r","bl1l"],
-            ["bl2r","bl2l"],
-            ["bl1r","bl2r"],
-            ["bl1l","bl2l"],
+        //Main shape right
+        {"deformGroup":"beaconlight_break_r"},
+        ["rbl1r","rbl1l"],
+        ["rbl2r","rbl2l"],
+        ["rbl1r","rbl2r"],
+        ["rbl1l","rbl2l"],
 
-            ["bl1r","bl2l"],
-            ["bl1l","bl2r"],
+        ["rbl1r","rbl2l"],
+        ["rbl1l","rbl2r"],
 
-            ["bl1r","bl3"],
-            ["bl2r","bl3"],
-            ["bl1l","bl3"],
-            ["bl2l","bl3"],
+        ["rbl1r","rbl3"],
+        ["rbl2r","rbl3"],
+        ["rbl1l","rbl3"],
+        ["rbl2l","rbl3"],
+        {"deformGroup":""},
+
+        //Main shape left
+        {"deformGroup":"beaconlight_break_l"},
+        ["lbl1r","lbl1l"],
+        ["lbl2r","lbl2l"],
+        ["lbl1r","lbl2r"],
+        ["lbl1l","lbl2l"],
+
+        ["lbl1r","lbl2l"],
+        ["lbl1l","lbl2r"],
+
+        ["lbl1r","lbl3"],
+        ["lbl2r","lbl3"],
+        ["lbl1l","lbl3"],
+        ["lbl2l","lbl3"],
+        {"deformGroup":""},
+
+        //Main shape center
+        {"deformGroup":"beaconlight_break"},
+        ["bl1r","bl1l"],
+        ["bl2r","bl2l"],
+        ["bl1r","bl2r"],
+        ["bl1l","bl2l"],
+    
+        ["bl1r","bl2l"],
+        ["bl1l","bl2r"],
+    
+        ["bl1r","bl3"],
+        ["bl2r","bl3"],
+        ["bl1l","bl3"],
+        ["bl2l","bl3"],
+    
+    
+        //To body
+        {"deformLimitExpansion":""},
+        {"beamSpring":301000,"beamDamp":60},
+        {"beamDeform":4000,"beamStrength":8000},
+        
+        //Right
+        {"deformGroup":"beaconlight_break_r"},
+
+        //This to avoid removing the beams that hold the light
+        ["rbl3","rbl2l"],
+        ["rbl3","rbl2r"],
+        ["rbl3","rbl1l"],
+        ["rbl3","rbl1r"],
+
+        {"breakGroup":"light_attach_r"},
+
+        ["rbl2r","rf1r"],
+        ["rbl3","rf1r"],
+        ["rbl1r","rf1r"],
+        ["rbl2l","rf1r"],
+
+        ["rbl2r","rf1"],
+        ["rbl3","rf1"],
+        ["rbl2l","rf1"],
+        ["rbl1l","rf1"],
+
+        ["rbl1r","rf2"],
+        ["rbl3","rf2"],
+        ["rbl2l","rf2"],
+        ["rbl1l","rf2"],
+
+        ["rbl1r","rf2r"],
+        ["rbl3","rf2r"],
+        ["rbl2r","rf2r"],
+        ["rbl1l","rf2r"],
+
+        ["rbl1r","f2r"],
+        ["rbl2l","f2r"],
+        ["rbl2r","f2r"],
+        ["rbl1l","f2r"],
+        ["rbl3","f2r"],
+        {"breakGroup":""},
+        {"deformGroup":""},
 
 
 
-             //To body
-            {"deformLimitExpansion":""},
-            {"beamSpring":301000,"beamDamp":60},
-            {"beamDeform":4000,"beamStrength":8000},
-          
-            //Right
-            {"deformGroup":"beaconlight_break"},
+        //Left
+        {"deformGroup":"beaconlight_break_l"},
 
-            {"breakGroup":"light_attach_c"},
+        //This to avoid removing the beams that hold the light
+        ["lbl3","lbl2l"],
+        ["lbl3","lbl2r"],
+        ["lbl3","lbl1l"],
+        ["lbl3","lbl1r"],
 
-            ["bl2r","rf5"],
-            ["bl3", "rf5"],
-            ["bl2l","rf5"],
+        {"breakGroup":"light_attach_l"},
 
-            ["bl3", "rf6r"],
-            ["bl2r","rf6r"],
-            ["bl1r","rf6r"],
+        ["lbl2r","rf1l"],
+        ["lbl3","rf1l"],
+        ["lbl1r","rf1l"],
+        ["lbl2l","rf1l"],
 
-            ["bl1r","rf7"],
-            ["bl3", "rf7"],
-            ["bl1l","rf7"],
+        ["lbl2r","rf1"],
+        ["lbl3","rf1"],
+        ["lbl2l","rf1"],
+        ["lbl1l","rf1"],
 
-            ["bl3", "rf6l"],
-            ["bl2l","rf6l"],
-            ["bl1l","rf6l"],
+        ["lbl1r","rf2"],
+        ["lbl3","rf2"],
+        ["lbl2l","rf2"],
+        ["lbl1l","rf2"],
 
-            ["bl1r","b9l"],
-            ["bl2l","b9l"],
-            ["bl2r","b9l"],
-            ["bl1l","b9l"],
-            ["bl3", "b9l"],
-            {"breakGroup":""},
-            {"deformGroup":""},
+        ["lbl1r","rf2l"],
+        ["lbl3","rf2l"],
+        ["lbl2r","rf2l"],
+        ["lbl1l","rf2l"],
 
+        ["lbl1r","f2l"],
+        ["lbl2l","f2l"],
+        ["lbl2r","f2l"],
+        ["lbl1l","f2l"],
+        ["lbl3","f2l"],
+        {"breakGroup":""},
+        {"deformGroup":""},
+
+
+        //rear
+        {"deformGroup":"beaconlight_break"},
+        {"breakGroup":"light_attach_c"},
+        ["bl2r","rf5"],
+        ["bl3", "rf5"],
+        ["bl2l","rf5"],
+
+        ["bl3", "rf6r"],
+        ["bl2r","rf6r"],
+        ["bl1r","rf6r"],
+
+        ["bl1r","rf7"],
+        ["bl3", "rf7"],
+        ["bl1l","rf7"],
+
+        ["bl3", "rf6l"],
+        ["bl2l","rf6l"],
+        ["bl1l","rf6l"],
+
+        ["bl1r","b9l"],
+        ["bl2l","b9l"],
+        ["bl2r","b9l"],
+        ["bl1l","b9l"],
+        ["bl3", "b9l"],
+        {"breakGroup":""},
+        {"deformGroup":""},
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
     "triangles": [
-        ["id1:", "id2:", "id3"],
+        ["id1:","id2:","id3:"],
         {"dragCoef":2},
 
         //left
+        {"group":"van_lightbar_l"},
+        
+        ["lbl3","lbl2r","lbl1r"],
+        ["lbl3","lbl2l","lbl2r"],
+        ["lbl3","lbl1l","lbl2l"],
+        ["lbl3","lbl1r","lbl1l"],
+        ["lbl1r","lbl2r","lbl2l"],
+        ["lbl1r","lbl2l","lbl1l"],
+        {"group":""},
+
+        //right
+        {"group":"van_lightbar_r"},
+        ["rbl3","rbl2r","rbl1r"],
+        ["rbl3","rbl2l","rbl2r"],
+        ["rbl3","rbl1l","rbl2l"],
+        ["rbl3","rbl1r","rbl1l"],
+        ["rbl1r","rbl2r","rbl2l"],
+        ["rbl1r","rbl2l","rbl1l"],
+        {"group":""},
+
+        //rear
         {"group":"van_lightbar_c"},
             
         ["bl3","bl2r","bl1r"],
@@ -422,8 +372,8 @@
         ["bl3","bl1r","bl1l"],
         ["bl1r","bl2r","bl2l"],
         ["bl1r","bl2l","bl1l"],
-        {"group":""},
-    ],
+        {"group":""}
+    ]
 },
 
 //Why? Because I couldn't be bothered to copy it back where it belongs.
@@ -610,6 +560,7 @@
     ],
 },
 
+
 "van_politi_front_bumper": {
     "information":{
         "authors":"NickRyge",
@@ -629,9 +580,47 @@
         "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 
         },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-    ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            //config BLUE
+            {
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 2.5,
+                "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.1,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            ["blue_r"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":0.008},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":-46.308, "y":-141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":-0.342},"deformGroup":"frontflashers_break"}],
+            ["blue_l"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":-0.008},"deformGroup":"frontflashers_break"}],
+            ["blue_r"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-124.736, "y":141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":0.342},"deformGroup":"frontflashers_break"}],
+        
+            //config WHITE
+            {
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 0.6,
+                "lightAttenuation":{"x":0, "y":9999999, "z":9999999}, //This actually does change the lights, but not really beyond 1.
+                "lightColor":{"r":230, "g":245, "b":255, "a":200},
+                "flareName":"vehicleHeadLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.04,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            }, 
+            ["white_r"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.365, "y":0.702, "z":-0.00},"deformGroup":"frontflashers_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.365, "y":0.702, "z":0.00},"deformGroup":"frontflashers_break"}]
+    
+        ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -650,9 +639,10 @@
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
         ["generic_flasher_led_FRR", ["van_fender_R"], [], {"pos":{"x": -1.002, "y":-1.7395, "z":0.99}, "rot":{"x":0, "y":1, "z":-85}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
 		["generic_flasher_led_FLL", ["van_fender_L"], [], {"pos":{"x": 1.002, "y":-1.7395, "z":0.99}, "rot":{"x":0, "y":-1, "z":85}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    ],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 },
+
 
 "van_politi_rear_bumper": {
     "information":{
@@ -716,7 +706,7 @@
     "information":{
         "authors":"NickRyge,MagnusLind",
         "name":"mobile station lights",
-        "value":50,
+        "value":200
     },
     "slotType" : "bumper_light_rear",
     "glowMap":{			

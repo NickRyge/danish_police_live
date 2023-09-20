@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Danish Police Lights",
-        "value":1300
+        "value":0
     },
     "slotType" : "vivace_lightbar",
     "slots": [
@@ -13,7 +13,13 @@
         ["trunk_lights", "vivace_politi_trunk_lights", "Tailgate frame lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}],
         ["vivace_politi_rooflights", "vivace_politi_beacons", "Roof lights"],
-        ["vivace_mirror_light", "", "Mirror flashers"]
+        ["vivace_mirror_light", "", "Mirror flashers"],
+        ["soundscape_siren","soundscape_siren_18", "Siren Audio"]
+    ],
+    "soundscape": [
+        ["name", "src"],
+        //affects siren location because siren soundscape part is loaded after
+        {"node:":"f15"}
     ]
 },
 
