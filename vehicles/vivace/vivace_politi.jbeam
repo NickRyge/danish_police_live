@@ -558,6 +558,162 @@
 },
 
 
+"vivace_politi_single_split_beacon": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Single SPLIT roof beacon",
+        "value":100
+    },
+    "slotType" : "vivace_politi_rooflights",
+    "glowMap":{			
+			"mod_beacon_light_front":                  	   {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "mod_beacon_light_rear":                  	   {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
+        },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+		    "lightInnerAngle":0,
+            "lightOuterAngle":10,
+            "lightRange":30,
+            "lightBrightness": 0.7,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.03,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+		
+        //["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
+       
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		
+		["mod_beacon_base_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["mod_beacon_light_rear", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["mod_beacon_light_front", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        ["mod_beacon_glass_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ],
+     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+            
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight":0.76},
+        {"frictionCoef":0.7},
+        {"nodeMaterial":"|NM_METAL"},
+            
+
+        //left
+        //I know the node names are mirrored. Sue me.
+        {"group":"vivace_beacon_l"},
+        ["lbl1l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.025}}],
+        ["lbl2l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.03}}],
+        ["lbl3", 0.385, 0.115, 1.5],
+        ["lbl1r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.037}}],
+        ["lbl2r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.05}}],
+        {"group":""}
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":601000,"beamDamp":60},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+            {"deformLimitExpansion":1.1},
+
+
+            //Main shape left
+            {"deformGroup":"beaconlight_break_l"},
+            ["lbl1r","lbl1l"],
+            ["lbl2r","lbl2l"],
+            ["lbl1r","lbl2r"],
+            ["lbl1l","lbl2l"],
+
+            ["lbl1r","lbl2l"],
+            ["lbl1l","lbl2r"],
+
+            ["lbl1r","lbl3"],
+            ["lbl2r","lbl3"],
+            ["lbl1l","lbl3"],
+            ["lbl2l","lbl3"],
+            {"deformGroup":""},
+            
+        
+            //To body
+            {"deformLimitExpansion":""},
+            {"beamSpring":301000,"beamDamp":60},
+            {"beamDeform":4000,"beamStrength":8000},
+          
+
+            //Left
+            {"deformGroup":"beaconlight_break_l"},
+
+            //This to avoid removing the beams that hold the light
+            ["lbl3","lbl2l"],
+            ["lbl3","lbl2r"],
+            ["lbl3","lbl1l"],
+            ["lbl3","lbl1r"],
+
+            {"breakGroup":"light_attach_l"},
+
+            ["lbl2r","rf1l"],
+            ["lbl3","rf1l"],
+            ["lbl1r","rf1l"],
+            ["lbl2l","rf1l"],
+
+            ["lbl2r","rf1"],
+            ["lbl3","rf1"],
+            ["lbl2l","rf1"],
+            ["lbl1l","rf1"],
+
+            ["lbl1r","rf2"],
+            ["lbl3","rf2"],
+            ["lbl2l","rf2"],
+            ["lbl1l","rf2"],
+
+            ["lbl1r","rf2l"],
+            ["lbl3","rf2l"],
+            ["lbl2r","rf2l"],
+            ["lbl1l","rf2l"],
+
+            ["lbl1r","f2l"],
+            ["lbl2l","f2l"],
+            ["lbl2r","f2l"],
+            ["lbl1l","f2l"],
+            ["lbl3","f2l"],
+            {"breakGroup":""},
+            {"deformGroup":""},
+
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":2},
+
+            //left
+            {"group":"vivace_lightbar_l"},
+            
+            ["lbl3","lbl2r","lbl1r"],
+            ["lbl3","lbl2l","lbl2r"],
+            ["lbl3","lbl1l","lbl2l"],
+            ["lbl3","lbl1r","lbl1l"],
+            ["lbl1r","lbl2r","lbl2l"],
+            ["lbl1r","lbl2l","lbl1l"],
+            {"group":""}
+
+    ]
+},
+
+
 "vivace_politi_front_bumper_S_sport": {
     "information":{
         "authors":"NickRyge",

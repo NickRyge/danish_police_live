@@ -1,4 +1,31 @@
 {
+
+  "mod_beacon_light_front": {
+    "name": "mod_beacon_light_front",
+    "mapTo": "mod_beacon_light_front",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+
+  "mod_beacon_light_rear": {
+    "name": "mod_beacon_light_rear",
+    "mapTo": "mod_beacon_light_rear",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+
+
+
   "mod_beacon_glass_fr": {
     "name": "mod_beacon_glass_fr",
     "mapTo": "mod_beacon_glass_fr",
@@ -169,7 +196,7 @@
           8000.4509811
         ],
         "emissiveMap": "/vehicles/common/police_parts/police_parts_lights_G.data.png",
-        "metallicFactor": 0.5,
+        "metallicFactor": 1.0,
         "metallicMap": "/vehicles/common/police_parts/police_parts_lights_m.data.png",
         "normalMap": "/vehicles/common/police_parts/police_parts_lights_nm.normal.png",
         "roughnessMap": "/vehicles/common/police_parts/police_parts_lights_r.data.png"
