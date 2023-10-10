@@ -439,7 +439,7 @@
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 		
-        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherR"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
        
     ],
     "flexbodies": [
