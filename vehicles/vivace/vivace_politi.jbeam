@@ -44,9 +44,9 @@
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
-		    "lightInnerAngle":0,
+            "lightInnerAngle":0,
             "lightOuterAngle":10,
-            "lightRange":30,
+            "lightRange":43,
             "lightBrightness": 0.7,
             "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
             "lightColor":{"r":10, "g":30, "b":255, "a":255},
@@ -55,12 +55,12 @@
             "texSize":64,
             "shadowSoftness":1,
             "flareScale":0.03,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "cookieName":"/vehicles/common/politi/cookie.png"
         },
 
-        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":-95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break_r"}],
-        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
-        ["roofflasherR"    , "POINTLIGHT"        ,  "bl1r", "bl2r", "bl1l",    {"x":-100, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break"}]
+        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":0.042, "y":38.860, "z":-7.743} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break_r"}],
+        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherR"    , "POINTLIGHT"        ,  "bl1r", "bl2r", "bl1l",    {"x":-17.671, "y":88.974, "z":-0.462} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break"}]
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -427,7 +427,7 @@
         {
 		    "lightInnerAngle":0,
             "lightOuterAngle":10,
-            "lightRange":30,
+            "lightRange":43,
             "lightBrightness": 0.7,
             "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
             "lightColor":{"r":10, "g":30, "b":255, "a":255},
@@ -436,10 +436,10 @@
             "texSize":64,
             "shadowSoftness":1,
             "flareScale":0.03,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "cookieName":"/vehicles/common/politi/cookie.png"
         },
 		
-        ["roofflasherR"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":95.527, "y":90.283, "z":-1.250} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherR"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
        
     ],
     "flexbodies": [
