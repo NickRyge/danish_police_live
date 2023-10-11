@@ -85,22 +85,23 @@
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
-		    "lightInnerAngle":0,
+            "lightInnerAngle":0,
             "lightOuterAngle":10,
-            "lightRange":30,
-            "lightBrightness": 1,
-            "lightColor":{"r":10, "g":10, "b":255, "a":200},
+            "lightRange":43,
+            "lightBrightness": 0.7,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.01,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "flareScale":0.03,
+            "cookieName":"/vehicles/common/politi/cookie.png"
         },
 
-        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
-        ["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
+        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":0.042, "y":38.860, "z":-7.743} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break_r"}],
+        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherR"    , "POINTLIGHT"        ,  "bl1r", "bl2r", "bl1l",    {"x":-23.599, "y":89.027, "z":-0.566} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break"}]
 
     ],
     "flexbodies": [
@@ -385,27 +386,26 @@
     },
     "slotType" : "roof_light",
     "glowMap":{			
-			"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+			"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
-		    "lightInnerAngle":0,
+            "lightInnerAngle":0,
             "lightOuterAngle":10,
-            "lightRange":30,
-            "lightBrightness": 0.5,
-            "lightColor":{"r":0, "g":10, "b":255, "a":0},
+            "lightRange":43,
+            "lightBrightness": 0.7,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.01,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "flareScale":0.03,
+            "cookieName":"/vehicles/common/politi/cookie.png"
         },
-		
-		["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
-        
+        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}]
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -556,8 +556,8 @@
         {"deformGroup":"mirror_L", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["generic_flasher_led_FL", ["van_mirror_L"], [], {"pos":{"x": 1.1, "y":-0.8985, "z":1.4}, "rot":{"x":6, "y":0, "z":15}, "scale":{"x":1, "y":0.9, "z":0.7}}],
 
-		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    ],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
 },
 
 
@@ -586,8 +586,8 @@
             {
                 "lightInnerAngle":10, 
                 "lightOuterAngle":120, 
-                "lightRange":75,
-                "lightBrightness": 2.5,
+                "lightRange":35,
+                "lightBrightness": 1.5,
                 "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
                 "lightColor":{"r":10, "g":30, "b":255, "a":255},
                 "flareName":"vehicleHeadLightFlare",
@@ -606,7 +606,7 @@
             {
                 "lightInnerAngle":10, 
                 "lightOuterAngle":120, 
-                "lightRange":75,
+                "lightRange":35,
                 "lightBrightness": 0.6,
                 "lightAttenuation":{"x":0, "y":9999999, "z":9999999}, //This actually does change the lights, but not really beyond 1.
                 "lightColor":{"r":230, "g":245, "b":255, "a":200},
