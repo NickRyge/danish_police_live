@@ -726,7 +726,7 @@
 },
 
 
-"dk_bumper_EV_spons": {
+"dk_bumper_EV_standard": {
     "information":{
         "authors":"NickRyge",
         "name":"ttsport",
@@ -779,7 +779,7 @@
     "slotType" : "bumper_light_front",
     "slots": [
         ["type", "default", "description"],
-        ["dk_ttsport_type","dk_bumper_EV_spons", "Type of front bumper light",{"coreSlot":true}],
+        ["dk_ttsport_type","dk_bumper_EV_standard", "Type of front bumper light",{"coreSlot":true}],
     ],
     "glowMap":{
         
