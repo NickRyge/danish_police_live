@@ -725,9 +725,30 @@
         "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
         "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 		
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightAttenuation":{"x":0, "y":99999, "z":99999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.1,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        
+        ["blue_l"    , "SPOTLIGHT"        , "rf1l", "rf4", "p10l", {"x":-93.969, "y":-158.677, "z":39.143} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.334, "y":1.227, "z":-0.443},"deformGroup":""}],
+        ["blue_r"    , "SPOTLIGHT"        , "rf1r", "rf4", "p10r", {"x":-86.031, "y":-153.677, "z":39.143} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.334, "y":1.227, "z":0.443},"deformGroup":""}],
+        
+        ["blue_r"    , "SPOTLIGHT"        , "t2", "t1", "t2l", {"x":155.904, "y":86.965, "z":-2.203} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.504, "y":1.360, "z":0.009},"deformGroup":""}],
+        ["blue_l"    , "SPOTLIGHT"        , "t2", "t1", "t2l", {"x":155.904, "y":86.965, "z":-2.203} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.504, "y":-1.360, "z":0.009},"deformGroup":""}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -757,9 +778,30 @@
         "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 		
         },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-    ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        
+            {
+                "lightInnerAngle":0, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 1.5,
+                "lightAttenuation":{"x":0, "y":99999, "z":99999},
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
+                "lightCastShadows":false,
+                "texSize":64,
+                "shadowSoftness":1,
+                "flareScale":0.1,
+                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            },
+            
+            ["blue_l"    , "SPOTLIGHT"        , "rf1l", "rf4", "p10l", {"x":-93.969, "y":-158.677, "z":39.143} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":  {"x":-0.082, "y":1.043, "z":-0.176},"deformGroup":""}],
+            ["blue_r"    , "SPOTLIGHT"        , "rf1r", "rf4", "p10r", {"x":-86.031, "y":-153.677, "z":39.143} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.082, "y":1.043, "z":0.176},"deformGroup":""}],
+            
+            ["blue_r"    , "SPOTLIGHT"        , "t2", "t1", "t2l", {"x":155.904, "y":86.965, "z":-2.203} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":2.177, "y":1.323 "z":0.211},"deformGroup":""}],
+            ["blue_l"    , "SPOTLIGHT"        , "t2", "t1", "t2l", {"x":155.904, "y":86.965, "z":-2.203} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":2.177, "y":-1.323, "z":0.211},"deformGroup":""}],
+        ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
