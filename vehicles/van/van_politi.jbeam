@@ -661,6 +661,27 @@
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightAttenuation":{"x":0, "y":99999, "z":99999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.1,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        //13.723 -149.387 -5.158
+        ["blue_l"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":0.011},"deformGroup":""}],
+        ["blue_r"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":-0.011},"deformGroup":""}],
+        
+        ["blue_r"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":0.002},"deformGroup":""}],
+        ["blue_l"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":-0.002},"deformGroup":""}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -689,6 +710,27 @@
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+    
+        {
+            "lightInnerAngle":0, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightAttenuation":{"x":0, "y":99999, "z":99999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.1,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        //13.723 -149.387 -5.158
+        ["blue_l"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":-0.052},"deformGroup":""}],
+        ["blue_r"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":0.052},"deformGroup":""}],
+        
+        ["blue_r"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":-0.045},"deformGroup":""}],
+        ["blue_l"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":0.045},"deformGroup":""}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -702,6 +744,7 @@
 },
 
 
+//This will have to do without spotlights. No way.
 "van_politi_mobile_station": {
     "information":{
         "authors":"NickRyge,MagnusLind",
