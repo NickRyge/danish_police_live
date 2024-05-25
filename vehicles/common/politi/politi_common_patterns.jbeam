@@ -103,8 +103,71 @@
                         ["roofflasherR", 1, 0.10],
                         ["roofflasherR", 0, 0.14]
 						
-                    ]
-                    ],
+
+                        /* Roof lightbar */
+                        ["lightbar_1r",   0, 0.4]
+                        ["lightbar_1r",   1, 0.1]
+                        ["lightbar_1r",   0, 0.02]
+                        ["lightbar_1r",   1, 0.1]
+                    
+                        ["lightbar_2r",   0, 0.4]
+                        ["lightbar_2r",   1, 0.1]
+                        ["lightbar_2r",   0, 0.02]
+                        ["lightbar_2r",   1, 0.1]
+                    
+                        ["lightbar_2r_2", 0, 0.1]
+                        ["lightbar_2r_3", 0, 0.1]
+                    
+                        ["lightbar_3r",   0, 0.4]
+                        ["lightbar_3r",   1, 0.1]
+                        ["lightbar_3r",   0, 0.02]
+                        ["lightbar_3r",   1, 0.1]
+                    
+                        ["lightbar_4r",   0, 0.4]
+                        ["lightbar_4r",   1, 0.1]
+                        ["lightbar_4r",   0, 0.02]
+                        ["lightbar_4r",   1, 0.1]
+                    
+                        ["lightbar_5r",   0, 0.4]
+                        ["lightbar_5r",   1, 0.1]
+                        ["lightbar_5r",   0, 0.02]
+                        ["lightbar_5r",   1, 0.1]
+                    
+                    
+                        ["lightbar_1l",   0, 0.1]
+                        ["lightbar_1l",   1, 0.1]
+                        ["lightbar_1l",   0, 0.02]
+                        ["lightbar_1l",   1, 0.1]
+                        ["lightbar_1l",   0, 0.3]
+                    
+                        ["lightbar_2l",   0, 0.1]
+                        ["lightbar_2l",   1, 0.1]
+                        ["lightbar_2l",   0, 0.02]
+                        ["lightbar_2l",   1, 0.1]
+                        ["lightbar_2l",   0, 0.3]
+                    
+                        ["lightbar_2l_2", 0, 0.1]
+                        ["lightbar_2l_3", 0, 0.1]
+                    
+                        ["lightbar_3l",   0, 0.1]
+                        ["lightbar_3l",   1, 0.1]
+                        ["lightbar_3l",   0, 0.02]
+                        ["lightbar_3l",   1, 0.1]
+                        ["lightbar_3l",   0, 0.3]
+                    
+                        ["lightbar_4l",   0, 0.1]
+                        ["lightbar_4l",   1, 0.1]
+                        ["lightbar_4l",   0, 0.02]
+                        ["lightbar_4l",   1, 0.1]
+                        ["lightbar_4l",   0, 0.3]
+                    
+                        ["lightbar_5l",   0, 0.1]
+                        ["lightbar_5l",   1, 0.1]
+                        ["lightbar_5l",   0, 0.02]
+                        ["lightbar_5l",   1, 0.1]
+                        ["lightbar_5l",   0, 0.3]
+                   ]
+                ],
 
                     ["testing", [
                         ["electric", "value", "duration"],
@@ -382,40 +445,42 @@
 						
 
                         /* Roof lightbar */
-                        ["lightbar_1r",   0, 0.3]
+                        ["lightbar_1r",   0, 0.4]
                         ["lightbar_1r",   1, 0.1]
                         ["lightbar_1r",   0, 0.02]
                         ["lightbar_1r",   1, 0.1]
 
-
-                        ["lightbar_2r",  0, 0.3]
-                        ["lightbar_2r",  1, 0.1]
-                        ["lightbar_2r",  0, 0.02]
-                        ["lightbar_2r",  1, 0.1]
+                        ["lightbar_2r",   0, 0.4]
+                        ["lightbar_2r",   1, 0.1]
+                        ["lightbar_2r",   0, 0.02]
+                        ["lightbar_2r",   1, 0.1]
 
                         ["lightbar_2r_2", 0, 0.1]
                         ["lightbar_2r_3", 0, 0.1]
 
-                        ["lightbar_3r",   0, 0.3]
+                        ["lightbar_3r",   0, 0.4]
                         ["lightbar_3r",   1, 0.1]
                         ["lightbar_3r",   0, 0.02]
                         ["lightbar_3r",   1, 0.1]
 
-                        ["lightbar_4r",   0, 0.3]
+                        ["lightbar_4r",   0, 0.4]
                         ["lightbar_4r",   1, 0.1]
                         ["lightbar_4r",   0, 0.02]
                         ["lightbar_4r",   1, 0.1]
 
-                        ["lightbar_5r",   0, 0.3]
+                        ["lightbar_5r",   0, 0.4]
                         ["lightbar_5r",   1, 0.1]
                         ["lightbar_5r",   0, 0.02]
                         ["lightbar_5r",   1, 0.1]
 
+
+                        ["lightbar_1l",   0, 0.1]
                         ["lightbar_1l",   1, 0.1]
                         ["lightbar_1l",   0, 0.02]
                         ["lightbar_1l",   1, 0.1]
                         ["lightbar_1l",   0, 0.3]
 
+                        ["lightbar_2l",   0, 0.1]
                         ["lightbar_2l",   1, 0.1]
                         ["lightbar_2l",   0, 0.02]
                         ["lightbar_2l",   1, 0.1]
@@ -424,84 +489,25 @@
                         ["lightbar_2l_2", 0, 0.1]
                         ["lightbar_2l_3", 0, 0.1]
 
+                        ["lightbar_3l",   0, 0.1]
                         ["lightbar_3l",   1, 0.1]
                         ["lightbar_3l",   0, 0.02]
                         ["lightbar_3l",   1, 0.1]
                         ["lightbar_3l",   0, 0.3]
 
+                        ["lightbar_4l",   0, 0.1]
                         ["lightbar_4l",   1, 0.1]
                         ["lightbar_4l",   0, 0.02]
                         ["lightbar_4l",   1, 0.1]
                         ["lightbar_4l",   0, 0.3]
 
+                        ["lightbar_5l",   0, 0.1]
                         ["lightbar_5l",   1, 0.1]
                         ["lightbar_5l",   0, 0.02]
                         ["lightbar_5l",   1, 0.1]
                         ["lightbar_5l",   0, 0.3]
                     ]
                 ],
-
-                //Blinking mode for Mr. Bauer
-                ["Still flash", [
-                    ["electric", "value", "duration"],
-
-                        ["white_r", 0, 0.3],
-                        ["white_r", 1, 0.1],
-                        ["white_r", 0, 0.03],
-                        ["white_r", 1, 0.1],
-                        
-						
-						["white_l", 0, 0.3],
-                        ["white_l", 1, 0.1],
-                        ["white_l", 0, 0.03],
-                        ["white_l", 1, 0.1],
-
-		                ["blue_r", 0, 0.3],
-                        ["blue_r", 1, 0.1],
-                        ["blue_r", 0, 0.03],
-                        ["blue_r", 1, 0.1],
-
-	                    ["blue_l", 0, 0.3],
-                        ["blue_l", 1, 0.1],
-                        ["blue_l", 0, 0.03],
-                        ["blue_l", 1, 0.1],
-						
-						["roofflasherFL", 0, 0.3],
-                        ["roofflasherFL", 1, 0.1],
-                        ["roofflasherFL", 0, 0.03],
-                        ["roofflasherFL", 1, 0.1],
-						
-						["roofflasherFR", 0, 0.3],
-                        ["roofflasherFR", 1, 0.1],
-                        ["roofflasherFR", 0, 0.03],
-                        ["roofflasherFR", 1, 0.1],
-					
-						["roofflasherR", 0, 0.3],
-                        ["roofflasherR", 1, 0.1],
-                        ["roofflasherR", 0, 0.03],
-                        ["roofflasherR", 1, 0.1]
-                    ]
-                ],
-                    
-                //Steady mode for Mr. Bauer
-                ["Steady", [
-                    ["electric", "value", "duration"],
-
-                        ["white_r", 0, 1],
-						
-						["white_l", 0, 1],
-
-		                ["blue_r", 1, 1],
-
-	                    ["blue_l", 1, 1],
-						
-						["roofflasherFL", 1, 1],
-						
-						["roofflasherFR", 1, 1],
-					
-						["roofflasherR", 1, 1]
-                    ]
-                ]
 			]
         }]
     ]
@@ -538,54 +544,54 @@
 
 
 		            ["blue_r1", 1, 0.1],
-					["blue_r1", 0, 0.02],
+					["blue_r1", 0, 0.03],
                     ["blue_r1", 1, 0.1],
                     ["blue_r1", 0, 0.2],
 
 	                ["blue_l1", 0, 0.2],
 					["blue_l1", 1, 0.1],
-                    ["blue_l1", 0, 0.02],
+                    ["blue_l1", 0, 0.03],
                     ["blue_l1", 1, 0.1],
                     
 
                     ["blue_l2", 1, 0.1],
-					["blue_l2", 0, 0.02],
+					["blue_l2", 0, 0.03],
                     ["blue_l2", 1, 0.1],
                     ["blue_l2", 0, 0.2],
 
 	                ["blue_r2", 0, 0.2],
 					["blue_r2", 1, 0.1],
-                    ["blue_r2", 0, 0.02],
+                    ["blue_r2", 0, 0.03],
                     ["blue_r2", 1, 0.1],
 
                     ["blue_r3", 1, 0.1],
-					["blue_r3", 0, 0.02],
+					["blue_r3", 0, 0.03],
                     ["blue_r3", 1, 0.1],
                     ["blue_r3", 0, 0.2],
 
 	                ["blue_l3", 0, 0.2],
 					["blue_l3", 1, 0.1],
-                    ["blue_l3", 0, 0.02],
+                    ["blue_l3", 0, 0.03],
                     ["blue_l3", 1, 0.1],
 
                     ["blue_r4", 1, 0.1],
-					["blue_r4", 0, 0.02],
+					["blue_r4", 0, 0.03],
                     ["blue_r4", 1, 0.1],
                     ["blue_r4", 0, 0.2],
 
 	                ["blue_l4", 1, 0.1],
-					["blue_l4", 0, 0.02],
+					["blue_l4", 0, 0.03],
                     ["blue_l4", 1, 0.1],
                     ["blue_l4", 0, 0.2],
 
                     ["blue_r5", 0, 0.2],
 					["blue_r5", 1, 0.1],
-                    ["blue_r5", 0, 0.02],
+                    ["blue_r5", 0, 0.03],
                     ["blue_r5", 1, 0.1],
 
 	                ["blue_l5", 0, 0.2],
 					["blue_l5", 1, 0.1],
-                    ["blue_l5", 0, 0.02],
+                    ["blue_l5", 0, 0.03],
                     ["blue_l5", 1, 0.1],
 
 					
@@ -616,60 +622,59 @@
 
                     /* Roof lightbar */
                     ["lightbar_1r",   1, 0.1]
-                    ["lightbar_1r",   0, 0.02]
+                    ["lightbar_1r",   0, 0.03]
                     ["lightbar_1r",   1, 0.1]
-                    ["lightbar_1r",   0, 0.3]
-
+                    ["lightbar_1r",   0, 0.2]
 
                     ["lightbar_2r",   1, 0.1]
-                    ["lightbar_2r",   0, 0.02]
+                    ["lightbar_2r",   0, 0.03]
                     ["lightbar_2r",   1, 0.1]
-                    ["lightbar_2r",   0, 0.3]
+                    ["lightbar_2r",   0, 0.2]
                     
                     ["lightbar_2r_2", 0, 0.1]
                     ["lightbar_2r_3", 0, 0.1]
                     
                     ["lightbar_3r",   1, 0.1]
-                    ["lightbar_3r",   0, 0.02]
+                    ["lightbar_3r",   0, 0.03]
                     ["lightbar_3r",   1, 0.1]
-                    ["lightbar_3r",   0, 0.3]
+                    ["lightbar_3r",   0, 0.2]
                     
-                    ["lightbar_4r",   0, 0.3]
+                    ["lightbar_4r",   0, 0.2]
                     ["lightbar_4r",   1, 0.1]
-                    ["lightbar_4r",   0, 0.02]
+                    ["lightbar_4r",   0, 0.03]
                     ["lightbar_4r",   1, 0.1]
                     
-                    ["lightbar_5r",   0, 0.3]
+                    ["lightbar_5r",   0, 0.2]
                     ["lightbar_5r",   1, 0.1]
-                    ["lightbar_5r",   0, 0.02]
+                    ["lightbar_5r",   0, 0.03]
                     ["lightbar_5r",   1, 0.1]
                     
                     ["lightbar_1l",   1, 0.1]
-                    ["lightbar_1l",   0, 0.02]
+                    ["lightbar_1l",   0, 0.03]
                     ["lightbar_1l",   1, 0.1]
-                    ["lightbar_1l",   0, 0.3]
+                    ["lightbar_1l",   0, 0.2]
 
                     ["lightbar_2l",   1, 0.1]
-                    ["lightbar_2l",   0, 0.02]
+                    ["lightbar_2l",   0, 0.03]
                     ["lightbar_2l",   1, 0.1]
-                    ["lightbar_2l",   0, 0.3]
+                    ["lightbar_2l",   0, 0.2]
                     
                     ["lightbar_2l_2", 0, 0.1]
                     ["lightbar_2l_3", 0, 0.1]
 
                     ["lightbar_3l",   1, 0.1]
-                    ["lightbar_3l",   0, 0.02]
+                    ["lightbar_3l",   0, 0.03]
                     ["lightbar_3l",   1, 0.1]
-                    ["lightbar_3l",   0, 0.3]
+                    ["lightbar_3l",   0, 0.2]
                     
-                    ["lightbar_4l",   0, 0.3]
+                    ["lightbar_4l",   0, 0.2]
                     ["lightbar_4l",   1, 0.1]
-                    ["lightbar_4l",   0, 0.02]
+                    ["lightbar_4l",   0, 0.03]
                     ["lightbar_4l",   1, 0.1]
                     
-                    ["lightbar_5l",   0, 0.3]
+                    ["lightbar_5l",   0, 0.2]
                     ["lightbar_5l",   1, 0.1]
-                    ["lightbar_5l",   0, 0.02]
+                    ["lightbar_5l",   0, 0.03]
                     ["lightbar_5l",   1, 0.1]
 				
                     ]
