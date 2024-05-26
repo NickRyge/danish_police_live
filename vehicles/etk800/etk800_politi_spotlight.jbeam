@@ -1,0 +1,140 @@
+{
+    "etk800_politi_spotlight": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Roof spotlight",
+            "value":250,
+        },
+        "slotType" : "politi_roofspot",
+        "controller": [
+            ["fileName"],
+            ["politi_spotlight"]
+        ]
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+                
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.50},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+
+            //Using offset because its easier
+            {"group":"etk800_politi_spotlight"},
+            ["polSpot1l",  0.07, 0.075, 1.48, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2l",  0.07, 0.075, 1.47, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+            ["polSpot3",    0.0, 0.075, 1.55],
+            ["polSpot1r", -0.07, 0.075, 1.48, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2r", -0.07, 0.075, 1.47, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+
+            {"selfCollision":false},
+            ["polSpot3low", 0.0, 0.075, 1.475, {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.090}}], 
+            {"group":""},
+        ]
+        "props": [
+            ["func"      , "mesh"            , "idRef:", "idX:", "idY:"          , "baseRotation"        , "rotation"               , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":40,
+                "lightOuterAngle":50,
+                "lightRange":200,
+                "lightBrightness": 2.2,
+                "lightAttenuation":{"x":0, "y":1, "z":1},
+                "lightColor":{"r":230, "g":240, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
+                "lightCastShadows":true,
+                "texSize":512,
+                "shadowSoftness":1,
+                "flareScale":0.03,
+                "cookieName":"/vehicles/common/politi/Spotlight_cookie.png"
+            },
+    
+            ["politi_spotlight", "SPOTLIGHT", "polSpot3low", "polSpot2l", "polSpot3", {"x":-135, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -360, 360, 360, 1 {"baseTranslation":{"x":0, "y":1, "z":-0},"deformGroup":"lightbar_break"}],
+        ],
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            {"beamSpring":601000,"beamDamp":60},
+            {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+            {"deformLimitExpansion":1.1},
+  
+            //Main shape 
+            {"deformGroup":"politi_spotlight_break"},
+            ["polSpot1r","polSpot1l"],
+            ["polSpot2r","polSpot2l"],
+            ["polSpot1r","polSpot2r"],
+            ["polSpot1l","polSpot2l"],
+            
+            ["polSpot3low","polSpot3"],
+            ["polSpot3low","polSpot2l"],
+            ["polSpot3low","polSpot2r"],
+            ["polSpot3low","polSpot1l"],
+            ["polSpot3low","polSpot1r"],
+
+            ["polSpot1r","polSpot2l"],
+            ["polSpot1l","polSpot2r"],
+  
+            ["polSpot1r","polSpot3"],
+            ["polSpot2r","polSpot3"],
+            ["polSpot1l","polSpot3"],
+            ["polSpot2l","polSpot3"],
+            {"deformGroup":""},
+          
+            //To body
+            {"deformLimitExpansion":""},
+            {"beamSpring":301000,"beamDamp":60},
+            {"beamDeform":4000,"beamStrength":8000},
+            {"deformGroup":"politi_spotlight_break"},
+  
+            //This to avoid removing the beams that hold the light
+            ["polSpot3","polSpot2l"],
+            ["polSpot3","polSpot2r"],
+            ["polSpot3","polSpot1l"],
+            ["polSpot3","polSpot1r"],
+  
+            {"breakGroup":"politi_spotlight_break"},
+
+            ["polSpot3", "rf2"],
+            ["polSpot3", "rf1"],
+            ["polSpot3", "f2r"],
+            ["polSpot3", "f2l"],
+
+            ["polSpot2r","rf1r"],
+            ["polSpot2r","rf1"],
+            ["polSpot2r","rf2r"],
+            ["polSpot2r","f2r"],
+            
+            ["polSpot1r","rf1r"],
+            ["polSpot1r","rf2"],
+            ["polSpot1r","rf2r"],
+            ["polSpot1r","f2r"],
+            
+            ["polSpot2l","rf1"],
+            ["polSpot2l","rf2"],
+            ["polSpot2l","rf1l"],
+            ["polSpot2l","rf2l"],
+            ["polSpot2l","f2l"],
+            
+            ["polSpot1l","rf1"],
+            ["polSpot1l","rf2"],
+            ["polSpot1l","rf1l"],
+            ["polSpot1l","rf2l"],
+            ["polSpot1l","f2l"],
+            
+            {"breakGroup":""},
+            {"deformGroup":""},
+        ],
+        "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":2},
+  
+            {"group":"etk800_politi_spotlight"},
+            ["polSpot3","polSpot1r","polSpot2r"],
+            ["polSpot3","polSpot2r","polSpot2l"],
+            ["polSpot3","polSpot2l","polSpot1l"],
+            ["polSpot3","polSpot1l","polSpot1r"],
+            ["polSpot1r","polSpot2l","polSpot2r"],
+            ["polSpot1r","polSpot1l","polSpot2l"],
+            {"group":""},
+        ],
+    },
+}

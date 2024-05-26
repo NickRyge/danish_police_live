@@ -8,12 +8,13 @@
     "slotType" : "etk800_lightbar",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
+        ["soundscape_siren","soundscape_siren_18", "Siren Audio"], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
         ["bumper_light_front","etk800_politi_bumper_normal", "bumper type for bumper flashers"],
         ["bumper_light_rear","etk800_politi_rear_bumper", "Type for rear flashers"],
         ["roof_light","roof_beacons", "Roof lights"],
         ["mirror_light","", "Side mirror lights"],
         ["trunk_lights", "etk800_trunklights_wagon", "Trunk lights"],
+        ["politi_roofspot", "etk800_politi_spotlight", "Roof spotlight (camera)"]
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}]
     ],
     "soundscape": [
