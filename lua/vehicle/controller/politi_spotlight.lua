@@ -25,12 +25,31 @@ function math.clamp(low, n, high) return math.min(math.max(n, low), high) end
 
 
 
+function normalize(value, rangeMin, rangeMax)
+    local range = rangeMax - rangeMin
+    return ((value - rangeMin) % range + range) % range + rangeMin
+end
 
-local function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoothness)
-    --Clamp the targetValue according to the min and max which allows for an offset to occur.
-    local step = (math.clamp(targetValue, clampMin, clampMax) - currentValue) * dt * smoothness --5.2
+function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoothness)
+    -- Normalize the targetValue and currentValue to the range [clampMin, clampMax)
+    targetValue = normalize(targetValue, clampMin, clampMax)
+    currentValue = normalize(currentValue, clampMin, clampMax)
 
-    local newValue = currentValue + step
+    -- Calculate the shortest path difference
+    local delta = targetValue - currentValue
+    local range = clampMax - clampMin
+    if delta > range / 2 then
+        delta = delta - range
+    elseif delta < -range / 2 then
+        delta = delta + range
+    end
+
+    -- Calculate the step
+    local step = delta * dt * smoothness
+
+    -- Compute the new value and normalize it to the range [clampMin, clampMax)
+    local newValue = normalize(currentValue + step, clampMin, clampMax)
+
     return newValue
 end
 

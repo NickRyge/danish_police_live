@@ -39,7 +39,7 @@
                 "lightRange":200,
                 "lightBrightness": 2.2,
                 "lightAttenuation":{"x":0, "y":1, "z":1},
-                "lightColor":{"r":230, "g":240, "b":255, "a":255},
+                "lightColor":{"r":200, "g":210, "b":255, "a":255},
                 "flareName":"vehicleHeadLightFlare",
                 "lightCastShadows":true,
                 "texSize":512,
@@ -48,7 +48,10 @@
                 "cookieName":"/vehicles/common/politi/Spotlight_cookie.png"
             },
     
-            ["politi_spotlight", "SPOTLIGHT", "polSpot3low", "polSpot2l", "polSpot3", {"x":-135, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -360, 360, 360, 1 {"baseTranslation":{"x":0, "y":1, "z":-0},"deformGroup":"lightbar_break"}],
+            ["politi_spotlight", "SPOTLIGHT", "polSpot3low", "polSpot2l", "polSpot3", {"x":-135, "y":92.891, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -360, 360, 360, 1 {"baseTranslation":{"x":0, "y":1, "z":-0},"deformGroup":"lightbar_break"}],
+            ["politi_spotlight_base", "spotlight_base", "polSpot3low", "polSpot2l", "polSpot3", {"x":0, "y":-177.109, "z":-45} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -360, 360, 360, 1 {"baseTranslation":{"x":0, "y":0.047, "z":-0},"deformGroup":"lightbar_break"}],
+            ["politi_spotlight_light", "LED_spotlight", "polSpot3low", "polSpot2l", "polSpot3", {"x":0, "y":-177.109, "z":-45} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -360, 360, 360, 1 {"baseTranslation":{"x":0, "y":0.129, "z":-0},"deformGroup":"lightbar_break"}],
+
         ],
         "beams": [
             ["id1:", "id2:"],
