@@ -1,0 +1,6 @@
+{
+"updateOffset":{"order": 2, "onChange":"UpdateVerOffset(VALUE)", "isCentered": true, "title":"Update offset"},
+"resetOffset":{"order": 3, "onChange":"ResetVerOffset()",  "title":"Reset offset"},
+"ToggleSpotlight":{"order":  1,  "onDown":"Spotlight_on = not Spotlight_on", "title": "Spotlight toggle", "desc": "Enables and disables the intelligence feature" }
+
+}

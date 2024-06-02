@@ -11,26 +11,41 @@ local prev_hor
 --- Vertical angle in degrees
 local prev_ver
 
+Spotlight_on = false
+local ver_offset = 0
+
 
 -- Import test controller 
 require "controller.test"
 
 
----comment
+---Clamp function
 ---@param low number Lowest possible value
 ---@param n number Real value
 ---@param high number Highest possible value
 ---@return number clampValue The clamped value
 function math.clamp(low, n, high) return math.min(math.max(n, low), high) end
 
+---Takes the input (prefferably from some input mapping), and adds it to the ver_offset. 
+---Clamped to -30, 30
+---@param val number The number to add to the ver_offset
+function UpdateVerOffset(val) 
+    ver_offset = math.clamp(-30, ver_offset + val, 30)
+    gui.message("Spotlight offset: " .. ver_offset .. "°")
+end
 
+---Resets the vertical offset variable for the spotlight
+function ResetVerOffset()
+    ver_offset = 0
+    gui.message("Spotlight offset: " .. ver_offset .. "°")
+end
 
-function normalize(value, rangeMin, rangeMax)
+local function normalize(value, rangeMin, rangeMax)
     local range = rangeMax - rangeMin
     return ((value - rangeMin) % range + range) % range + rangeMin
 end
 
-function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoothness)
+local function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoothness)
     -- Normalize the targetValue and currentValue to the range [clampMin, clampMax)
     targetValue = normalize(targetValue, clampMin, clampMax)
     currentValue = normalize(currentValue, clampMin, clampMax)
@@ -90,14 +105,14 @@ function SetDirVec(vector)
     local hor, ver = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
     --local vect = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
 
-    prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 5)
-    prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 5)
+    prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 4)
+    prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 4)
     local radVer = math.rad(prev_ver)
     local rotX = math.rad(prev_hor)
     local rotY = math.sin(rotX)*radVer
     local rotZ = math.cos(rotX)*radVer*-1
 
-    UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, false, 1, 1)
+    UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, false, Spotlight_on and 1 or 0, 1)
     
 
     --UpdateProp(spotLight.id, 0, 0, 0, 
@@ -117,7 +132,7 @@ end
 function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
     --First check if the update is valid and there is a player in the car.
     --This is necessary because the function can get called with or without a player, since the lua from GE is queued, and it may be delayed.
-    if not playerInfo.anyPlayerSeated then
+    if not playerInfo.anyPlayerSeated or not Spotlight_on then
         return 0, 0
     end
 
@@ -148,7 +163,7 @@ function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
     local spotlightVec = targetPos - vehiclePos
     --local angle1 = (spotlightVec.x * vehicleDir.x + spotlightVec.y + vehicleDir.y) / ()
     --print(spotlightVec.y)
-    print(spotlightVec)
+    --print(spotlightVec)
 
     --Wrap the angle properly
     if horizontalDotproduct < 0 then
@@ -162,7 +177,7 @@ function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
 
     --Vertical angle is a lot easier because it's just two values we depend on, so they can just be subtracted from eachother.
     local ver_angle = math.deg(math.sin(cameraDir.z - vehicleDir.z))
-
+    ver_angle = ver_angle + ver_offset
     --print(cameraPos-vehiclePos)
     --print("Omdrejning: " .. hor_angle_wrapped)
     --print("Op-ned: " .. ver_angle)

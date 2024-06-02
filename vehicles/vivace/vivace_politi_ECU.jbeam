@@ -1,0 +1,18 @@
+"vivace_engine_ecu_i4_2.0_diesel_230_politi": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Cd 230 ECU",
+        "value":1550,
+    },
+    "slotType" : "vivace_engine_ecu_i4_2.0_diesel",
+    "slots": [
+        ["type", "default", "description"],
+        ["vivace_engine_ecu_i4_2.0_diesel_speedlimit","vivace_engine_ecu_i4_2.0_diesel_speedlimit_230", "Speed Limiter", {"coreSlot":true}],
+    ],
+    "mainEngine":{
+        "revLimiterRPM":4800,
+    },
+    "turbocharger": {
+        "wastegateStart":[10.3, 30.0],
+    }
+}

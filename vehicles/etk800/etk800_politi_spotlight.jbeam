@@ -43,7 +43,7 @@
                 "flareName":"vehicleHeadLightFlare",
                 "lightCastShadows":true,
                 "texSize":512,
-                "shadowSoftness":1,
+                "shadowSoftness":0.2,
                 "flareScale":0.03,
                 "cookieName":"/vehicles/common/politi/Spotlight_cookie.png"
             },
