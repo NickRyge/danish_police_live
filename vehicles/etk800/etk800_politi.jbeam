@@ -1,7 +1,7 @@
 {
 "etk800_politi": {
     "information":{
-        "authors":"BeamNGxNickRyge",
+        "authors":"NickRyge",
         "name":"Danish Police Lights",
         "value":100
     },
@@ -22,6 +22,8 @@
         {"node:":"f15"},
     ],
 },
+
+
 
 /* Extra lights */
 "etk800_trunklights_wagon": {

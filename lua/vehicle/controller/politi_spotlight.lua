@@ -11,8 +11,12 @@ local prev_hor
 --- Vertical angle in degrees
 local prev_ver
 
-Spotlight_on = false
 local ver_offset = 0
+local prev_targetx, prev_targety = 0,0
+
+-- Global variables -- 
+Spotlight_on = false
+Spotlight_move = true
 
 
 -- Import test controller 
@@ -45,6 +49,14 @@ local function normalize(value, rangeMin, rangeMax)
     return ((value - rangeMin) % range + range) % range + rangeMin
 end
 
+---"Takes a step" from the currentValue to the targetValue. Smoothes according to dt and smoothness
+---@param targetValue number The target for the
+---@param dt number DeltaTime
+---@param currentValue number The current value. Keep in a local variable.
+---@param clampMin number min clamp value
+---@param clampMax number max clamp value
+---@param smoothness number Smoothness factor. Around 5 seems good.
+---@return number newValue The value of the step
 local function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoothness)
     -- Normalize the targetValue and currentValue to the range [clampMin, clampMax)
     targetValue = normalize(targetValue, clampMin, clampMax)
@@ -69,7 +81,7 @@ local function takeStep(targetValue, dt, currentValue, clampMin, clampMax, smoot
 end
 
 
---This has to be global. 
+--This has to be global.
 -- Callback from the gameengine lua that gets cued on updateGFX
 function SetDirVec(vector)
 
@@ -113,13 +125,6 @@ function SetDirVec(vector)
     local rotZ = math.cos(rotX)*radVer*-1
 
     UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, false, Spotlight_on and 1 or 0, 1)
-    
-
-    --UpdateProp(spotLight.id, 0, 0, 0, 
-    --            0, -- Yaw - Positive: Left. Negative: Right. 
-    --            0, -- Roll - Irrelevant.  
-    --            0, -- Pitch - Negative: Up. Positive: Down. 
-    --            false, 1, 1)
 end
 
 ---comment 
@@ -134,6 +139,10 @@ function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
     --This is necessary because the function can get called with or without a player, since the lua from GE is queued, and it may be delayed.
     if not playerInfo.anyPlayerSeated or not Spotlight_on then
         return 0, 0
+    end
+
+    if not Spotlight_move then
+        return prev_targetx, prev_targety
     end
 
     --Desperate normalize just to make doubly sure.
@@ -178,18 +187,13 @@ function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
     --Vertical angle is a lot easier because it's just two values we depend on, so they can just be subtracted from eachother.
     local ver_angle = math.deg(math.sin(cameraDir.z - vehicleDir.z))
     ver_angle = ver_angle + ver_offset
-    --print(cameraPos-vehiclePos)
-    --print("Omdrejning: " .. hor_angle_wrapped)
-    --print("Op-ned: " .. ver_angle)
-    --print(hor_angle_wrapped)
 
+    prev_targetx, prev_targety = hor_angle_wrapped, ver_angle
     return hor_angle_wrapped, ver_angle
-    --return spotlightVec
 end
 
 
 local function updateGFX(dt)
-    
     localDt = dt
 
     --Ideally we need the camera position and direction vectors in order to calculate where the pointlight should look.
@@ -197,7 +201,7 @@ local function updateGFX(dt)
 
     --Check if there is a player in the car to save resources on GE calls.
     if playerInfo.anyPlayerSeated then
-    
+
         --Do this function call in order to get access to the core_camera values:
         --Queue lua in GE      |       Queue vehicle lua from GE       |     Call function in this class with an escaped string of the desired vectors seperated on ":" 
         obj:queueGameEngineLua("be:getObjectByID("..tostring(objectId).."):queueLuaCommand('SetDirVec(\"'..tostring(core_camera.getQuat() * vec3(0,1,0))..\":\"..tostring(core_camera.getPosition())..'\")')")
@@ -214,6 +218,7 @@ local function init()
     SetPropsList(v.data.props)
     spotLight = HijackSingleProp("politi_spotlight", "politiSpot")
 end
+
 
 local function reset()
 end

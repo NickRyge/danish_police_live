@@ -1,0 +1,6 @@
+{
+    "displayName": "Keyboard",
+    "bindings": [
+        {"control":"h", "action":"horn_siren"}
+    ]
+}

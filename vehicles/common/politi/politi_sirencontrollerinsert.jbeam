@@ -1,0 +1,26 @@
+{
+
+"politi_sirencontroller_insert": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"Siren controller",
+        "value":100
+    },
+    "slotType" : "soundscape_siren",
+    "slots": [
+        ["type", "default", "description"],
+        //["soundscape_siren","soundscape_siren_18", "Siren Audio"], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
+    ],
+    "soundscape": [
+        ["name", "src"],
+        ["siren1", "event:>Vehicle>Electrics>Sirens>Ambulance_12"],
+        ["siren2", "event:>Vehicle>Electrics>Sirens>Police_15"],
+        ["siren3", "event:>Vehicle>Electrics>Sirens>Police_19"],
+    ],
+    "controller": [
+        ["fileName"],
+        ["politi_sirencontroller"]
+    ]
+}
+
+}

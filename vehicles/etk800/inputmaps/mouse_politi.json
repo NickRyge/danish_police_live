@@ -5,12 +5,16 @@
     "notes": "Mouse-steering can be assigned, as well as throttle, brake, etc.",
     "bindings": [
         {
-            "control": "shift zaxis",
+            "control": "zaxis",
             "action": "updateOffset"
         },
         {
-            "control": "shift button2",
+            "control": "button2",
             "action": "resetOffset"
+        },
+        {
+            "control": "shift button2",
+            "action": "spotLightMove"
         }
     ]
 }
