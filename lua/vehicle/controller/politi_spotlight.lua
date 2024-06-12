@@ -5,6 +5,8 @@ local M = {}
 local playerVehPos
 local playerVehDir
 local spotLight
+local spotLightBrick
+local spotLightBase
 local localDt
 --- Horizontal angle in degrees
 local prev_hor 
@@ -124,7 +126,10 @@ function SetDirVec(vector)
     local rotY = math.sin(rotX)*radVer
     local rotZ = math.cos(rotX)*radVer*-1
 
-    UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, false, Spotlight_on and 1 or 0, 1)
+    UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, true, Spotlight_on and 1 or 0, 1)
+
+    UpdateProp(spotLightBase.id, 0, 0, 0, 0, 0, -rotX, true, 0, 1)
+    UpdateProp(spotLightBrick.id, 0, 0, 0, radVer, 0, -rotX, true, 0, 1)
 end
 
 ---comment 
@@ -217,6 +222,9 @@ local function init()
     dirVec = 0
     SetPropsList(v.data.props)
     spotLight = HijackSingleProp("politi_spotlight", "politiSpot")
+    spotLightBrick = HijackSingleProp("politi_spotlight_light", "politiSpotBrick")
+    spotLightBase = HijackSingleProp("politi_spotlight_base", "politiSpotBase")
+
 end
 
 

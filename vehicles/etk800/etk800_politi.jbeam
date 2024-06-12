@@ -15,7 +15,7 @@
         ["mirror_light","", "Side mirror lights"],
         ["trunk_lights", "etk800_trunklights_wagon", "Trunk lights"],
         ["politi_roofspot", "etk800_politi_spotlight", "Roof spotlight (camera)"]
-        ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}]
+        ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
     ],
     "soundscape": [
         ["name", "src"],
@@ -24,8 +24,7 @@
 },
 
 
-
-/* Extra lights */
+/* Extra lights - Misc*/
 "etk800_trunklights_wagon": {
     "information":{
         "authors":"NickRyge",

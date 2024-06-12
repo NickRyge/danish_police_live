@@ -1,26 +1,34 @@
 {
 
-"politi_sirencontroller_insert": {
-    "information":{
-        "authors":"NickRyge",
-        "name":"Siren controller",
-        "value":100
+    "politi_sirencontroller_insert": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Siren controller",
+            "value":100
+        },
+        "slotType" : "soundscape_siren",
+        "slots": [
+            ["type", "default", "description"],
+            ["sirencontroller_siren","politi_sirencontroller_sirentype_1", "Siren audio configuration" {"coreSlot":true}], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
+        ],
+        "controller": [
+            ["fileName"],
+            ["politi_sirencontroller"]
+        ]
     },
-    "slotType" : "soundscape_siren",
-    "slots": [
-        ["type", "default", "description"],
-        //["soundscape_siren","soundscape_siren_18", "Siren Audio"], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
-    ],
-    "soundscape": [
-        ["name", "src"],
-        ["siren1", "event:>Vehicle>Electrics>Sirens>Ambulance_12"],
-        ["siren2", "event:>Vehicle>Electrics>Sirens>Police_15"],
-        ["siren3", "event:>Vehicle>Electrics>Sirens>Police_19"],
-    ],
-    "controller": [
-        ["fileName"],
-        ["politi_sirencontroller"]
-    ]
-}
-
+    
+    "politi_sirencontroller_sirentype_1": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Siren (3 danish)",
+            "value":100
+        },
+        "slotType" : "sirencontroller_siren",
+        "soundscape": [
+            ["name", "src"],
+            ["siren1", "event:>Vehicle>Electrics>Sirens>Ambulance_12"],
+            ["siren2", "event:>Vehicle>Electrics>Sirens>Police_15"],
+            ["siren3", "event:>Vehicle>Electrics>Sirens>Police_19"],
+        ]
+    }
 }
