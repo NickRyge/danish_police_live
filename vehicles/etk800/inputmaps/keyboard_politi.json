@@ -3,10 +3,6 @@
     {
       "control": "L",
       "action": "ToggleSpotlight"
-    },
-    {
-      "control": "H",
-      "action": "horn"
     }
   ],
 
