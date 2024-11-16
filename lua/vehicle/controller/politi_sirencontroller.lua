@@ -7,7 +7,9 @@ local createdSounds = false
 local currentSiren
 local sirenArray = {}
 local prevHornStatus = 0
-local currentSirenCount = 0
+local prevSirenCount = 0
+
+--local currentSirenCount = 0 -- <- Synchronize this value and ensure it plays from the updateGFX. 
 
 
 ---Function that plays a specified soundscape sound.
@@ -16,20 +18,21 @@ local function playSiren(siren)
     currentSiren = siren
     obj:setVolume(currentSiren, 1)
     obj:playSFX(currentSiren)
-    -- print(currentSiren)
+    print(currentSiren)
 end
 
 
 ---Funciton that stops a specified soundscape sound.
 ---@param siren v.data.soundscape Siren from the soundscape table to stop.
 local function stopSiren(siren)
+    print("stopped " .. siren)
     obj:cutSFX(siren)
 end
 
 
 ---Called to reset the sirenController back to 0.
 local function reset()
-    currentSirenCount = 0
+    electrics.values.currentSirenCount = 0
 
     if currentSiren ~= nil then
         stopSiren(currentSiren)
@@ -39,20 +42,23 @@ end
 
 ---Updates which siren currently plays. Skips the val amount of sirens ahead.
 ---@param val number The number of sirens to skip. Default is 1, to play the next siren.
+function UpdateSirenCount(val)
+    electrics.values.currentSirenCount = ((electrics.values.currentSirenCount + val) % (#sirenArray + 1))
+    print(electrics.values.currentSirenCount)
+end
+
+
+
 local function UpdateSirenSound(val)
-
-    if (currentSiren ~= nil) then
-        stopSiren(currentSiren)
+    if (prevSirenCount ~= val and currentSiren ~= nil) then
+        stopSiren(sirenArray[prevSirenCount]) -- bad
     end
-
-    currentSirenCount = ((currentSirenCount + val) % (#sirenArray + 1))
-    print(currentSirenCount)
-
-    if (currentSirenCount == 0) then
+    if (val == 0) then
         currentSiren = nil
-    else
-        playSiren(sirenArray[currentSirenCount])
+    elseif prevSirenCount ~= val then
+        playSiren(sirenArray[val]) -- bad
     end
+    prevSirenCount = val
 end
 
 
@@ -76,14 +82,20 @@ local function updateGFX(dt)
         createdSounds = true
     end
 
+    -- Ideally the below should be replaced with a controller that the multiplayer
+    -- clients cant interfere with.
     if currentSiren ~= nil and electrics.values["lightbar"] < 1 then
         reset()
+    elseif electrics.values["lightbar"] < 1 then
         return
     end
 
+    -- This might create conflicting sounds for the multiplayer vehicles.
     if electrics.values.horn == 1 and prevHornStatus ~= 1 then
-        UpdateSirenSound(1)
+        UpdateSirenCount(1)
     end
+
+    UpdateSirenSound(electrics.values.currentSirenCount)
 
     prevHornStatus = electrics.values.horn
 end
@@ -91,7 +103,7 @@ end
 
 ---Function to init the controller.
 local function init()
-    --Placeholder, doesn't do anything right now.
+    electrics.values.currentSirenCount = 0
 end
 
 

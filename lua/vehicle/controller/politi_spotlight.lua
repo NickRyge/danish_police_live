@@ -20,6 +20,14 @@ local prev_targetx, prev_targety = 0,0
 Spotlight_on = false
 Spotlight_move = true
 
+-- Electricsvalues for reference
+electrics.values.slRadVer = 0
+electrics.values.slRotx = 0
+electrics.values.slRoty = 0
+electrics.values.slRotz = 0
+electrics.values.slActivated = 0
+
+
 
 -- Import test controller 
 require "controller.test"
@@ -126,10 +134,17 @@ function SetDirVec(vector)
     local rotY = math.sin(rotX)*radVer
     local rotZ = math.cos(rotX)*radVer*-1
 
-    UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, true, Spotlight_on and 1 or 0, 1)
+    --Refactor to depend on electrics-values instead.
+    electrics.values.slRadVer = radVer
+    electrics.values.slRotx = rotX
+    electrics.values.slRoty = rotY
+    electrics.values.slRotz = rotZ
+    electrics.values.slActivated = Spotlight_on
 
-    UpdateProp(spotLightBase.id, 0, 0, 0, 0, 0, -rotX, true, 0, 1)
-    UpdateProp(spotLightBrick.id, 0, 0, 0, radVer, 0, -rotX, true, 0, 1)
+    --UpdateProp(spotLight.id, 0, 0, 0, rotX, rotY, rotZ, true, Spotlight_on and 1 or 0, 1)
+
+    --UpdateProp(spotLightBase.id, 0, 0, 0, 0, 0, -rotX, true, 0, 1)
+    --UpdateProp(spotLightBrick.id, 0, 0, 0, radVer, 0, -rotX, true, 0, 1)
 end
 
 ---comment 
@@ -198,6 +213,17 @@ function UpdateSpotlight(cameraPos, cameraDir, vehiclePos, vehicleDir)
 end
 
 
+
+local function updateSpotlightSynced()
+    local ev = electrics.values
+
+    UpdateProp(spotLight.id, 0, 0, 0, ev.slRotx, ev.slRoty, ev.slRotz, true, ev.slActivated, 1)
+
+    UpdateProp(spotLightBase.id, 0, 0, 0, 0, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightBrick.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
+end
+
+
 local function updateGFX(dt)
     localDt = dt
 
@@ -213,6 +239,9 @@ local function updateGFX(dt)
     end
     --The reason it is an escaped string that has to be converted back to a vec3 object is because I don't know how else to escape to get the core_camera value from inside the GE VM.
     --Perhaps I am not smart enough, but at the very least it works. I don't believe it to be too performance expensive, but you never know with hackjobs like these.
+    
+    updateSpotlightSynced()
+
 end
 
 
