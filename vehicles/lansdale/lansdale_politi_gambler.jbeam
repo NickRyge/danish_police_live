@@ -1,0 +1,268 @@
+{
+    "lansdale_foglight_R_LED_politi": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Totally normal LED Fog Light",
+            "falue":500
+        },
+        "slotType" : "lansdale_foglight_R_gambler",
+
+        "controller": [
+            ["fileName"],
+            ["lightbar", {
+                "defaultModeIndex": 1,
+                "modes": [
+                    ["name", "config"],
+                    ["Default", [
+                        ["electric", "value", "duration"],
+    
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.1],
+                            ["white_r", 0, 0.02],
+                            ["white_r", 1, 0.2],
+                            ["white_r", 0, 0.44],
+                            
+                            ["white_l", 0, 0.44],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.1],
+                            ["white_l", 0, 0.02],
+                            ["white_l", 1, 0.2]
+                            
+                        ]
+                    ]
+                ]
+            }]
+        ],
+
+        "glowMap":{			
+            "off_road_lights_fog":              {"simpleFunction":"white_l", "off":"off_road_lights", "on":"off_road_lights_on"},
+            "off_road_lights_glass_fog":        {"simpleFunction":"white_l", "off":"off_road_lights_glass", "on":"off_road_lights_glass_on"}
+        },
+
+
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["lansdale_led_foglight_R_bracket", ["lansdale_bumper_F"],[], ],
+             {"deformGroup":"foglightglass_R_break", "deformMaterialBase":"off_road_lights_glass", "deformMaterialDamaged":"off_road_lights_glass_dmg"},
+             ["lansdale_led_foglight_glass_R", ["lansdale_foglight_R"],[], {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5}],
+             {"deformGroup":"foglightglass_R_break", "deformMaterialBase":"off_road_lights", "deformMaterialDamaged":"off_road_lights"},
+             ["lansdale_led_foglight_R", ["lansdale_foglight_R"],[], {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5}],
+             {"deformGroup":""},
+        ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":120,
+                "lightBrightness":0.85,
+                "lightRange":150,
+                "lightColor":{"r":245, "g":245, "b":255, "a":255},
+                "lightAttenuation":{"x":0, "y":1, "z":1},
+                "lightCastShadows":true,
+                "flareName":"vehicleHeadLightFlare",
+                "flareScale":0.05,
+                "cookieName":"art/special/BNG_light_cookie_headlight.dds",
+                "texSize":512,
+                "shadowSoftness":0.5
+            },
+            ["fog", "SPOTLIGHT", "fge4r", "fge3r", "fge2r", {"x":180, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":-0.0},"deformGroup":"foglightglass_R_break"}],
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--HEADLIGHT--
+             {"selfCollision":true},
+             {"collision":true},
+             {"nodeMaterial":"|NM_PLASTIC"},
+             {"frictionCoef":0.5},
+             {"nodeWeight":1.128},
+             {"group":"lansdale_foglight_R"},
+             ["fge1r", -0.41781, -2.34005, 0.53139],
+             ["fge2r", -0.41781, -2.34005, 0.45806, {"selfCollision":false}],
+             ["fge3r", -0.22881, -2.34005, 0.53139],
+             ["fge4r", -0.22881, -2.34005, 0.45806, {"selfCollision":false}],
+             ["fge5r", -0.32331, -2.26288, 0.49472],
+             {"group":""},
+    
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              //--HEADLIGHT--
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":1201000,"beamDamp":120},
+              {"beamDeform":12000,"beamStrength":60000},
+              //headlight main shape
+              {"deformLimitExpansion":1.2},
+              {"deformGroup":"foglightglass_R_break", "deformationTriggerRatio":0.1},
+              ["fge1r","fge2r"],
+              ["fge3r","fge4r"],
+              ["fge1r","fge3r"],
+              ["fge2r","fge4r"],
+              ["fge1r","fge4r"],
+              ["fge2r","fge3r"],
+              ["fge1r","fge5r"],
+              ["fge2r","fge5r"],
+              ["fge3r","fge5r"],
+              ["fge4r","fge5r"],
+    
+              //attach
+              {"deformLimitExpansion":""},
+              {"disableTriangleBreaking":true},
+              {"beamSpring":501000,"beamDamp":40},
+              {"beamDeform":6000,"beamStrength":26000},
+              {"breakGroup":"foglight_R"},
+              ["fge1r", "gfb1r"],
+              ["fge1r", "gfb3r"],
+              ["fge1r", "gfb1"],
+              ["fge1r", "gfb3"],
+    
+              ["fge2r", "gfb1r"],
+              ["fge2r", "gfb3r"],
+              ["fge2r", "gfb1"],
+              ["fge2r", "gfb3"],
+    
+              ["fge3r", "gfb1r"],
+              ["fge3r", "gfb3r"],
+              ["fge3r", "gfb1"],
+              ["fge3r", "gfb3"],
+    
+              ["fge4r", "gfb1r"],
+              ["fge4r", "gfb3r"],
+              ["fge4r", "gfb1"],
+              ["fge4r", "gfb3"],
+              {"breakGroup":""},
+              {"deformGroup":""},
+    
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"deformLimitExpansion":1.2},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                {"groundModel":"plastic"},
+                {"group":"lansdale_foglight_R"},
+                {"dragCoef":4},
+                ["fge3r","fge1r","fge4r"],
+                ["fge4r","fge1r","fge2r"],
+                ["fge4r","fge2r","fge5r"],
+                ["fge1r","fge5r","fge2r"],
+                ["fge3r","fge5r","fge1r"],
+                ["fge4r","fge5r","fge3r"],
+        ],
+    },
+    "lansdale_foglight_L_LED_politi": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Totally normal LED Fog Light",
+            "falue":500,
+        },
+        "slotType" : "lansdale_foglight_L_gambler",
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["lansdale_led_foglight_L_bracket", ["lansdale_bumper_F"],[], ],
+             {"deformGroup":"foglightglass_L_break", "deformMaterialBase":"off_road_lights_glass", "deformMaterialDamaged":"off_road_lights_glass_dmg"},
+             ["lansdale_led_foglight_glass_L", ["lansdale_foglight_L"],[], {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5}],
+             {"deformGroup":"foglightglass_L_break", "deformMaterialBase":"off_road_lights", "deformMaterialDamaged":"off_road_lights"},
+             ["lansdale_led_foglight_L", ["lansdale_foglight_L"],[], {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5}],
+             {"deformGroup":""},
+        ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+            {
+                "lightInnerAngle":0,
+                "lightOuterAngle":120,
+                "lightBrightness":0.85,
+                "lightRange":150,
+                "lightColor":{"r":245, "g":245, "b":255, "a":255},
+                "lightAttenuation":{"x":0, "y":1, "z":1},
+                "lightCastShadows":true,
+                "flareName":"vehicleHeadLightFlare",
+                "flareScale":0.05,
+                "cookieName":"art/special/BNG_light_cookie_headlight.dds",
+                "texSize":512,
+                "shadowSoftness":0.5
+            },
+            ["fog", "SPOTLIGHT", "fge4l", "fge3l", "fge2l", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":-0.0},"deformGroup":"foglightglass_L_break"}],
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--HEADLIGHT--
+             {"selfCollision":true},
+             {"collision":true},
+             {"nodeMaterial":"|NM_PLASTIC"},
+             {"frictionCoef":0.5},
+             {"nodeWeight":1.128},
+             {"group":"lansdale_foglight_L"},
+             ["fge1l", 0.41781, -2.34005, 0.53139],
+             ["fge2l", 0.41781, -2.34005, 0.45806, {"selfCollision":false}],
+             ["fge3l", 0.22881, -2.34005, 0.53139],
+             ["fge4l", 0.22881, -2.34005, 0.45806, {"selfCollision":false}],
+             ["fge5l", 0.32331, -2.26288, 0.49472],
+             {"group":""},
+    
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              //--HEADLIGHT--
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":1201000,"beamDamp":120},
+              {"beamDeform":12000,"beamStrength":60000},
+              //headlight main shape
+              {"deformLimitExpansion":1.2},
+              {"deformGroup":"foglightglass_L_break", "deformationTriggerRatio":0.1},
+              ["fge1l","fge2l"],
+              ["fge3l","fge4l"],
+              ["fge1l","fge3l"],
+              ["fge2l","fge4l"],
+              ["fge1l","fge4l"],
+              ["fge2l","fge3l"],
+              ["fge1l","fge5l"],
+              ["fge2l","fge5l"],
+              ["fge3l","fge5l"],
+              ["fge4l","fge5l"],
+    
+              //attach
+              {"deformLimitExpansion":""},
+              {"disableTriangleBreaking":true},
+              {"beamSpring":501000,"beamDamp":40},
+              {"beamDeform":6000,"beamStrength":26000},
+              {"breakGroup":"foglight_L"},
+              ["fge1l", "gfb1l"],
+              ["fge1l", "gfb3l"],
+              ["fge1l", "gfb1"],
+              ["fge1l", "gfb3"],
+    
+              ["fge2l", "gfb1l"],
+              ["fge2l", "gfb3l"],
+              ["fge2l", "gfb1"],
+              ["fge2l", "gfb3"],
+    
+              ["fge3l", "gfb1l"],
+              ["fge3l", "gfb3l"],
+              ["fge3l", "gfb1"],
+              ["fge3l", "gfb3"],
+    
+              ["fge4l", "gfb1l"],
+              ["fge4l", "gfb3l"],
+              ["fge4l", "gfb1"],
+              ["fge4l", "gfb3"],
+              {"breakGroup":""},
+              {"deformGroup":""},
+    
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"deformLimitExpansion":1.2},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                {"groundModel":"plastic"},
+                {"group":"lansdale_foglight_L"},
+                {"dragCoef":4},
+                ["fge1l","fge3l","fge4l"],
+                ["fge1l","fge4l","fge2l"],
+                ["fge2l","fge4l","fge5l"],
+                ["fge5l","fge1l","fge2l"],
+                ["fge5l","fge3l","fge1l"],
+                ["fge5l","fge4l","fge3l"],
+        ],
+    },
+    }
