@@ -1,22 +1,22 @@
 {
-  "vivace.skin.politi_patrol" : {
-    "name" : "vivace.skin.politi_patrol",
-    "mapTo" : "vivace.skin.politi_patrol",
+  "lansdale_main.skin.politi_patrol" : {
+    "name" : "lansdale_main.skin.politi_patrol",
+    "mapTo" : "lansdale_main.skin.politi_patrol",
     "class" : "Material",
-    "persistentId" : "b9919442-87f6-4798-ae60-56e20645f785",
+    "persistentId" : "",
     "Stages": [
       {
-        "ambientOcclusionMap": "/vehicles/vivace/vivace_main_ao.data.png",
-        "baseColorMap": "/vehicles/vivace/vivace_main_b.color.png",
+        "ambientOcclusionMap": "/vehicles/lansdale/lansdale_main_ao.data.png",
+        "baseColorMap": "/vehicles/lansdale/lansdale_main_b.color.png",
         "metallicFactor": 1,
         "roughnessFactor":0.1,
-        "metallicMap": "/vehicles/vivace/vivace_main_m.data.png",
-        "normalMap": "vehicles/vivace/vivace_main_nm.normal.png",
-        "roughnessMap": "/vehicles/vivace/vivace_main_r.data.png",
+        "metallicMap": "/vehicles/lansdale/lansdale_main_m.data.png",
+        "normalMap": "/vehicles/lansdale/lansdale_main_nm.normal.png",
+        "roughnessMap": "/vehicles/lansdale/lansdale_main_r.data.png",
         "useAnisotropic": true
       },
       {
-        "ambientOcclusionMap": "/vehicles/vivace/vivace_main_ao.data.png",
+        "ambientOcclusionMap": "/vehicles/lansdale/lansdale_main_ao.data.png",
         "useAnisotropic": true,
         "diffuseMapUseUV": 1,
         "clearCoatFactor": 1,
@@ -25,12 +25,12 @@
         "roughnessFactor": 0.7,
         "metallicMapUseUV": 1,
         "roughnessMapUseUV": 1,
-        "metallicMap": "/vehicles/vivace/politi/skin/metallic.png",
-        "roughnessMap": "/vehicles/vivace/politi/skin/rough.png",
-        "clearCoatMap": "/vehicles/vivace/vivace_main_cc.data.png",
-        "normalMap": "/vehicles/vivace/vivace_main_nm.normal.png",
-        "opacityMap": "/vehicles/vivace/vivace_main_c.data.png",
-        "baseColorMap": "vehicles/vivace/politi/skin/politi_patrol.png",
+        "clearCoatMap": "/vehicles/lansdale/lansdale_main_cc.data.png",
+        "normalMap": "/vehicles/lansdale/lansdale_main_nm.normal.png",
+        "opacityMap": "/vehicles/lansdale/lansdale_main_c.data.png",
+        "metallicMap": "/vehicles/lansdale/politi/skin/metallic.png",
+        "roughnessMap": "/vehicles/lansdale/politi/skin/rough.png",
+        "baseColorMap": "vehicles/lansdale/politi/skin/politi_patrol.png"
       },
       {},
       {}
@@ -43,37 +43,38 @@
     "version": 1.5
   },
 
-  "vivace.skin.politi_dog" : {
-    "name" : "vivace.skin.politi_dog",
-    "mapTo" : "vivace.skin.politi_dog",
+  "lansdale_main.skin.politi_k9": {
+    "name" : "lansdale_main.skin.politi_k9",
+    "mapTo" : "lansdale_main.skin.politi_k9",
     "class" : "Material",
-    "persistentId" : "b9919442-87f6-4798-ae60-56e20645f785",
+    "persistentId" : "",
     "Stages": [
       {
-        "ambientOcclusionMap": "/vehicles/vivace/vivace_main_ao.data.png",
-        "baseColorMap": "/vehicles/vivace/vivace_main_b.color.png",
-        "metallicFactor": 0.7,
-        "roughnessFactor":0.1,
-        "metallicMap": "/vehicles/vivace/vivace_main_m.data.png",
-        "normalMap": "vehicles/vivace/vivace_main_nm.normal.png",
-        "roughnessMap": "/vehicles/vivace/vivace_main_r.data.png",
+        "ambientOcclusionMap": "/vehicles/lansdale/lansdale_main_ao.data.png",
+        "baseColorMap": "/vehicles/lansdale/lansdale_main_b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor":0.3,
+        "metallicMap": "/vehicles/lansdale/lansdale_main_m.data.png",
+        "normalMap": "/vehicles/lansdale/lansdale_main_nm.normal.png",
+        "roughnessMap": "/vehicles/lansdale/lansdale_main_r.data.png",
         "useAnisotropic": true
       },
       {
-        "ambientOcclusionMap": "/vehicles/vivace/vivace_main_ao.data.png",
+        "ambientOcclusionMap": "/vehicles/lansdale/lansdale_main_ao.data.png",
         "useAnisotropic": true,
         "diffuseMapUseUV": 1,
         "clearCoatFactor": 1,
         "clearCoatRoughnessFactor":0.33,
-        "metallicFactor": 0.7,
-        "roughnessFactor": 0.7,
+        "metallicFactor": 1.3,
+        "roughnessFactor": 0.4,
         "metallicMapUseUV": 1,
         "roughnessMapUseUV": 1,
-        "roughnessMap": "/vehicles/vivace/politi/skin/rough_dog.png",
-        "clearCoatMap": "/vehicles/vivace/vivace_main_cc.data.png",
-        "normalMap": "/vehicles/vivace/vivace_main_nm.normal.png",
-        "opacityMap": "/vehicles/vivace/vivace_main_c.data.png",
-        "baseColorMap": "vehicles/vivace/politi/skin/politi_dog.png",
+        "clearCoatMap": "/vehicles/lansdale/lansdale_main_cc.data.png",
+        "normalMap": "/vehicles/lansdale/lansdale_main_nm.normal.png",
+        "opacityMap": "/vehicles/lansdale/lansdale_main_c.data.png",
+        "metallicMap": "/vehicles/lansdale/politi/skin/rough_dog.png",
+        "roughnessMap": "/vehicles/lansdale/politi/skin/rough_dog.png",
+        "baseColorMap": "vehicles/lansdale/politi/skin/politi_dog.png"
       },
       {},
       {}
