@@ -8,7 +8,7 @@
         "slotType" : "lansdale_roof_accessory",
         "slots": [
             ["type", "default", "description"],
-            ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
+            ["soundscape_siren","politi_sirencontroller_insert", "Siren Audio"],
             ["bumper_light_front","lansdale_politi_bumper_early", "bumper type for bumper flashers"],
             ["bumper_light_rear","lansdale_politi_rear_bumper", "Type for rear flashers"],
             ["roof_light","roof_beacons", "Roof lights"],
@@ -71,35 +71,34 @@
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
             {
                 "lightInnerAngle":0,
-                "lightOuterAngle":10,
-                "lightRange":30,
-                "lightBrightness": 1,
-                "lightColor":{"r":10, "g":10, "b":255, "a":200},
+                "lightOuterAngle":110,
+                "lightRange":75,
+                "lightBrightness": 2,
+                "lightColor":{"r":10, "g":10, "b":255, "a":0},
+                "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
+                "texSize":32,
+                "shadowSoftness":0,
                 "flareScale":0.01,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+                //"cookieName":"/vehicles/common/politi/half_cookie.png"
+                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-    
-            ["roofflasherFR", "POINTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break_r"}],
-            ["roofflasherFL", "POINTLIGHT", "lbl1r", "lbl2r", "lbl1l", {"x":-90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}     , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.05},"deformGroup":"beaconlight_break_l"}],
-            
-                {
-            "lightInnerAngle":0,
-            "lightOuterAngle":60,
-            "lightColor":{"r":255, "g":255, "b":240, "a":255},
-            "lightAttenuation":{"x":10, "y":1, "z":1},
-            "lightCastShadows":true,
-            "lightRange":200,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
-            "texSize":254,
-            "shadowSoftness":0.4,
-        },
-    
-    
+            // make a few per light and copy paste to each car.
+            ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+            ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":94, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+            ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+            ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":95, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":95, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":94, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+
+            ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -398,37 +397,38 @@
         "slotType" : "roof_light",
     
         "glowMap":{			
-            "mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-            },
+            "mod_beacon_light_fl": {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},                
+            "mod_beacon_glass_fl": {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+        },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
             {
                 "lightInnerAngle":0,
-                "lightOuterAngle":10,
-                "lightRange":30,
-                "lightBrightness": 0.5,
-                "lightColor":{"r":0, "g":10, "b":255, "a":0},
+                "lightOuterAngle":110,
+                "lightRange":75,
+                "lightBrightness": 2,
+                "lightColor":{"r":10, "g":10, "b":255, "a":0},
+                "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
+                "texSize":32,
+                "shadowSoftness":0,
                 "flareScale":0.01,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-            
-            ["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
-            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":95, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":94, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+            ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
-            
-            
-            ["mod_beacon_base_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            ["mod_beacon_base_fl",  ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
             {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-            ["mod_beacon_light_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            ["mod_beacon_light_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
             {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-            ["mod_beacon_glass_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.366}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+            ["mod_beacon_glass_fl", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
         ],
@@ -441,15 +441,12 @@
             {"frictionCoef":0.7},
             {"nodeMaterial":"|NM_METAL"},
                 
-    
-            //left
-            //I know the node names are mirrored. Sue me.
             {"group":"lansdale_lightbar_l"},
-            ["lbl1l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.08}}],
-            ["lbl2l", 0.385, 0.115, 1.45, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.083}}],
-            ["lbl3", 0.385, 0.115, 1.47],
-            ["lbl1r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.083}}],
-            ["lbl2r", 0.385, 0.115, 1.45, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.09}}],
+            ["lbl1l", 0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":0.09, "z":-0.08}}],
+            ["lbl2l", 0.41, 0.0, 1.7, {"nodeOffset":{"x":-0.09, "y":-0.09, "z":-0.083}}],
+            ["lbl3",  0.41, 0.0, 1.72],
+            ["lbl1r", 0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":0.09, "z":-0.083}}],
+            ["lbl2r", 0.41, 0.0, 1.7, {"nodeOffset":{"x":0.09, "y":-0.09, "z":-0.09}}],
             {"group":""},
         ],
     
@@ -562,7 +559,7 @@
             "generic_flasher_led_FLL": {"simpleFunction":"blue_l2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
             "generic_flasher_led_FRR": {"simpleFunction":"blue_r2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
 
-            },
+        },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
             
@@ -589,7 +586,7 @@
             ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":180, "y":45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":-0.011},"deformGroup":"frontflashers_break"}],
             ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":0.011},"deformGroup":"frontflashers_break"}],
             ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":-170, "y":100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":0.382},"deformGroup":"frontflashers_break"}],
-            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-20, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":-0.382},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-10, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":-0.382},"deformGroup":"frontflashers_break"}],
             
             //White
             {
@@ -608,8 +605,8 @@
             },
     
             // Whoops. I aint fixing it now.
-            ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l", {"x":170, "y":-180, "z":0} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":0.144},"deformGroup":"flasher_special_break"}],
-            ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r", {"x":-10, "y":0, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":-0.144},"deformGroup":"flasher_special_break"}],   
+            ["white_r"    , "SPOTLIGHT"        , "fa2", "fa1", "fa2l", {"x":-140, "y":90, "z":-10} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.589, "y":-0.224, "z":0.039},"deformGroup":"flasher_special_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fa2", "fa1", "fa2r", {"x":40, "y":-90, "z":-10} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.589, "y":-0.224, "z":-0.039},"deformGroup":"flasher_special_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -651,33 +648,33 @@
         },
         "props": [
             ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
-            
             //Blue
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
-                "lightCastShadows":false,
-                "texSize":64,
-                "shadowSoftness":1,
-                "flareScale":0,
-                "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "lightInnerAngle":10, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 2.5,
+            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.1,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-            
-            //["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            //["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            //["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            //["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            
+        
+            ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":180, "y":45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":-0.011},"deformGroup":"frontflashers_break"}],
+            ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":0.011},"deformGroup":"frontflashers_break"}],
+            ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":-170, "y":100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":0.382},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-10, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":-0.382},"deformGroup":"frontflashers_break"}],
+             
             //White
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":20,
-                "lightBrightness":0.2,
-                "lightRange":15,
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 0.6,
                 "lightColor":{"r":230, "g":255, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
@@ -687,8 +684,8 @@
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
     
-            //["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            //["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+            ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l", {"x":170, "y":90, "z":-10} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":0.144},"deformGroup":"flasher_special_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r", {"x":-10, "y":-90, "z":-10} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":-0.144},"deformGroup":"flasher_special_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -734,33 +731,33 @@
             //I am not happy with the placement of these lights. 
             //They need to be changed, but it takes a while to do, and is 
             //downprioritised as a result.
-
-            //Blue
+            //blue
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 2.5,
+                "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
                 "lightCastShadows":false,
                 "texSize":64,
                 "shadowSoftness":1,
-                "flareScale":0,
+                "flareScale":0.1,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
             
-            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            
+            ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":180, "y":45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":-0.011},"deformGroup":"frontflashers_break"}],
+            ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.028, "y":0.754, "z":0.011},"deformGroup":"frontflashers_break"}],
+            ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":-170, "y":100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":0.382},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-10, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.177, "y":2.342, "z":-0.382},"deformGroup":"frontflashers_break"}],
+                 
             //White
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":20,
-                "lightBrightness":0.2,
-                "lightRange":15,
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 0.6,
                 "lightColor":{"r":230, "g":255, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
@@ -769,9 +766,8 @@
                 "flareScale":0,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-    
-            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+            ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l", {"x":170, "y":90, "z":-10} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":0.144},"deformGroup":"flasher_special_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r", {"x":-10, "y":-90, "z":-10} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.307, "y":-0.224, "z":-0.144},"deformGroup":"flasher_special_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -819,32 +815,33 @@
             //They need to be changed, but it takes a while to do, and is 
             //downprioritised as a result.
 
-            //Blue
+            //blue
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 2.5,
+                "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
                 "lightCastShadows":false,
                 "texSize":64,
                 "shadowSoftness":1,
-                "flareScale":0,
+                "flareScale":0.1,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
             
-            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            
+            ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":180, "y":45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.108, "y":0.790, "z":-0.012},"deformGroup":"frontflashers_break"}],
+            ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.108, "y":0.790, "z":0.012},"deformGroup":"frontflashers_break"}],
+            ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":-170, "y":100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.120, "y":2.273, "z":0.336},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-10, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.120, "y":2.273, "z":-0.336},"deformGroup":"frontflashers_break"}],
+                 
             //White
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":20,
-                "lightBrightness":0.2,
-                "lightRange":15,
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 0.6,
                 "lightColor":{"r":230, "g":255, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
@@ -853,9 +850,8 @@
                 "flareScale":0,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-    
-            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+            ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l", {"x":170, "y":90, "z":-10} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.099, "y":-0.535, "z":0.208},"deformGroup":"flasher_special_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r", {"x":-10, "y":-90, "z":-10} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.099, "y":-0.535, "z":-0.208},"deformGroup":"flasher_special_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -903,32 +899,33 @@
             //They need to be changed, but it takes a while to do, and is 
             //downprioritised as a result.
 
-            //Blue
+            //blue
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
-                "flareName":"vehicleBrakeLightFlare",
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 2.0,
+                "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
+                "flareName":"vehicleHeadLightFlare",
                 "lightCastShadows":false,
                 "texSize":64,
                 "shadowSoftness":1,
-                "flareScale":0,
+                "flareScale":0.1,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
             
-            ["blue_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":170} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":0} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":80, "y":-40, "z":210} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["blue_l"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":80, "y":-110, "z":-40} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            
+            ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":180, "y":45, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.002, "y":0.837, "z":-0.009},"deformGroup":"frontflashers_break"}],
+            ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":15, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.002, "y":0.837, "z":0.009},"deformGroup":"frontflashers_break"}],
+            ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l",     {"x":-170, "y":100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.306, "y":2.140, "z":0.340},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r",     {"x":-10, "y":-100, "z":70} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.306, "y":2.140, "z":-0.340},"deformGroup":"frontflashers_break"}],
+                 
             //White
             {
-                "lightInnerAngle":0,
-                "lightOuterAngle":20,
-                "lightBrightness":0.2,
-                "lightRange":15,
+                "lightInnerAngle":10, 
+                "lightOuterAngle":120, 
+                "lightRange":75,
+                "lightBrightness": 0.5,
                 "lightColor":{"r":230, "g":255, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
@@ -937,9 +934,8 @@
                 "flareScale":0,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-    
-            ["white_l"    , "POINTLIGHT"        , "fb1ll", "fb0ll", "fb1l", {"x":100, "y":-40, "z":130} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],
-            ["white_r"    , "POINTLIGHT"        , "fb1rr", "fb0rr", "fb1r", {"x":70, "y":-110, "z":40} , {"x":90, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"frontflashers_break"}],   
+            ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2l", {"x":-160, "y":90, "z":-10} , {"x":0, "y":0, "z":0}    ,  {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.759, "y":-0.461, "z":0.161},"deformGroup":"flasher_special_break"}],
+            ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb2r", {"x":20, "y":-90, "z":-10} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.759, "y":-0.461, "z":-0.161},"deformGroup":"flasher_special_break"}],   
         ],
         "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
@@ -983,9 +979,9 @@
             {
                 "lightInnerAngle":0,
                 "lightOuterAngle":100,
-                "lightBrightness":0.6,
-                "lightRange":15,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "lightBrightness":2.0,
+                "lightRange":75,
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
                 "texSize":64,
@@ -1035,9 +1031,9 @@
             {
                 "lightInnerAngle":0,
                 "lightOuterAngle":70,
-                "lightBrightness":0.6,
-                "lightRange":10,
-                "lightColor":{"r":0, "g":25, "b":255, "a":255},
+                "lightBrightness":2.0,
+                "lightRange":75,
+                "lightColor":{"r":10, "g":30, "b":255, "a":255},
                 "flareName":"vehicleBrakeLightFlare",
                 "lightCastShadows":false,
                 "texSize":64,

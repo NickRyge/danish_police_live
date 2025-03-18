@@ -45,23 +45,35 @@
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
             "lightInnerAngle":0,
-            "lightOuterAngle":10,
-            "lightRange":43,
-            "lightBrightness": 0.7,
-            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
-            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "lightOuterAngle":110,
+            "lightRange":75,
+            "lightBrightness": 3,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
-            "texSize":64,
-            "shadowSoftness":1,
-            "flareScale":0.03,
-            "cookieName":"/vehicles/common/politi/cookie.png"
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0.01,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
 
-        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":0.042, "y":38.860, "z":-7.743} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break_r"}],
-        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
-        ["roofflasherR"    , "POINTLIGHT"        ,  "bl1r", "bl2r", "bl1l",    {"x":-17.671, "y":88.974, "z":-0.462} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break"}]
-    ],
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":94, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":95, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],            
+
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":95, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":94, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+
+
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
