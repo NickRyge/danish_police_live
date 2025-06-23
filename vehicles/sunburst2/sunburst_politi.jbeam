@@ -8,16 +8,16 @@
     "slotType" : "sunburst2_lightbar",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
-        ["bumper_light_front","sunburst2_politi_bumper_normal", "bumper type for bumper flashers"],
-        ["bumper_light_rear","sunburst2_politi_rear_bumper", "Type for rear flashers"],
-        ["roof_light","roof_beacons", "Roof lights"],
-        ["mirror_light","", "Side mirror lights"],
-        ["trunk_lights", "sunburst2_trunklights_wagon", "Trunk lights"],
+        ["soundscape_siren", "politi_sirencontroller_insert", "Siren Audio"],
+        ["bumper_light_front", "sunburst2_politi_bumper_normal", "bumper type for bumper flashers"],
+        ["bumper_light_rear", "sunburst2_politi_rear_bumper", "Type for rear flashers"],
+        ["roof_light", "roof_beacons", "Roof lights"],
+        ["mirror_light", "", "Side mirror lights"],
+        ["trunk_lights", "sunburst2_trunklights_sedan", "Trunk lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
         
-        //Nuh-uh, not yet.
-        //["politi_lightbar_spotlight","sunburst2_politi_spotlight", "Spotlight"],
+        //WIP
+        //["politi_lightbar_spotlight","sunburst2_politi_spotlight", "Camera-controlled spotlight"],
     ],
     "soundscape": [
         ["name", "src"],
@@ -26,29 +26,114 @@
 },
 
 
-"sunburst2_trunklights": {
+"sunburst2_trunklights_wagon": {
     "information":{
         "authors":"NickRygexMagnusLind",
-        "name":"Trunklights",
+        "name":"Tailgate lights (wagon)",
         "value":10
     },
     "slotType" : "trunk_lights",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                ["trunk_l", "((electrics.tailgateCoupler_notAttached or 0) * (electrics.blue_l5 or 0)) or 0", 0],
+                ["trunk_r", "((electrics.tailgateCoupler_notAttached or 0) * (electrics.blue_r5 or 0)) or 0", 0]
+            ],
+
+        },
+    },
     "glowMap":{
 
-        "generic_flasher_led_TRNK_R":               {"simpleFunction":"blue_l5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_TRNK_L":               {"simpleFunction":"blue_r5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"}
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":"trunk_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":"trunk_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"}
     
         },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
 		//I don't know whether it makes any sense to provide any breakgroups as additional beams with no strength perhaps?
-        {"deformGroup":"tailgatelight_R_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_R", ["sunburst2_trunk"], [], {"pos":{"x": -0.24, "y":2.145, "z":0.5448}, "rot":{"x":78, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"tailgatelight_L_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["generic_flasher_led_TRNK_L", ["sunburst2_trunk"], [], {"pos":{"x": 0.24, "y":2.145, "z":0.5448}, "rot":{"x":78, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"tailgateglass_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_R", ["sunburst2_trunk"], [], {"pos":{"x": -0.205, "y":2.138, "z":0.575}, "rot":{"x":85, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"tailgateglass_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_L", ["sunburst2_trunk"], [], {"pos":{"x": 0.205, "y":2.138, "z":0.575}, "rot":{"x":85, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-    ]
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":110,
+            "lightRange":60,
+            "lightBrightness": 1,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0.01,
+            //"cookieName":"/vehicles/common/politi/half_cookie.png"
+             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        ["trunk_l", "SPOTLIGHT", "t4", "t3", "t4l", {"x":-90, "y":-90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.016, "y":0.719, "z":0.026},"deformGroup":"beaconlight_break_r"}],
+        ["trunk_r", "SPOTLIGHT", "t4", "t3", "t4l", {"x":-90, "y":-90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.016, "y":-0.719, "z":0.026},"deformGroup":"beaconlight_break_r"}],
+    ],
+},
+
+
+"sunburst2_trunklights_sedan": {
+    "information":{
+        "authors":"NickRygexMagnusLind",
+        "name":"Trunklights (sedan)",
+        "value":10
+    },
+    "slotType" : "trunk_lights",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction", "electricsDefault"],
+                ["trunk_l", "((electrics.trunkCoupler_notAttached or 0) * (electrics.blue_l5 or 0)) or 0", 0],
+                ["trunk_r", "((electrics.trunkCoupler_notAttached or 0) * (electrics.blue_r5 or 0)) or 0", 0]
+            ],
+        },
+    },
+    "glowMap":{
+
+        "generic_flasher_led_TRNK_R": {"simpleFunction":"trunk_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_TRNK_L": {"simpleFunction":"trunk_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"}
+    
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+		//I don't know whether it makes any sense to provide any breakgroups as additional beams with no strength perhaps?
+        {"deformGroup":"platelight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_R", ["sunburst2_trunk"], [], {"pos":{"x": -0.205, "y":2.138, "z":0.575}, "rot":{"x":85, "y":29, "z":30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"platelight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["generic_flasher_led_TRNK_L", ["sunburst2_trunk"], [], {"pos":{"x": 0.205, "y":2.138, "z":0.575}, "rot":{"x":85, "y":-29, "z":-30}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":110,
+            "lightRange":60,
+            "lightBrightness": 1,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0.01,
+            //"cookieName":"/vehicles/common/politi/half_cookie.png"
+             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        ["trunk_l", "SPOTLIGHT", "t4", "t3", "t4l", {"x":-90, "y":-90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.016, "y":0.719, "z":0.026},"deformGroup":"beaconlight_break_r"}],
+        ["trunk_r", "SPOTLIGHT", "t4", "t3", "t4l", {"x":-90, "y":-90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.016, "y":-0.719, "z":0.026},"deformGroup":"beaconlight_break_r"}],
+    ],
 },
 
 
@@ -365,6 +450,7 @@
     ]
 },
 
+// Gotta split the beacons into a sedan and a wagon, since they have different placements and attach nodes.
 "sunburst_extra_beacon_sedan": {
     "information":{
         "authors":"NickRyge",
@@ -464,6 +550,7 @@
     ]
 },
 
+// Gotta split the beacons into a sedan and a wagon, since they have different placements and attach nodes.
 "sunburst_extra_beacon_wagon": {
     "information":{
         "authors":"NickRyge",
@@ -563,6 +650,7 @@
     ]
 },
 
+//TODO
 "roof_lightbar": {
     "information":{
         "authors":"MagnusLind, BeamNG",
@@ -781,7 +869,6 @@
     ]
 },
 
-
 //This is the beacon for the unmarked variant
 "sunburst2_politi_extra_beacon": {
     "information":{
@@ -790,9 +877,9 @@
         "value":100,
     },
     "slotType" : "roof_light",
-    "glowMap":{			
-			"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+    "glowMap":{
+			"mod_beacon_light_fl": {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+            "mod_beacon_glass_fl": {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -815,8 +902,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-		
-		
+
         ["mod_beacon_base_fl", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.339}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
         ["mod_beacon_light_fl", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.339}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
@@ -1104,8 +1190,11 @@
     "slotType" : "bumper_light_rear",
     "glowMap":{			
 
-        "generic_flasher_led_BL":                   {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_BR":                   {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BL":   {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR":   {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+        "generic_flasher_led_BR_L": {"simpleFunction":"blue_l5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_R": {"simpleFunction":"blue_r5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         
     },
     "props": [
@@ -1122,18 +1211,25 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.1,
+            "flareScale":0.02,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-        ["blue_r4"    , "SPOTLIGHT"        , "rb1rr", "rb2rr", "rb5rr", {"x":-164.083, "y":105.865, "z":-3.762} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.794, "y":0.595, "z":-0.034},"deformGroup":""}],
-        ["blue_l4"    , "SPOTLIGHT"        , "rb1ll", "rb2ll", "rb5ll", {"x":19.237, "y":-78.676, "z":-1.314} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.794, "y":0.595, "z":0.034},"deformGroup":""}]
-    ],
+        ["blue_r4"    , "SPOTLIGHT"        , "rb2rrr", "rb2rr", "rb3rrr", {"x":-180.000, "y":170, "z":25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.349, "y":0.183, "z":0.038},"deformGroup":""}],
+        ["blue_r5"    , "SPOTLIGHT"        , "rb2rrr", "rb2rr", "rb3rrr", {"x":180, "y":-170, "z":-25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.007, "y":0.244, "z":-0.016},"deformGroup":""}],
+        
+        ["blue_l4"    , "SPOTLIGHT"        , "rb2lll", "rb2ll", "rb3lll", {"x":0, "y":10, "z":25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.358, "y":0.191, "z":-0.039},"deformGroup":""}],
+        ["blue_l5"    , "SPOTLIGHT"        , "rb2lll", "rb2ll", "rb3lll", {"x":0, "y":10, "z":-25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.005, "y":0.213, "z":0.020},"deformGroup":""}],
+
+        ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		["generic_flasher_led_BR", ["sunburst2_bumper_R"], [], {"pos":{"x": -0.786, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":-104}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         ["generic_flasher_led_BL", ["sunburst2_bumper_R"], [], {"pos":{"x": 0.786, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":104}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        
+        ["generic_flasher_led_BR_R", ["sunburst2_bumper_R"], [], {"pos":{"x": -0.560, "y":2.114, "z":0.49}, "rot":{"x":0, "y":0, "z":-157}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["sunburst2_bumper_R"], [], {"pos":{"x": 0.560, "y":2.114, "z":0.49}, "rot":{"x":0, "y":0, "z":157}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
 
     ],
 },
@@ -1142,14 +1238,17 @@
 "sunburst2_politi_rear_bumper_sport": {
     "information":{
         "authors":"MagnusLind",
-        "name":"rear sport bumper lights",
+        "name":"sport rear bumper lights",
         "value":50,
     },
     "slotType" : "bumper_light_rear",
     "glowMap":{			
 
-        "generic_flasher_led_BL":                   {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "generic_flasher_led_BR":                   {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BL":   {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR":   {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        
+        "generic_flasher_led_BR_L": {"simpleFunction":"blue_l5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_R": {"simpleFunction":"blue_r5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         
     },
     "props": [
@@ -1166,21 +1265,27 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.1,
+            "flareScale":0.02,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-        ["blue_r4"    , "SPOTLIGHT"        , "rb1rr", "rb2rr", "rb5rr", {"x":-164.083, "y":105.865, "z":-3.762} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.794, "y":0.595, "z":-0.034},"deformGroup":""}],
-        ["blue_l4"    , "SPOTLIGHT"        , "rb1ll", "rb2ll", "rb5ll", {"x":19.237, "y":-78.676, "z":-1.314} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.794, "y":0.595, "z":0.034},"deformGroup":""}]
- 
-    ],
+        ["blue_r4"    , "SPOTLIGHT"        , "rb2rrr", "rb2rr", "rb3rrr", {"x":-180.000, "y":170, "z":25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.349, "y":0.183, "z":0.038},"deformGroup":""}],
+        ["blue_r5"    , "SPOTLIGHT"        , "rb2rrr", "rb2rr", "rb3rrr", {"x":180, "y":-170, "z":-25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.007, "y":0.244, "z":-0.016},"deformGroup":""}],
+        
+        ["blue_l4"    , "SPOTLIGHT"        , "rb2lll", "rb2ll", "rb3lll", {"x":0, "y":10, "z":25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.358, "y":0.191, "z":-0.039},"deformGroup":""}],
+        ["blue_l5"    , "SPOTLIGHT"        , "rb2lll", "rb2ll", "rb3lll", {"x":0, "y":10, "z":-25} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.005, "y":0.213, "z":0.020},"deformGroup":""}],
+
+        ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		["generic_flasher_led_BR", ["sunburst2_bumper_R"], [], {"pos":{"x": -0.796, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":-106}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        ["generic_flasher_led_BL", ["sunburst2_bumper_R"], [], {"pos":{"x": 0.796, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":106}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+		["generic_flasher_led_BR", ["sunburst2_bumper_R"], [], {"pos":{"x": -0.794, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":-104}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BL", ["sunburst2_bumper_R"], [], {"pos":{"x": 0.794, "y":1.77, "z":0.49}, "rot":{"x":0, "y":0, "z":104}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        
+        ["generic_flasher_led_BR_R", ["sunburst2_bumper_R"], [], {"pos":{"x": -0.560, "y":2.114, "z":0.49}, "rot":{"x":0, "y":0, "z":-157}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["sunburst2_bumper_R"], [], {"pos":{"x": 0.560, "y":2.114, "z":0.49}, "rot":{"x":0, "y":0, "z":157}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
 
-    ]
+    ],
 },
 
 
@@ -1235,4 +1340,57 @@
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 }
+
+"sunburst2_politi_rear_side_wagon": {
+    "information":{
+        "authors":"MagnusLind",
+        "name":"rear side lights wagon (unmarked)",
+        "value":50,
+    },
+    "slotType" : "bumper_light_rear",
+    "glowMap":{			
+        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r5", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+
+        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
+         
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
+        //config BLUE
+        {
+            "lightInnerAngle":0, 
+            "lightOuterAngle":120, 
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightAttenuation":{"x":0, "y":99999, "z":99999},
+            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "flareName":"vehicleHeadLightFlare",
+            "lightCastShadows":false,
+            "texSize":64,
+            "shadowSoftness":1,
+            "flareScale":0.1,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        // Rear window
+        //["blue_r5"    , "SPOTLIGHT"        , "rf4", "rf3", "rf4r", {"x":73.252, "y":87.829, "z":-5.367} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.101, "y":0.723, "z":-0.028},"deformGroup":""}],
+        //["blue_l5"    , "SPOTLIGHT"        , "rf4", "rf3", "rf4r", {"x":74.741, "y":100.661, "z":-3.377} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.042, "y":-0.696, "z":-0.108},"deformGroup":""}],
+//
+        ////Door R
+        //["blue_r4"    , "SPOTLIGHT"        , "d27r", "d26r", "d21r", {"x":166.156, "y":-82.493, "z":-41.760} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.455, "y":0.345, "z":-0.009},"deformGroup":""}],
+        //["blue_l4"    , "SPOTLIGHT"        , "d27l", "d26l", "d21l", {"x":36.794, "y":12.511, "z":-28.669} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.455, "y":0.345, "z":0.009},"deformGroup":""}]
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		{"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+		["generic_flasher_led_BR", ["sunburst2_trunk"], [], {"pos":{"x": -0.39, "y":1.08, "z":1.306}, "rot":{"x":0, "y":-6, "z":-170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BL", ["sunburst2_trunk"], [], {"pos":{"x": 0.39, "y":1.08, "z":1.306}, "rot":{"x":0, "y":6, "z":170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+
+		["generic_flasher_led_BR_R", ["sunburst2_door_RR"], [], {"pos":{"x": -0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":20, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["sunburst2_door_RL"], [], {"pos":{"x": 0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":-20, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+}
+
 }
