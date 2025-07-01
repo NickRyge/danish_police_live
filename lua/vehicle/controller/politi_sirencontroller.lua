@@ -5,11 +5,19 @@ local M = {}
 local createdSounds = false
 
 local currentSiren
-local sirenArray = {}
-local prevHornStatus = 0
+local sirenArray = {} 
 local prevSirenCount = 0
 
---local currentSirenCount = 0 -- <- Synchronize this value and ensure it plays from the updateGFX. 
+--how long the player can hold the horn before it no longer counts as a "tap"
+local maxHornTapTime -- is set in init
+
+local hornHoldTimer = 0
+local isHornHeld = false
+local hasExceededHoldTime = false
+local prevHornStatus = 0
+
+
+--local currentSirenCount = 0 -- <- Synchronize this value and ensure it plays from the updateGFX. For multiplayer!
 
 
 ---Function that plays a specified soundscape sound.
@@ -76,6 +84,9 @@ end
 ---The beamng-specific updateGFX function, that runs once per graphics tick.
 ---@param dt number DeltaTime - see https://en.wikipedia.org/wiki/Delta_timing or the beamng docs.
 local function updateGFX(dt)
+
+    local horn = electrics.values.horn
+
     -- Must be done here, init loads too quickly to work properly.
     if not createdSounds then
         startup()
@@ -90,20 +101,41 @@ local function updateGFX(dt)
         return
     end
 
+    -- The Chattiest of GPT code blocks. I wanted to do this myself, but prototyping is easier this way.
+    -- ALso, there is nothing as permanent as temporary solutions.
+    -- Basically tries to determine whether we are holding the horn or not. IRL the horn can be held without switching sirens.
     -- This might create conflicting sounds for the multiplayer vehicles.
-    if electrics.values.horn == 1 and prevHornStatus ~= 1 then
-        UpdateSirenCount(1)
+    if horn == 1 then
+        if not isHornHeld then
+            isHornHeld = true
+            hornHoldTimer = 0
+            hasExceededHoldTime = false
+        else
+            hornHoldTimer = hornHoldTimer + dt
+            if hornHoldTimer > maxHornTapTime then
+                hasExceededHoldTime = true
+            end
+        end
+    elseif horn == 0 and prevHornStatus == 1 then
+        if isHornHeld and not hasExceededHoldTime then
+            UpdateSirenCount(1)
+        end
+        -- Reset state
+        isHornHeld = false
+        hornHoldTimer = 0
+        hasExceededHoldTime = false
     end
 
     UpdateSirenSound(electrics.values.currentSirenCount)
 
-    prevHornStatus = electrics.values.horn
+    prevHornStatus = horn
 end
 
 
 ---Function to init the controller.
-local function init()
+local function init(jbeamData)
     electrics.values.currentSirenCount = 0
+    maxHornTapTime = jbeamData.maxHornTime or 0.5
 end
 
 

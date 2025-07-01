@@ -257,8 +257,8 @@
         "baseColorMap": "/vehicles/common/police_parts/police_parts_glass_b.color.png",
         "emissiveFactor": [
           0,
-          2,
-          10
+          6,
+          30
         ],
         "metallicFactor": 1,
         "emissiveMap": "/vehicles/common/politi/mod_beacon_glass_test_glow.png",
@@ -275,6 +275,43 @@
     "alphaRef": 42,
     "dynamicCubemap": true,
     "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+
+  "politi_dome_light_blue_glow": {
+    "name": "politi_dome_light_blue_glow",
+    "mapTo": "politi_dome_light_blue_glow",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.358316004,
+          0.56853199,
+          3,
+          0
+        ],
+        "baseColorMap": "/vehicles/common/police_parts/police_parts_glass_b.color.png",
+        "emissiveFactor": [
+          0,
+          20,
+          100
+        ],
+        "metallicFactor": 1,
+        "emissiveMap": "/vehicles/common/politi/mod_beacon_glass_test_glow.png",
+        "normalMap": "/vehicles/common/politi/mod_beacon_glass_test_normal.png",
+        "opacityMap": "/vehicles/common/politi/mod_beacon_glass_test_op.png",
+        "opacityFactor":0,
+        "roughnessFactor": 0.800000006,
+        "roughnessMap": "/vehicles/common/police_parts/police_parts_glass_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 42,
+    "dynamicCubemap": true,
+    "translucent": false,
     "translucentBlendOp": "PreMulAlpha",
     "version": 1.5
   },

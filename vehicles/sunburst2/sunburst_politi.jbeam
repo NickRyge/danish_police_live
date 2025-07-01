@@ -152,7 +152,28 @@
         "mod_beacon_light_ml":                    {"simpleFunction":"blue_l3", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
         "mod_beacon_glass_ml":                    {"simpleFunction":"blue_l3", "off":"policeparts_glass_white", "on":"policeparts_glass_white"}
 
-    }
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":110,
+            "lightRange":65,
+            "lightBrightness": 1.5,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
+            "flareName":"vehicleBrakeLightFlare",
+            "lightCastShadows":false,
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0,
+            //"cookieName":"/vehicles/common/politi/half_cookie.png"
+             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+        },
+        // make a few per light and copy paste to each car.
+        ["blue_r3", "SPOTLIGHT", "mi5r", "mi1r", "mi4r", {"x":33.940, "y":66.112, "z":50.593} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.044, "y":0.079, "z":-0.013},"deformGroup":"beaconlight_break_l"}],            
+        ["blue_l3", "SPOTLIGHT", "mi5l", "mi1l", "mi4l", {"x":33.940, "y":66.112, "z":50.593} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.065, "y":0.053, "z":0.013},"deformGroup":"beaconlight_break_l"}],            
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -201,14 +222,14 @@
             "lightInnerAngle":0,
             "lightOuterAngle":110,
             "lightRange":75,
-            "lightBrightness": 2,
+            "lightBrightness": 1.5,
             "lightColor":{"r":10, "g":10, "b":255, "a":0},
             "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
             "texSize":32,
             "shadowSoftness":0,
-            "flareScale":0.01,
+            "flareScale":0,
             //"cookieName":"/vehicles/common/politi/half_cookie.png"
              "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
@@ -461,7 +482,7 @@
     "glowMap":{
         "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -1041,7 +1062,7 @@
 		"generic_flasher_led_FLL":                 {"simpleFunction":"blue_l2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
         "generic_flasher_led_FRR":                 {"simpleFunction":"blue_r2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
 		
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],      
         //config BLUE
@@ -1056,13 +1077,13 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.1,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-        ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.492, "y":0.986, "z":-0.021},"deformGroup":"frontflashers_break"}],
-        ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":-5.308, "y":-102.340, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.391, "y":1.984, "z":-0.264},"deformGroup":"frontflashers_break"}],
-        ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.492, "y":0.986, "z":0.021},"deformGroup":"frontflashers_break"}],
-        ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-166.588, "y":102.322, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.391, "y":1.984, "z":0.264},"deformGroup":"frontflashers_break"}],
+        ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.434, "y":1.026, "z":-0.007},"deformGroup":"frontflashers_break"}],
+        ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":-5.308, "y":-102.340, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.344, "y":2.089, "z":-0.251},"deformGroup":"frontflashers_break"}],
+        ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.434, "y":1.026, "z":0.007},"deformGroup":"frontflashers_break"}],
+        ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-166.588, "y":102.322, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.344, "y":2.089, "z":0.251},"deformGroup":"frontflashers_break"}],
     
         //config WHITE
         {
@@ -1076,12 +1097,12 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         }, 
-        ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.419, "y":0.283, "z":-0.075},"deformGroup":"frontflashers_break"}],
-        ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.419, "y":0.283, "z":0.075},"deformGroup":"frontflashers_break"}]
-        ],
+        ["white_r"    , "SPOTLIGHT"        , "h5", "h4", "h5r", {"x":-131.000, "y":-83.000, "z":-2.370} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.225, "y":0.301, "z":-0.017},"deformGroup":"frontflashers_break"}],
+        ["white_l"    , "SPOTLIGHT"        , "h5", "h4", "h5r", {"x":-130.000, "y":-80.000, "z":2.370} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.456, "y":-0.301, "z":0.017},"deformGroup":"frontflashers_break"}]
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         {"deformGroup":"frontflashers_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
@@ -1101,7 +1122,7 @@
     ],
 },
 
-//TODO
+
 "sunburst2_politi_bumper_sport": {
     "information":{
         "authors":"MagnusLind",
@@ -1135,13 +1156,13 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.1,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-        ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.495, "y":0.936, "z":-0.052},"deformGroup":"frontflashers_break"}],
-        ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":-5.308, "y":-102.340, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.545, "y":1.889, "z":-0.314},"deformGroup":"frontflashers_break"}],
-        ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.495, "y":0.936, "z":0.052},"deformGroup":"frontflashers_break"}],
-        ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-166.588, "y":102.322, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.545, "y":1.889, "z":0.314},"deformGroup":"frontflashers_break"}],
+        ["blue_r1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.434, "y":1.026, "z":-0.007},"deformGroup":"frontflashers_break"}],
+        ["blue_r2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":-5.308, "y":-102.340, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.344, "y":2.089, "z":-0.251},"deformGroup":"frontflashers_break"}],
+        ["blue_l1"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.434, "y":1.026, "z":0.007},"deformGroup":"frontflashers_break"}],
+        ["blue_l2"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-166.588, "y":102.322, "z":50.808} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-2.344, "y":2.089, "z":0.251},"deformGroup":"frontflashers_break"}],
     
         //config WHITE
         {
@@ -1155,11 +1176,11 @@
             "lightCastShadows":false,
             "texSize":64,
             "shadowSoftness":1,
-            "flareScale":0.04,
+            "flareScale":0,
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         }, 
-        ["white_r"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.419, "y":0.283, "z":-0.075},"deformGroup":"frontflashers_break"}],
-        ["white_l"    , "SPOTLIGHT"        , "fb2", "fb3", "fb3l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.419, "y":0.283, "z":0.075},"deformGroup":"frontflashers_break"}]
+        ["white_r"    , "SPOTLIGHT"        , "h5", "h4", "h5r", {"x":-131.000, "y":-83.000, "z":-2.370} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.225, "y":0.301, "z":-0.017},"deformGroup":"frontflashers_break"}],
+        ["white_l"    , "SPOTLIGHT"        , "h5", "h4", "h5r", {"x":-130.000, "y":-80.000, "z":2.370} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.456, "y":-0.301, "z":0.017},"deformGroup":"frontflashers_break"}]
       ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

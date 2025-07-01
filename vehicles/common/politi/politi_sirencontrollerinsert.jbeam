@@ -16,7 +16,7 @@
             ["politi_sirencontroller"]
         ]
     },
-    
+
     "politi_sirencontroller_sirentype_1": {
         "information":{
             "authors":"NickRyge",
@@ -26,9 +26,24 @@
         "slotType" : "sirencontroller_siren",
         "soundscape": [
             ["name", "src"],
-            ["siren1", "event:>Vehicle>Electrics>Sirens>Ambulance_12"],
-            ["siren2", "event:>Vehicle>Electrics>Sirens>Police_15"],
-            ["siren3", "event:>Vehicle>Electrics>Sirens>Police_19"],
-        ]
+            ["siren1", "art/sound/Danish_police_nickryge/Danish_Police_Yelp"],
+            ["siren2", "art/sound/stolen/Danish police hi-lo"],
+            ["siren3", "art/sound/stolen/Danish police wail"],
+        ],
+    },
+    
+    "politi_sirencontroller_sirentype_2": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Siren (3 FMOD sirens)",
+            "value":100
+        },
+        "slotType" : "sirencontroller_siren",
+        "soundscape": [
+            ["name", "src"],
+            ["siren1", "event:>Vehicle>Electrics>Sirens>Police_15"],
+            ["siren2", "event:>Vehicle>Electrics>Sirens>Police_19"],
+            ["siren3", "event:>Vehicle>Electrics>Sirens>Ambulance_12"],
+        ],
     }
 }
