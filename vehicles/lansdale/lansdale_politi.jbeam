@@ -15,6 +15,7 @@
             ["mirror_light","", "Side mirror lights"],
             ["trunk_lights", "lansdale_trunklights_wagon", "Trunk lights"],
             ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
+            ["antenna", "lansdale__politi_antenna", "roof-mounted GPS antenna"],
         ],
         "soundscape": [
             ["name", "src"],
@@ -22,6 +23,23 @@
         ]
     },
     
+    "lansdale__politi_antenna": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Unmarked extra roof beacon",
+            "value":100,
+        },
+        "slotType" : "antenna",
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+            ["politi_gps_fin",      ["lansdale_roof"], [], {"pos":{"x": 0, "y":1.4, "z":1.656}, "rot":{"x":3, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+            ["politi_gps_antenna",  ["lansdale_roof"], [], {"pos":{"x": 0, "y":1.4, "z":1.656}, "rot":{"x":3, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        ]
+    },
+
     //F
     "lansdale_trunklights_wagon": {
         "information":{
@@ -706,7 +724,7 @@
             "hansch_politi_light_3": {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
             "hansch_politi_glass_3": {"simpleFunction":"roofflasherFR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
        
-            "hansch_politi_light_2": {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
+            "hansch_politi_light_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow"},                
             "hansch_politi_glass_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
        
             "hansch_politi_light_1": {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
@@ -751,23 +769,23 @@
             //Oriented in left to right for the deform groups. Sorry.
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},		
             ["hansch_politi_base_1",  ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
             ["hansch_politi_light_3", ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
             ["hansch_politi_glass_3", ["lansdale_lightbar_r"], [], {"pos":{"x": -0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":-3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
             
             ["hansch_politi_base_1",  ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
             ["hansch_politi_light_2", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
             ["hansch_politi_glass_2", ["lansdale_lightbar_l"], [], {"pos":{"x": 0.41, "y":0, "z":1.597}, "rot":{"x":3.7, "y":3.3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     
             ["hansch_politi_base_1",  ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.652}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+            {"deformGroup":"beaconlight_break", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
             ["hansch_politi_light_1", ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.652}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-            {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+            {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
             ["hansch_politi_glass_1", ["lansdale_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.65, "z":1.652}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
             {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
         ],

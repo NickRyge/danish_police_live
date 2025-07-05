@@ -15,7 +15,7 @@
         ["mirror_light", "", "Side mirror lights"],
         ["trunk_lights", "sunburst2_trunklights_sedan", "Trunk lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
-        
+        ["politi_antenna", "sunburst_politi_antenna_sedan", "roof-mounted GPS antenna"],
         //WIP
         //["politi_lightbar_spotlight","sunburst2_politi_spotlight", "Camera-controlled spotlight"],
     ],
@@ -25,6 +25,37 @@
     ]
 },
 
+"sunburst_politi_antenna_wagon": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"GPS antenna (wagon)",
+        "value":10,
+    },
+    "slotType" : "politi_antenna",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ["politi_gps_fin",      ["sunburst2_body"], [], {"pos":{"x": 0, "y":1.15, "z":1.385}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["politi_gps_antenna",  ["sunburst2_body"], [], {"pos":{"x": 0, "y":1.15, "z":1.385}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+},
+
+"sunburst_politi_antenna_sedan": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"GPS antenna (sedan)",
+        "value":10,
+    },
+    "slotType" : "politi_antenna",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ["politi_gps_fin",      ["sunburst2_body"], [], {"pos":{"x": 0, "y":0.7, "z":1.3977}, "rot":{"x":0.7, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["politi_gps_antenna",  ["sunburst2_body"], [], {"pos":{"x": 0, "y":0.7, "z":1.3977}, "rot":{"x":0.7, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+    ]
+},
 
 "sunburst2_trunklights_wagon": {
     "information":{
@@ -151,7 +182,6 @@
 
         "mod_beacon_light_ml":                    {"simpleFunction":"blue_l3", "off":"policeparts_lights_white", "on":"policeparts_lights_blue_on_bright_full"},
         "mod_beacon_glass_ml":                    {"simpleFunction":"blue_l3", "off":"policeparts_glass_white", "on":"policeparts_glass_white"}
-
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -206,15 +236,14 @@
         ["sunburst_extra_light","sunburst_extra_beacon_sedan", "rear-most roof light",{"coreSlot":true}],
     ],
     "glowMap":{
-        "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-	
-		"mod_beacon_light_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "mod_beacon_glass_fr":                      {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-		
-		"mod_beacon_light_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},                
-        "mod_beacon_glass_fl":                      {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-			
+            "hansch_politi_light_3": {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
+            "hansch_politi_glass_3": {"simpleFunction":"roofflasherFR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
+       
+            "hansch_politi_light_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow"},                
+            "hansch_politi_glass_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
+       
+            "hansch_politi_light_1": {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
+            "hansch_politi_glass_1": {"simpleFunction":"roofflasherR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -247,24 +276,22 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-		//Oriented in left to right for the deform groups. Sorry.
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},		
-		["mod_beacon_base_fr", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fr", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fr", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+		["hansch_politi_base_3", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":  {"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        ["hansch_politi_light_3", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        ["hansch_politi_glass_3", ["sunburst2_lightbar_r"], [], {"pos":{"x": -0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":-5, "z":3}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		
-		["mod_beacon_base_fl", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fl", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fl", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+		["hansch_politi_base_2", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale": {"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        ["hansch_politi_light_2", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        ["hansch_politi_glass_2", ["sunburst2_lightbar_l"], [], {"pos":{"x": 0.38, "y":0, "z":1.369}, "rot":{"x":2.5, "y":5, "z":3}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-
     ],
-     "nodes": [
+    "nodes": [
         ["id", "posX", "posY", "posZ"],
             
         {"selfCollision":true},
@@ -479,10 +506,6 @@
         "value":100,
     },
     "slotType" : "sunburst_extra_light",
-    "glowMap":{
-        "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -508,13 +531,14 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-	
-        ["mod_beacon_base", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+		["hansch_politi_base_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale": {"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        ["hansch_politi_light_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        ["hansch_politi_glass_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
     ],
      "nodes": [
@@ -579,10 +603,6 @@
         "value":100,
     },
     "slotType" : "sunburst_extra_light",
-    "glowMap":{
-        "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright"},
-        "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-        },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -609,12 +629,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["mod_beacon_base", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+		["hansch_politi_base_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale": {"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        ["hansch_politi_light_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        ["hansch_politi_glass_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
     ],
      "nodes": [
@@ -899,27 +920,30 @@
     },
     "slotType" : "roof_light",
     "glowMap":{
-			"mod_beacon_light_fl": {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fl": {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-        },
+        "hansch_politi_light_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow"},                
+        "hansch_politi_glass_2": {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
-		    "lightInnerAngle":0,
-            "lightOuterAngle":10,
-            "lightRange":30,
-            "lightBrightness": 0.5,
-            "lightColor":{"r":0, "g":10, "b":255, "a":0},
+            "lightInnerAngle":0,
+            "lightOuterAngle":110,
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
-            "texSize":64,
-            "shadowSoftness":1,
-            "flareScale":0.01,
-            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0,
+            //"cookieName":"/vehicles/common/politi/half_cookie.png"
+             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
-		
-		["roofflasherR"    , "POINTLIGHT"        , "bl1r", "bl2r", "bl1l", {"x":90, "y":-90, "z":180} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.05},"deformGroup":"beaconlight_break"}],        
-        
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":95, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":94, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1356,11 +1380,12 @@
 		["generic_flasher_led_BR", ["sunburst2_body"], [], {"pos":{"x": -0.39, "y":1.08, "z":1.306}, "rot":{"x":0, "y":-6, "z":-170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         ["generic_flasher_led_BL", ["sunburst2_body"], [], {"pos":{"x": 0.39, "y":1.08, "z":1.306}, "rot":{"x":0, "y":6, "z":170}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
 
-		["generic_flasher_led_BR_R", ["sunburst2_door_RR"], [], {"pos":{"x": -0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":20, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
-        ["generic_flasher_led_BR_L", ["sunburst2_door_RL"], [], {"pos":{"x": 0.685, "y":1, "z":0.945}, "rot":{"x":85, "y":-20, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+		["generic_flasher_led_BR_R", ["sunburst2_door_RR"], [], {"pos":{"x": -0.692, "y":1, "z":1.0}, "rot":{"x":87, "y": 18, "z":-90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
+        ["generic_flasher_led_BR_L", ["sunburst2_door_RL"], [], {"pos":{"x":  0.692, "y":1, "z":1.0}, "rot":{"x":87, "y":-18, "z":90}, "scale":{"x":1.8, "y":0.9, "z":0.6}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 }
+
 
 "sunburst2_politi_rear_side_wagon": {
     "information":{
