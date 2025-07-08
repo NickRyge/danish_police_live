@@ -197,11 +197,10 @@
             "texSize":32,
             "shadowSoftness":0,
             "flareScale":0,
-            //"cookieName":"/vehicles/common/politi/half_cookie.png"
-             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         // make a few per light and copy paste to each car.
-        ["blue_r3", "SPOTLIGHT", "mi5r", "mi1r", "mi4r", {"x":33.940, "y":66.112, "z":50.593} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.044, "y":0.079, "z":-0.013},"deformGroup":"beaconlight_break_l"}],            
+        ["blue_r3", "SPOTLIGHT", "mi5r", "mi1r", "mi4r", {"x":-132.411, "y":-99.343, "z":35.981} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.044, "y":0.079, "z":-0.013},"deformGroup":"beaconlight_break_l"}],            
         ["blue_l3", "SPOTLIGHT", "mi5l", "mi1l", "mi4l", {"x":33.940, "y":66.112, "z":50.593} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.065, "y":0.053, "z":0.013},"deformGroup":"beaconlight_break_l"}],            
     ],
     "flexbodies": [
@@ -534,9 +533,9 @@
         
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		["hansch_politi_base_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale": {"x":1, "y":1, "z":1}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
         ["hansch_politi_light_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
         ["hansch_politi_glass_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":0.85, "z":1.385}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
@@ -631,9 +630,9 @@
 	
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 		["hansch_politi_base_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale": {"x":1, "y":1, "z":1}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"politi_dome_light_blue", "deformMaterialDamaged":"politi_dome_light_blue"},
         ["hansch_politi_light_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
+        {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"politi_dome_light_blue_dmg"},
         ["hansch_politi_glass_1", ["sunburst2_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.4, "z":1.367}, "rot":{"x":-4.25, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
@@ -1370,9 +1369,9 @@
         ["blue_r5"    , "SPOTLIGHT"        , "rf4", "rf3", "rf4r", {"x":73.252, "y":87.829, "z":-5.367} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.101, "y":0.723, "z":-0.028},"deformGroup":""}],
         ["blue_l5"    , "SPOTLIGHT"        , "rf4", "rf3", "rf4r", {"x":74.741, "y":100.661, "z":-3.377} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.042, "y":-0.696, "z":-0.108},"deformGroup":""}],
 
-        //Door R
-        ["blue_r4"    , "SPOTLIGHT"        , "d27r", "d26r", "d21r", {"x":166.156, "y":-82.493, "z":-41.760} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.455, "y":0.345, "z":-0.009},"deformGroup":""}],
-        ["blue_l4"    , "SPOTLIGHT"        , "d27l", "d26l", "d21l", {"x":36.794, "y":12.511, "z":-28.669} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.455, "y":0.345, "z":0.009},"deformGroup":""}]
+        //Doors
+        ["blue_r4"    , "SPOTLIGHT"        , "d23r", "d28r", "d22r", {"x":18, "y":50, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.486, "y":0.218, "z":-0.021},"deformGroup":""}],
+        ["blue_l4"    , "SPOTLIGHT"        , "d23l", "d28l", "d22l", {"x":-160, "y":-90, "z":-5} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.486, "y":0.218, "z":0.021},"deformGroup":""}]
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

@@ -6,7 +6,6 @@
             "falue":500
         },
         "slotType" : "lansdale_foglight_R_gambler",
-
         "controller": [
             ["fileName"],
             ["lightbar", {
@@ -35,13 +34,10 @@
                 ]
             }]
         ],
-
         "glowMap":{			
             "off_road_lights_fog":              {"simpleFunction":"white_l", "off":"off_road_lights", "on":"off_road_lights_on"},
             "off_road_lights_glass_fog":        {"simpleFunction":"white_l", "off":"off_road_lights_glass", "on":"off_road_lights_glass_on"}
         },
-
-
         "flexbodies": [
              ["mesh", "[group]:", "nonFlexMaterials"],
              ["lansdale_led_foglight_R_bracket", ["lansdale_bumper_F"],[], ],
