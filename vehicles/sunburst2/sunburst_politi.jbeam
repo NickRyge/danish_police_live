@@ -243,7 +243,7 @@
        
             "hansch_politi_light_1": {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow"},                
             "hansch_politi_glass_1": {"simpleFunction":"roofflasherR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow"},
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -523,10 +523,10 @@
              "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         // make a few per light and copy paste to each car.
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflash erR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],  
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],  
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -620,10 +620,10 @@
              "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         // make a few per light and copy paste to each car.
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-        ["roofflash erR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],  
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],            
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],  
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

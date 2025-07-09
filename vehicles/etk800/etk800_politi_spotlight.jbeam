@@ -10,6 +10,13 @@
             ["fileName"],
             ["politi_spotlight"]
         ]
+        "actionsEnabled": [
+            ["id"],
+            ["spotLightMove"],
+            ["ToggleSpotlight"],
+            ["resetOffset"],
+            ["updateOffset"]
+        ],
         "nodes": [
             ["id", "posX", "posY", "posZ"],
                 
