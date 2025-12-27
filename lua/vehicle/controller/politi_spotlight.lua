@@ -127,13 +127,10 @@ function SetDirVec(vector)
     local hor, ver = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
     --local vect = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
 
-<<<<<<< HEAD
+
     prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 5)
     prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 5)
-=======
-    prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 4)
-    prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 4)
->>>>>>> bc97979db29415aab422b1fe5852d547e48c8e39
+
     local radVer = math.rad(prev_ver)
     local rotX = math.rad(prev_hor)
     local rotY = math.sin(rotX)*radVer

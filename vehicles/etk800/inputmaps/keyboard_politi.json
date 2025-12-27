@@ -2,11 +2,7 @@
   "bindings": [
     {
       "control": "L",
-<<<<<<< HEAD
-      "action": "ChangeSiren"
-=======
       "action": "ToggleSpotlight"
->>>>>>> bc97979db29415aab422b1fe5852d547e48c8e39
     }
   ],
 
