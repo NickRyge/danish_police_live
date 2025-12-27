@@ -4,25 +4,51 @@
         "information":{
             "authors":"NickRyge",
             "name":"Siren controller",
-            "value":100
+            "value":1
         },
         "slotType" : "soundscape_siren",
         "slots": [
             ["type", "default", "description"],
             ["sirencontroller_siren","politi_sirencontroller_sirentype_1", "Siren audio configuration" {"coreSlot":true}], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
-        ],
+            ["sirencontroller_keybind","politi_sirencontroller_insert_type_horn", "Siren keybind" {"coreSlot":true}], // https://documentation.beamng.com/modding/vehicle/sections/soundscape/
+        ]
+    },
+
+    "politi_sirencontroller_insert_type_horn": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Bound to horn",
+            "value":1
+        },
+        "slotType" : "sirencontroller_keybind",
         "controller": [
             ["fileName"],
             ["politi_sirencontroller"]
         ]
     },
 
-    "politi_sirencontroller_sirentype_1": {
+    "politi_sirencontroller_insert_type_bindable": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Custom bindabl",
+            "value":1
+        },
+        "slotType" : "sirencontroller_keybind",
+        "controller": [
+            ["fileName"],
+            ["politi_sirencontroller", {"keyBind": "ChangeSirenEV"}]
+        ],
+        "actionsEnabled": [
+            ["id"],
+            ["ChangeSiren"]
+        ]
+    },
+   "politi_sirencontroller_sirentype_1": {
         "information":{
             "authors":"NickRyge",
             "name":"Siren (3 danish)",
-            "value":100
-        },
+            "value":1
+       },
         "slotType" : "sirencontroller_siren",
         "soundscape": [
             ["name", "src"],
@@ -36,7 +62,7 @@
         "information":{
             "authors":"NickRyge",
             "name":"Siren (3 FMOD sirens)",
-            "value":100
+            "value":1
         },
         "slotType" : "sirencontroller_siren",
         "soundscape": [

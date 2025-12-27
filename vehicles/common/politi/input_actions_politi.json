@@ -1,0 +1,9 @@
+{
+    "ChangeSiren": {
+        "order": 1,
+        "onChange": "print('skibidi')",
+        "isCentered": true,
+        "title": "Change siren",
+        "desc": "Offsets the spotlight up and down to enable use with weird camera perspectives."
+    }
+}
