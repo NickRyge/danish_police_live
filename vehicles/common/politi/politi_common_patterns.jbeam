@@ -6,6 +6,10 @@
         "value":0
     },
     "slotType" : "politi_lights_pattern",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$Brightness", "range", "+m", "Police Lights",  1.00, 0.00, 1.00, "Brightness", "test"]
+    ],
     "controller": [
         ["fileName"],
         ["lightbar", {
@@ -15,92 +19,92 @@
                 ["Default", [
                     ["electric", "value", "duration"],
 
-						["white_r", 1, 0.1],
-                        ["white_r", 0, 0.02],
-                        ["white_r", 1, 0.1],
-						["white_r", 0, 0.02],
-                        ["white_r", 1, 0.2],
-                        ["white_r", 0, 0.44],
+						["white_r", "$=$Brightness*1", 0.1],
+                        ["white_r", "$=$Brightness*0", 0.02],
+                        ["white_r", "$=$Brightness*1", 0.1],
+						["white_r", "$=$Brightness*0", 0.02],
+                        ["white_r", "$=$Brightness*1", 0.2],
+                        ["white_r", "$=$Brightness*0", 0.44],
 						
 						["white_l", 0, 0.44],
-						["white_l", 1, 0.1],
+						["white_l", "$=$Brightness*1", 0.1],
                         ["white_l", 0, 0.02],
-                        ["white_l", 1, 0.1],
+                        ["white_l", "$=$Brightness*1", 0.1],
 						["white_l", 0, 0.02],
-                        ["white_l", 1, 0.2],
+                        ["white_l", "$=$Brightness*1", 0.2],
 
 		                ["blue_r1", 0, 0.30],
-						["blue_r1", 1, 0.1],
+						["blue_r1", "$=$Brightness*1", 0.1],
                         ["blue_r1", 0, 0.02],
-                        ["blue_r1", 1, 0.1],
+                        ["blue_r1", "$=$Brightness*1", 0.1],
                         ["blue_r1", 0, 0.17],
 
 	                    ["blue_l1", 0, 0.47],
-						["blue_l1", 1, 0.1],
+						["blue_l1", "$=$Brightness*1", 0.1],
                         ["blue_l1", 0, 0.02],
-                        ["blue_l1", 1, 0.1],
+                        ["blue_l1", "$=$Brightness*1", 0.1],
     
 	                    ["blue_r2", 0, 0.47],
-						["blue_r2", 1, 0.1],
+						["blue_r2", "$=$Brightness*1", 0.1],
                         ["blue_r2", 0, 0.02],
-                        ["blue_r2", 1, 0.1],
+                        ["blue_r2", "$=$Brightness*1", 0.1],
 
 		                ["blue_l2", 0, 0.30],
-						["blue_l2", 1, 0.1],
+						["blue_l2", "$=$Brightness*1", 0.1],
                         ["blue_l2", 0, 0.02],
-                        ["blue_l2", 1, 0.1],
+                        ["blue_l2", "$=$Brightness*1", 0.1],
                         ["blue_l2", 0, 0.17],
 
                         ["blue_r3", 0, 0.30],
-						["blue_r3", 1, 0.1],
+						["blue_r3", "$=$Brightness*1", 0.1],
                         ["blue_r3", 0, 0.02],
-                        ["blue_r3", 1, 0.1],
+                        ["blue_r3", "$=$Brightness*1", 0.1],
                         ["blue_r3", 0, 0.17],
     
 	                    ["blue_l3", 0, 0.47],
-						["blue_l3", 1, 0.1],
+						["blue_l3", "$=$Brightness*1", 0.1],
                         ["blue_l3", 0, 0.02],
-                        ["blue_l3", 1, 0.1],
+                        ["blue_l3", "$=$Brightness*1", 0.1],
 
                         ["blue_r4", 0, 0.30],
-						["blue_r4", 1, 0.1],
+						["blue_r4", "$=$Brightness*1", 0.1],
                         ["blue_r4", 0, 0.02],
-                        ["blue_r4", 1, 0.1],
+                        ["blue_r4", "$=$Brightness*1", 0.1],
                         ["blue_r4", 0, 0.17],
     
 	                    ["blue_l4", 0, 0.47],
-						["blue_l4", 1, 0.1],
+						["blue_l4", "$=$Brightness*1", 0.1],
                         ["blue_l4", 0, 0.02],
-                        ["blue_l4", 1, 0.1],
+                        ["blue_l4", "$=$Brightness*1", 0.1],
 
                         ["blue_r5", 0, 0.30],
-						["blue_r5", 1, 0.1],
+						["blue_r5", "$=$Brightness*1", 0.1],
                         ["blue_r5", 0, 0.02],
-                        ["blue_r5", 1, 0.1],
+                        ["blue_r5", "$=$Brightness*1", 0.1],
                         ["blue_r5", 0, 0.17],
     
 	                    ["blue_l5", 0, 0.47],
-						["blue_l5", 1, 0.1],
+						["blue_l5", "$=$Brightness*1", 0.1],
                         ["blue_l5", 0, 0.02],
-                        ["blue_l5", 1, 0.1],
+                        ["blue_l5", "$=$Brightness*1", 0.1],
 
 
 						
-						["roofflasherFL", 1, 0.10],
+						["roofflasherFL", "$=$Brightness*1", 0.10],
                         ["roofflasherFL", 0, 0.04],
-                        ["roofflasherFL", 1, 0.10],
+                        ["roofflasherFL", "$=$Brightness*1", 0.10],
                         ["roofflasherFL", 0, 0.30],
 						
 						["roofflasherFR", 0, 0.08],
-						["roofflasherFR", 1, 0.10],
+						["roofflasherFR", "$=$Brightness*1", 0.10],
                         ["roofflasherFR", 0, 0.04],
-                        ["roofflasherFR", 1, 0.10],
+                        ["roofflasherFR", "$=$Brightness*1", 0.10],
                         ["roofflasherFR", 0, 0.22],
 						
 						["roofflasherR", 0, 0.16],
-						["roofflasherR", 1, 0.10],
+						["roofflasherR", "$=$Brightness*1", 0.10],
                         ["roofflasherR", 0, 0.04],
-                        ["roofflasherR", 1, 0.10],
+                        ["roofflasherR", "$=$Brightness*1", 0.10],
                         ["roofflasherR", 0, 0.14]
 						
 
