@@ -99,12 +99,21 @@
         "value":10
     },
     "slotType" : "trunk_lights",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                ["trunk_l", "((electrics.trunkCoupler_notAttached or 0) * (electrics.blue_l5 or 0)) or 0", 0],
+                ["trunk_r", "((electrics.trunkCoupler_notAttached or 0) * (electrics.blue_r5 or 0)) or 0", 0]
+            ],
+        },
+    },
     "glowMap":{
 
-        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"tailgateCoupler_notAttached":1, "blue_l1":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright", "materialEmissiveScaling":{"on_max":1.0}},
-        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"tailgateCoupler_notAttached":1, "blue_r1":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_flasher_led_TRNK_R": {"simpleFunction":"trunk_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_flasher_led_TRNK_L": {"simpleFunction":"trunk_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_bright", "materialEmissiveScaling":{"on_max":1.0}},
     
-        },
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
