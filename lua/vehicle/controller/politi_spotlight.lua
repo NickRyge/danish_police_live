@@ -7,7 +7,10 @@ local playerVehDir
 local spotLight
 local spotLightBrick
 local spotLightBase
+local spotLightRod
 local localDt
+local spotLightHandleRod
+local spotLightHandle   
 --- Horizontal angle in degrees
 local prev_hor 
 --- Vertical angle in degrees
@@ -128,8 +131,8 @@ function SetDirVec(vector)
     --local vect = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
 
 
-    prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 5)
-    prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 5)
+    prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 10)
+    prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 10)
 
     local radVer = math.rad(prev_ver)
     local rotX = math.rad(prev_hor)
@@ -221,8 +224,11 @@ local function updateSpotlightSynced()
 
     UpdateProp(spotLight.id, 0, 0, 0, ev.slRotx, ev.slRoty, ev.slRotz, true, ev.slActivated, 1)
 
-    UpdateProp(spotLightBase.id, 0, 0, 0, 0, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightBase.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
     UpdateProp(spotLightBrick.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightRod.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightHandleRod.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightHandle.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
 end
 
 
@@ -255,6 +261,9 @@ local function init()
     spotLight = HijackSingleProp("politi_spotlight", "politiSpot")
     spotLightBrick = HijackSingleProp("politi_spotlight_light", "politiSpotBrick")
     spotLightBase = HijackSingleProp("politi_spotlight_base", "politiSpotBase")
+    spotLightRod = HijackSingleProp("politi_spotlight_light2", "politiSpotBase")
+    spotLightHandleRod = HijackSingleProp("politi_spotlight_handlerod", "politiSpotBase")
+    spotLightHandle = HijackSingleProp("politi_spotlight_handle", "politiSpotBase")
 
 end
 
