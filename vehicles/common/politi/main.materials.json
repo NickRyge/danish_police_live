@@ -620,5 +620,77 @@
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
     "version": 1.5
+  },
+
+  "politi_spotlight_housing": {
+    "name": "politi_spotlight_housing",
+    "mapTo": "politi_spotlight_housing",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.02,
+          0.02,
+          0.022,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.55
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "politi_spotlight_chrome": {
+    "name": "politi_spotlight_chrome",
+    "mapTo": "politi_spotlight_chrome",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.82,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.12
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "politi_spotlight_handle": {
+    "name": "politi_spotlight_handle",
+    "mapTo": "politi_spotlight_handle",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.015,
+          0.015,
+          0.015,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "version": 1.5
   }
 }
