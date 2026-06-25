@@ -641,7 +641,6 @@
       {},
       {}
     ],
-    "doubleSided": true,
     "dynamicCubemap": true,
     "version": 1.5
   },
@@ -665,7 +664,6 @@
       {},
       {}
     ],
-    "doubleSided": true,
     "dynamicCubemap": true,
     "version": 1.5
   },
@@ -689,7 +687,6 @@
       {},
       {}
     ],
-    "doubleSided": true,
     "dynamicCubemap": true,
     "version": 1.5
   }
