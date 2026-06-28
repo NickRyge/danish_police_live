@@ -10,7 +10,8 @@ local spotLightBase
 local spotLightRod
 local localDt
 local spotLightHandleRod
-local spotLightHandle   
+local spotLightHandle
+local spotLightGlass
 --- Horizontal angle in degrees
 local prev_hor 
 --- Vertical angle in degrees
@@ -229,6 +230,7 @@ local function updateSpotlightSynced()
     UpdateProp(spotLightRod.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
     UpdateProp(spotLightHandleRod.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
     UpdateProp(spotLightHandle.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
+    UpdateProp(spotLightGlass.id, 0, 0, 0, ev.slRadVer, 0, -ev.slRotx, true, 0, 1)
 end
 
 
@@ -264,6 +266,7 @@ local function init()
     spotLightRod = HijackSingleProp("politi_spotlight_light2", "politiSpotBase")
     spotLightHandleRod = HijackSingleProp("politi_spotlight_handlerod", "politiSpotBase")
     spotLightHandle = HijackSingleProp("politi_spotlight_handle", "politiSpotBase")
+    spotLightGlass = HijackSingleProp("politi_spotlight_glass", "politiSpotBrick")
 
 end
 

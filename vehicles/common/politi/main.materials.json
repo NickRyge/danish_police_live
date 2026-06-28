@@ -689,5 +689,134 @@
     ],
     "dynamicCubemap": true,
     "version": 1.5
+  },
+  "off_road_lights": {
+    "name": "off_road_lights",
+    "mapTo": "off_road_lights",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/lights/off_road_lights_ao.data.png",
+        "baseColorMap": "/vehicles/common/lights/off_road_lights_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/common/lights/off_road_lights_m.data.png",
+        "normalMap": "/vehicles/common/lights/off_road_lights_nm.normal.png",
+        "roughnessMap": "/vehicles/common/lights/off_road_lights_r.data.png"
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      }
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "off_road_lights_glass": {
+    "name": "off_road_lights_glass",
+    "mapTo": "off_road_lights_glass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/lights/off_road_lights_glass_b.color.png",
+        "metallicFactor": 0.850000024,
+        "metallicMap": "/vehicles/common/lights/off_road_lights_glass_m.data.png",
+        "normalMap": "/vehicles/common/lights/off_road_lights_glass_nm.normal.png",
+        "opacityMap": "/vehicles/common/lights/off_road_lights_glass_op.data.png",
+        "roughnessMap": "/vehicles/common/lights/off_road_lights_glass_r.data.png"
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "off_road_lights_glass_dmg": {
+    "name": "off_road_lights_glass_dmg",
+    "mapTo": "off_road_lights_glass_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/lights/off_road_lights_glass_dmg_b.color.png",
+        "metallicFactor": 0.850000024,
+        "metallicMap": "/vehicles/common/lights/off_road_lights_glass_dmg_m.data.png",
+        "normalMap": "/vehicles/common/lights/off_road_lights_glass_dmg_nm.normal.png",
+        "opacityMap": "/vehicles/common/lights/off_road_lights_glass_dmg_op.data.png",
+        "roughnessMap": "/vehicles/common/lights/off_road_lights_glass_dmg_r.data.png"
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      }
+    ],
+    "alphaRef": 0,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "off_road_lights_on_TEST": {
+    "name": "off_road_lights_on_TEST",
+    "mapTo": "off_road_lights_on_TEST",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/lights/off_road_lights_ao.data.png",
+        "baseColorMap": "/vehicles/common/lights/off_road_lights_b.color.png",
+        "emissiveFactor": [
+          30,
+          30,
+          30
+        ],
+        "emissiveMap": "/vehicles/common/lights/off_road_lights_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/common/lights/off_road_lights_m.data.png",
+        "normalMap": "/vehicles/common/lights/off_road_lights_nm.normal.png",
+        "roughnessMap": "/vehicles/common/lights/off_road_lights_r.data.png"
+      },
+      {
+        "emissiveFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "emissiveFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "emissiveFactor": null,
+        "metallicFactor": null
+      }
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
   }
 }

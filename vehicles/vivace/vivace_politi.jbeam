@@ -28,7 +28,7 @@
     "information":{
         "authors":"BeamNGxNickRyge",
         "name":"Triple roof beacons",
-        "value":1300
+        "value":150 
     },
     "slotType" : "vivace_politi_rooflights",
     "glowMap":{
@@ -40,7 +40,7 @@
 
             "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
             "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
-        },
+    },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
@@ -73,7 +73,7 @@
         ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
         ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
         ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],            
-],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
