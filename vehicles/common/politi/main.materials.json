@@ -355,9 +355,15 @@
     "Stages": [
       {
         "normalMap": "vehicles/etk800/etk800_n.dds",
-        "roughnessFactor": 0.9,
+        "roughnessFactor": 0.7,
         "metallicFactor": 0.0,
         "pixelSpecular": true,
+        "specular": [
+          0.588235,
+          0.588235,
+          0.588235,
+          1
+        ],
         "useAnisotropic": false,
         "baseColorFactor": [
           0.008,
@@ -374,30 +380,6 @@
     "materialTag1": "vehicle"
   },
 
-  "hf_antenna": {
-    "name": "hf_antenna",
-    "mapTo": "hf_antenna",
-    "class": "Material",
-    "Stages": [
-      {
-        "roughnessFactor": 0.9,
-        "metallicFactor": 0.0,
-        "pixelSpecular": true,
-        "useAnisotropic": false,
-        "baseColorFactor": [
-          0.008,
-          0.008,
-          0.008,
-          1
-        ]
-      },
-      {}
-    ],
-    "alphaRef": 0,
-    "dynamicCubemap": false,
-    "materialTag0": "beamng",
-    "materialTag1": "vehicle"
-  },
 
   "politi_dome_light_blue_dmg": {
     "name": "politi_dome_light_blue_dmg",

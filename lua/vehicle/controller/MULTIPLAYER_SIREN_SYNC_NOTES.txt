@@ -1,0 +1,132 @@
+================================================================================
+ SIREN / HORN MULTIPLAYER (BeamMP) DESYNC - FINDINGS & PROPOSED FIX
+ File: politi_sirencontroller.lua (and politi_sirenSynchronizer.lua)
+ Author of notes: Claude, for NickRyge - 2026-07-05
+================================================================================
+
+--------------------------------------------------------------------------------
+1. THE PROBLEM (restated)
+--------------------------------------------------------------------------------
+The siren is advanced by tapping the HORN. The controller detects a horn
+edge (0 -> 1 or the tap release) and calls UpdateSirenCount(1), which bumps
+the electrics value `currentSirenCount`.
+
+In BeamMP:
+  - Vehicle Lua runs INDEPENDENTLY on every connected client, for every
+    vehicle (yours AND everyone else's copies of your car).
+  - Electrics values are synced across clients.
+
+So a single horn press by the owner gets "counted twice":
+  (a) The owner's client sees the horn edge locally and does +1.
+  (b) `horn` is also synced to every remote client. On each remote client,
+      that same car's Lua ALSO sees the horn go 0->1 and does its OWN +1.
+  (c) Meanwhile `currentSirenCount` is itself synced, so the locally computed
+      value and the synced value fight each other -> desync / double stepping.
+
+Net effect: the siren index jumps by 2 (or jitters) instead of 1.
+
+--------------------------------------------------------------------------------
+2. THE IDEA (NickRyge's)
+--------------------------------------------------------------------------------
+"If the player is NOT inside this vehicle, it must be someone else's
+multiplayer vehicle -> ignore horn presses here. The synced electrics values
+will still drive the siren sound implicitly from the owning client."
+
+This is the correct instinct. Only ONE client (the one whose local player is
+seated / owns the car) should do the horn->count logic. Everyone else should
+be a passive follower that just plays whatever `currentSirenCount` says.
+
+--------------------------------------------------------------------------------
+3. THE API - HOW TO DETECT "IS THE LOCAL PLAYER IN THIS VEHICLE"
+--------------------------------------------------------------------------------
+Vehicle-side Lua has a GLOBAL table `playerInfo` (no require needed).
+Defined in BeamNG game source: lua/vehicle/main.lua
+
+    playerInfo = {
+        seatedPlayers    = <table>,  -- players seated in THIS vehicle,
+                                     -- indexed 0..N ({ [0]=true, [1]=true, ... })
+        firstPlayerSeated = false,   -- true if player 0 (the LOCAL player) is seated
+        anyPlayerSeated   = false    -- true if ANY player is seated
+    }
+
+Set by setControllingPlayers(players) in main.lua:
+    playerInfo.anyPlayerSeated   = not tableIsEmpty(players)
+    playerInfo.firstPlayerSeated = players[0] ~= nil
+
+KEY FIELD: `playerInfo.firstPlayerSeated`
+  - player index 0 == the local human at this PC.
+  - On YOUR OWN car that you are driving:      firstPlayerSeated == true
+  - On a REMOTE player's car (their copy on your PC): firstPlayerSeated == false
+    (you are not seated in it; it is driven from another machine)
+
+So the gate we want is simply:  if playerInfo.firstPlayerSeated then ...
+
+(`anyPlayerSeated` is less reliable here - remote seat occupancy is not
+guaranteed to be synced, and we specifically want "am *I* the driver", which
+is exactly what firstPlayerSeated answers.)
+
+--------------------------------------------------------------------------------
+4. PROPOSED FIX (shape, not final code)
+--------------------------------------------------------------------------------
+In updateGFX(dt) of politi_sirencontroller.lua:
+
+  - WRAP the horn-edge detection + UpdateSirenCount(1) block in:
+        if playerInfo.firstPlayerSeated then
+            ... existing horn hold/tap logic that calls UpdateSirenCount(1) ...
+        end
+    => Only the owning/driving client mutates currentSirenCount.
+
+  - ALWAYS run the follower/playback line regardless of seating:
+        UpdateSirenSound(electrics.values.currentSirenCount)
+    => Remote clients play the siren purely from the synced count.
+
+  - Keep the lightbar-based reset() running on all clients (it also keys off a
+    synced electrics value, so behaviour stays consistent).
+
+  - IMPORTANT: still update prevHornStatus every frame (even when gated off),
+    otherwise the moment the local player enters the car a stale edge could
+    fire a spurious +1.
+
+The near-duplicate politi_sirenSynchronizer.lua has the SAME horn->count bug
+(lines 17-19) and should get the SAME gate, or be removed if it is redundant
+with politi_sirencontroller.lua. Decide which one is authoritative first.
+
+--------------------------------------------------------------------------------
+5. CRITICAL ASSUMPTION TO VERIFY BEFORE TRUSTING THIS
+--------------------------------------------------------------------------------
+The whole plan relies on: **`currentSirenCount` actually being synced by
+BeamMP across clients.**
+
+  - BeamMP syncs electrics, but historically it syncs a SPECIFIC SET of keys,
+    not necessarily arbitrary custom ones like `currentSirenCount`. Confirm in
+    a real 2-client test that a remote client's `electrics.values.currentSirenCount`
+    changes when the owner taps the horn.
+  - If custom electrics are NOT synced, the follower clients will never hear the
+    right siren. Fallbacks in that case:
+        * Piggyback on an electrics key that IS known to sync, OR
+        * Derive the count on followers from a value that is synced, OR
+        * Use a BeamMP-specific messaging mechanism.
+
+  - Also sanity check: is `horn` itself synced (the bug report implies yes) and
+    is it synced as a 0/1 the remote Lua sees as an edge? The double-count
+    symptom strongly suggests horn IS synced.
+
+--------------------------------------------------------------------------------
+6. QUICK TEST PLAN
+--------------------------------------------------------------------------------
+  1. 2 clients on a BeamMP server, both with the police car.
+  2. Add temporary debug: print(playerInfo.firstPlayerSeated, electrics.values.horn,
+     electrics.values.currentSirenCount) in updateGFX.
+  3. On client A (owner) confirm firstPlayerSeated == true; on B confirm the
+     SAME car shows firstPlayerSeated == false.
+  4. Tap horn on A. Watch whether currentSirenCount on B mirrors A (proves sync)
+     and whether it increments by exactly 1 after the fix.
+
+--------------------------------------------------------------------------------
+7. REFERENCES (BeamNG game source, v0.38.x)
+--------------------------------------------------------------------------------
+  lua/vehicle/main.lua:44   -- playerInfo table definition
+  lua/vehicle/main.lua:499  -- setControllingPlayers(): firstPlayerSeated / anyPlayerSeated
+  lua/vehicle/ai.lua:299    -- example use of playerInfo.anyPlayerSeated
+  lua/vehicle/bdebugImpl.lua-- many examples of playerInfo.firstPlayerSeated gating
+================================================================================

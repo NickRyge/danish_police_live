@@ -15,12 +15,32 @@
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}],
         ["van_trunk_lights_rear", "van_trunk_lights_rear", "Rear door lights"],
         ["van_trunk_lights_side", "van_trunk_lights_side", "Side door lights"],
-        ["soundscape_siren","soundscape_siren_18", "Siren Audio"]
+        ["soundscape_siren","soundscape_siren_18", "Siren Audio"],
+        ["politi_roofspot", "van_politi_spotlight", "Roof spotlight (camera)"],
+        ["politi_antenna", "van_politi_antenna", "roof-mounted GPS antennas"]
     ],
     "soundscape": [
         ["name", "src"],
         //affects siren location because siren soundscape part is loaded after
         {"node:":"b6l"}
+    ]
+},
+
+"van_politi_antenna": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"GPS antennas (twin)",
+        "value":10,
+    },
+    "slotType" : "politi_antenna",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ["politi_gps_fin",      ["van_body"], [], {"pos":{"x":  0.12, "y":1.2, "z":2.0835}, "rot":{"x":3.5, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["politi_gps_antenna",  ["van_body"], [], {"pos":{"x":  0.12, "y":1.2, "z":2.0835}, "rot":{"x":3.5, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["politi_gps_fin",      ["van_body"], [], {"pos":{"x": -0.12, "y":1.2, "z":2.0835}, "rot":{"x":3.5, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["politi_gps_antenna",  ["van_body"], [], {"pos":{"x": -0.12, "y":1.2, "z":2.0835}, "rot":{"x":3.5, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 },
 
@@ -33,8 +53,8 @@
     },
     "slotType" : "van_trunk_lights_side",
     "glowMap":{                                                     //Prevents turning on when door is not opened.
-        "generic_flasher_led_TRNK_RR":               {"simpleFunction":{"rightFrontDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_TRNK_LR":               {"simpleFunction":{"rightRearDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+        "generic_flasher_led_TRNK_RR":               {"simpleFunction":{"rightFrontDoorCoupler_notAttached":1, "blue_r5":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_LR":               {"simpleFunction":{"rightRearDoorCoupler_notAttached":1, "blue_r5":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -53,8 +73,8 @@
     },
     "slotType" : "van_trunk_lights_rear",
     "glowMap":{                                                     //Prevents turning on when door is not opened.
-        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"rearRightDoorCoupler_notAttached":1, "blue_l":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"rearLeftDoorCoupler_notAttached":1, "blue_r":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_R":               {"simpleFunction":{"rearRightDoorCoupler_notAttached":1, "blue_r5":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_TRNK_L":               {"simpleFunction":{"rearLeftDoorCoupler_notAttached":1, "blue_l5":0.4, "1":-1}, "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -73,61 +93,73 @@
     },
     "slotType" : "roof_light",
     "glowMap":{
-			"mod_beacon_light_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-			
-			"mod_beacon_light_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},                
-            "mod_beacon_glass_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+			"hansch_politi_light_3":                   {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_3":                   {"simpleFunction":"roofflasherFR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
 
-            "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
+			"hansch_politi_light_2":                   {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_2":                   {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+
+            "hansch_politi_light_1":              	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_1":                   {"simpleFunction":"roofflasherR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}}
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         {
             "lightInnerAngle":0,
-            "lightOuterAngle":10,
-            "lightRange":43,
-            "lightBrightness": 0.7,
-            "lightAttenuation":{"x":0, "y":9999999, "z":9999999},
-            "lightColor":{"r":10, "g":30, "b":255, "a":255},
+            "lightOuterAngle":110,
+            "lightRange":75,
+            "lightBrightness": 1.5,
+            "lightColor":{"r":10, "g":10, "b":255, "a":0},
+            "lightAttenuation":{"x":1, "y":9999999, "z":9999999},
             "flareName":"vehicleBrakeLightFlare",
             "lightCastShadows":false,
-            "texSize":64,
-            "shadowSoftness":1,
-            "flareScale":0.03,
-            "cookieName":"/vehicles/common/politi/cookie.png"
+            "texSize":32,
+            "shadowSoftness":0,
+            "flareScale":0,
+            "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
+        // right beacon
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":135, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":94, "y":225, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":97, "y":315, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],
+        ["roofflasherFR", "SPOTLIGHT", "rbl1r", "rbl2r", "rbl1l", {"x":95, "y":45,  "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_r"}],
 
-        ["roofflasherFR"    , "POINTLIGHT"        , "rbl1r", "rbl2r", "rbl1l", {"x":0.042, "y":38.860, "z":-7.743} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break_r"}],
-        ["roofflasherFL"    , "POINTLIGHT"        , "lbl1r", "lbl2r", "lbl1l", {"x":-172.064, "y":92.820, "z":-2.376} , {"x":100, "y":0, "z":0}  , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":0.030},"deformGroup":"beaconlight_break_l"}],
-        ["roofflasherR"    , "POINTLIGHT"        ,  "bl1r", "bl2r", "bl1l",    {"x":-23.599, "y":89.027, "z":-0.566} , {"x":100, "y":0, "z":0}    ,{"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.469, "y":0.505, "z":-0.030},"deformGroup":"beaconlight_break"}]
+        // left beacon
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":95, "y":135, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":225, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":94, "y":315, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],
+        ["roofflasherFL", "SPOTLIGHT", "lbl1l", "lbl2l", "lbl1r", {"x":97, "y":45,  "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break_l"}],
 
+        // rear beacon
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97,  "y":135, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":225, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":110, "y":315, "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],
+        ["roofflasherR", "SPOTLIGHT", "bl1r", "bl2r", "bl1l", {"x":97,  "y":45,  "z":0} , {"x":0, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"deformGroup":"beaconlight_break"}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
 		//Oriented in left to right for the deform groups. Sorry.
-		["mod_beacon_base_fr", ["van_beacon_r"], [], {"pos":{"x": -0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
+		["hansch_politi_base_3", ["van_beacon_r"], [], {"pos":{"x": -0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fr", ["van_beacon_r"], [], {"pos":{"x": -0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_3", ["van_beacon_r"], [], {"pos":{"x": -0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fr", ["van_beacon_r"], [], {"pos":{"x": -0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_3", ["van_beacon_r"], [], {"pos":{"x": -0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":-3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-		["mod_beacon_base_fl", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
+
+		["hansch_politi_base_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fl", ["van_beacon_l"], [], {"pos":{"x": 0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fl", ["van_beacon_l"], [], {"pos":{"x": 0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
         //rear
-        ["mod_beacon_base", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
+        ["hansch_politi_base_1", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_1", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.098}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_1", ["van_lightbar_c"], [], {"pos":{"x": 0, "y":2.6, "z":2.084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
 		
     ],
@@ -386,8 +418,8 @@
     },
     "slotType" : "roof_light",
     "glowMap":{			
-			"mod_beacon_light_fl":                  	   {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fl":                         {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+			"hansch_politi_light_2":                  	   {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_2":                         {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
         },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -410,11 +442,11 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-		["mod_beacon_base_fl", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":2.512}}],
+		["hansch_politi_base_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fl", ["van_beacon_l"], [], {"pos":{"x": 0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fl", ["van_beacon_l"], [], {"pos":{"x": 0.4508, "y":-0.2, "z":2.076}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_2", ["van_beacon_l"], [], {"pos":{"x": 0.45, "y":-0.2, "z":2.062}, "rot":{"x":2, "y":3, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
 
@@ -540,8 +572,8 @@
     "glowMap":{			
 
         //Pointless because I just copied already existing objects to save time. This is the WRONG way to do it, but I have become increasingly lazy with this.
-		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l1", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_FR":                  {"simpleFunction":"blue_r1", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 
         },
     "props": [
@@ -573,11 +605,11 @@
         "generic_flasher_led_L":                   {"simpleFunction":"white_l", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_test"},
         "generic_flasher_led_R":                   {"simpleFunction":"white_r", "off":"policeparts_lights_white", "on":"policeparts_lights_white_on_test"},
 
-		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_FR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+		"generic_flasher_led_FL":                  {"simpleFunction":"blue_l1", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_FR":                  {"simpleFunction":"blue_r1", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 
-        "generic_flasher_led_FLL":                 {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_FRR":                 {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_FLL":                 {"simpleFunction":"blue_l2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_FRR":                 {"simpleFunction":"blue_r2", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
 
         },
         "props": [
@@ -597,10 +629,10 @@
                 "flareScale":0.1,
                 "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
             },
-            ["blue_r"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":0.008},"deformGroup":"frontflashers_break"}],
-            ["blue_l"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":-46.308, "y":-141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":-0.342},"deformGroup":"frontflashers_break"}],
-            ["blue_l"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":-0.008},"deformGroup":"frontflashers_break"}],
-            ["blue_r"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-124.736, "y":141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":0.342},"deformGroup":"frontflashers_break"}],
+            ["blue_r1"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":3.395, "y":-97.761, "z":2.995} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":0.008},"deformGroup":"frontflashers_break"}],
+            ["blue_r2"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2r", {"x":-46.308, "y":-141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":-0.342},"deformGroup":"frontflashers_break"}],
+            ["blue_l1"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-176.294, "y":97.751, "z":-0.711} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.109, "y":0.501, "z":-0.008},"deformGroup":"frontflashers_break"}],
+            ["blue_l2"    , "SPOTLIGHT"        , "fa1", "fa2", "fa2l", {"x":-124.736, "y":141.876, "z":80.129} , {"x":100, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-1.823, "y":2.075, "z":0.342},"deformGroup":"frontflashers_break"}],
         
             //config WHITE
             {
@@ -653,10 +685,10 @@
     "slotType" : "bumper_light_rear",
     "glowMap":{			
 
-        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 		
         },
     "props": [
@@ -677,11 +709,11 @@
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         //13.723 -149.387 -5.158
-        ["blue_l"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":0.011},"deformGroup":""}],
-        ["blue_r"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":-0.011},"deformGroup":""}],
+        ["blue_l3"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":0.011},"deformGroup":""}],
+        ["blue_r3"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.044, "y":0.410, "z":-0.011},"deformGroup":""}],
         
-        ["blue_r"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":0.002},"deformGroup":""}],
-        ["blue_l"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":-0.002},"deformGroup":""}],
+        ["blue_l4"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":0.002},"deformGroup":""}],
+        ["blue_r4"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.144, "y":0.349, "z":-0.002},"deformGroup":""}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -702,10 +734,10 @@
     "slotType" : "bumper_light_rear",
     "glowMap":{			
 
-        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 		
         },
     "props": [
@@ -726,11 +758,11 @@
             "cookieName":"/art/special/BNG_light_cookie_lightbar.dds"
         },
         //13.723 -149.387 -5.158
-        ["blue_l"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":-0.052},"deformGroup":""}],
-        ["blue_r"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":0.052},"deformGroup":""}],
+        ["blue_l3"    , "SPOTLIGHT"        , "b10ll", "b9ll", "v6l", {"x":-15, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":-0.052},"deformGroup":""}],
+        ["blue_r3"    , "SPOTLIGHT"        , "b10rr", "b9rr", "v6r", {"x":-165, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.159, "y":1.140, "z":0.052},"deformGroup":""}],
         
-        ["blue_r"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":-0.045},"deformGroup":""}],
-        ["blue_l"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":0.045},"deformGroup":""}],
+        ["blue_l4"    , "SPOTLIGHT"        , "rd2ll", "rd3ll", "rd7l", {"x":0, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":-0.045},"deformGroup":""}],
+        ["blue_r4"    , "SPOTLIGHT"        , "rd2rr", "rd3rr", "rd7r", {"x":0, "y":0, "z":165} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.192, "y":0.470, "z":0.045},"deformGroup":""}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -754,10 +786,10 @@
     "slotType" : "bumper_light_rear",
     "glowMap":{			
 
-        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_r", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_l", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
+        "generic_flasher_led_BL":                  {"simpleFunction":"blue_l3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR":                  {"simpleFunction":"blue_r3", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_L":                {"simpleFunction":"blue_l4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
+        "generic_flasher_led_BR_R":                {"simpleFunction":"blue_r4", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"}
 		
         },
     "props": [

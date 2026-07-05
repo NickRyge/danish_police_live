@@ -16,6 +16,7 @@
             ["trunk_lights", "lansdale_trunklights_wagon", "Trunk lights"],
             ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
             ["antenna", "lansdale__politi_antenna", "roof-mounted GPS antenna"],
+            ["politi_roofspot", "lansdale_politi_spotlight", "Roof spotlight (camera)"],
         ],
         "soundscape": [
             ["name", "src"],

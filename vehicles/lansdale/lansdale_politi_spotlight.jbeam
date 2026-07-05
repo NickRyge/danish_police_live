@@ -1,0 +1,43 @@
+{
+    "lansdale_politi_spotlight": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Roof spotlight",
+            "value":250,
+        },
+        "slotType" : "politi_roofspot",
+         "slots": [
+            ["type", "default", "description"],
+            ["politi_roofspot_extended","politi_spotlight_abstract", "Spotlight JBeam base", {"coreSlot":true}]
+        ],
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.50},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+
+            // NOTE: seeded near the lansdale roof anchor (antenna sits at z:1.656) - tune in-world
+            {"group":"lansdale_politi_spotlight"},
+            ["polSpot1l",  0.07, -0.25, 1.695, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2l",  0.07, -0.25, 1.670, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+            ["polSpot3",    0.0, -0.25, 1.750],
+            ["polSpot1r", -0.07, -0.25, 1.695, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2r", -0.07, -0.25, 1.670, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+
+{"selfCollision":false},
+            ["polSpot3low", 0.0, -0.25, 1.675, {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.090}}],
+            {"group":""},
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+
+		    //Oriented in left to right for the deform groups. Sorry.
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+		    ["NRM_spotlight_Base", ["lansdale_roof"], [], {"pos":{"x": 0, "y":-0.25, "z":1.582}, "rot":{"x":-8, "y":-180, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ]
+    }
+}

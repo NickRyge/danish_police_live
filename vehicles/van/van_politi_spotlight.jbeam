@@ -1,0 +1,41 @@
+{
+    "van_politi_spotlight": {
+        "information":{
+            "authors":"NickRyge",
+            "name":"Roof spotlight",
+            "value":250,
+        },
+        "slotType" : "politi_roofspot",
+         "slots": [
+            ["type", "default", "description"],
+            ["politi_roofspot_extended","politi_spotlight_abstract", "Spotlight JBeam base", {"coreSlot":true}]
+        ],
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+
+            {"selfCollision":true},
+            {"collision":true},
+            {"nodeWeight":0.50},
+            {"frictionCoef":0.7},
+            {"nodeMaterial":"|NM_METAL"},
+
+            {"group":"van_politi_spotlight"},
+            ["polSpot1l",  0.07, -0.2, 2.18, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2l",  0.07, -0.2, 2.17, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+            ["polSpot3",    0.0, -0.2, 2.23],
+            ["polSpot1r", -0.07, -0.2, 2.18, {"nodeOffset":{"x":0.0, "y":0.07, "z":-0.090}}],
+            ["polSpot2r", -0.07, -0.2, 2.17, {"nodeOffset":{"x":0.0, "y":-0.07, "z":-0.090}}],
+
+{"selfCollision":false},
+            ["polSpot3low", 0.0, -0.2, 2.175, {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.090}}],
+            {"group":""},
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+		    ["NRM_spotlight_Base", ["van_body"], [], {"pos":{"x": 0, "y":-0.2, "z":2.08}, "rot":{"x":-2, "y":-180, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+            {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ]
+    }
+}
