@@ -355,55 +355,48 @@
     "Stages": [
       {
         "normalMap": "vehicles/etk800/etk800_n.dds",
-        "pixelSpecular": true,
-        "roughnessFactor": 0.15,
-        "useAnisotropic": true,
-        "baseColorFactor": [
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      {
-        "baseColorMap": "vehicles/etk800/etk800_d.dds",
-        "normalMap": "vehicles/etk800/etk800_n.dds",
-        "pixelSpecular": true,
-        "roughnessFactor": 0.5,
-        "specularMap": "vehicles/etk800/etk800_s.dds",
-        "useAnisotropic": true,
+        "roughnessFactor": 0.9,
         "metallicFactor": 0.0,
-        "baseColorFactor": [
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      {
-        "baseColorMap": "vehicles/etk800/etk800_c.dds",
-        "instanceDiffuse": true,
-        "normalMap": "vehicles/etk800/etk800_n.dds",
         "pixelSpecular": true,
-        "roughnessFactor": 0.5,
-        "metallicFactor": 0.0,
-        "specularMap": "vehicles/etk800/etk800_s.dds",
-        "useAnisotropic": true,
+        "useAnisotropic": false,
         "baseColorFactor": [
-          0,
-          0,
-          0,
-          0
+          0.008,
+          0.008,
+          0.008,
+          1
         ]
       },
       {}
     ],
     "alphaRef": 0,
-    "dynamicCubemap": true,
+    "dynamicCubemap": false,
     "materialTag0": "beamng",
-    "materialTag1": "vehicle",
-    "translucent": true,
-    "translucentBlendOp": "None"
+    "materialTag1": "vehicle"
+  },
+
+  "hf_antenna": {
+    "name": "hf_antenna",
+    "mapTo": "hf_antenna",
+    "class": "Material",
+    "Stages": [
+      {
+        "roughnessFactor": 0.9,
+        "metallicFactor": 0.0,
+        "pixelSpecular": true,
+        "useAnisotropic": false,
+        "baseColorFactor": [
+          0.008,
+          0.008,
+          0.008,
+          1
+        ]
+      },
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": false,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle"
   },
 
   "politi_dome_light_blue_dmg": {
@@ -690,14 +683,14 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "off_road_lights": {
-    "name": "off_road_lights",
-    "mapTo": "off_road_lights",
+  "nrm_politi_spotlight": {
+    "name": "nrm_politi_spotlight",
+    "mapTo": "nrm_politi_spotlight",
     "class": "Material",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/common/lights/off_road_lights_ao.data.png",
-        "baseColorMap": "/vehicles/common/lights/off_road_lights_b.color.png",
+        "baseColorMap": "/vehicles/common/politi/off_road_lights_nrm_politi.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/common/lights/off_road_lights_m.data.png",
         "normalMap": "/vehicles/common/lights/off_road_lights_nm.normal.png",
@@ -787,7 +780,7 @@
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/common/lights/off_road_lights_ao.data.png",
-        "baseColorMap": "/vehicles/common/lights/off_road_lights_b.color.png",
+        "baseColorMap": "/vehicles/common/politi/off_road_lights_nrm_politi.png",
         "emissiveFactor": [
           30,
           30,

@@ -1,0 +1,30 @@
+{
+    "fileversion": 2,
+    "actions": {
+        "updateOffset": {
+            "order": 2,
+            "onChange": "UpdateVerOffset(VALUE)",
+            "isCentered": true,
+            "title": "Update offset",
+            "desc": "Offsets the spotlight up and down to enable use with weird camera perspectives."
+        },
+        "resetOffset": {
+            "order": 3,
+            "onChange": "ResetVerOffset()",
+            "title": "Reset offset",
+            "desc": "Resets the spotlight offset back to 0°"
+        },
+        "ToggleSpotlight": {
+            "order": 4,
+            "onDown": "Spotlight_on = not Spotlight_on",
+            "title": "Spotlight toggle",
+            "desc": "Toggles the spotlight on and off."
+        },
+        "spotLightMove": {
+            "order": 5,
+            "onDown": "Spotlight_move = not Spotlight_move \ngui.message(\"Spotlight follow mouse: \" .. tostring(Spotlight_move))",
+            "title": "Spotlight follow mouse toggle",
+            "desc": "Toggles whether the spotlight should follow the mouse / camera or hold position."
+        }
+    }
+}

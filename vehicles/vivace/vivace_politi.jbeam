@@ -13,6 +13,8 @@
         ["trunk_lights", "vivace_politi_trunk_lights", "Tailgate frame lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern w/siren", {"coreSlot":true}],
         ["vivace_politi_rooflights", "vivace_politi_beacons", "Roof lights"],
+        ["vivace_politi_antenna", "vivace_politi_antenna", "roof-mounted GPS antenna"],
+        ["politi_roofspot", "vivace_politi_spotlight", "Roof spotlight (camera)"],
         ["vivace_mirror_light", "", "Mirror flashers"],
         ["soundscape_siren","soundscape_siren_18", "Siren Audio"]
     ],
@@ -32,14 +34,14 @@
     },
     "slotType" : "vivace_politi_rooflights",
     "glowMap":{
-			"mod_beacon_light_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass_fr":                     {"simpleFunction":"roofflasherFR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
-			
-			"mod_beacon_light_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},                
-            "mod_beacon_glass_fl":                     {"simpleFunction":"roofflasherFL", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"},
+			"hansch_politi_light_3":                   {"simpleFunction":"roofflasherFR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_3":                   {"simpleFunction":"roofflasherFR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
 
-            "mod_beacon_light":                  	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on_test"},
-            "mod_beacon_glass":                        {"simpleFunction":"roofflasherR", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue"}
+			"hansch_politi_light_2":                   {"simpleFunction":"roofflasherFL", "off":"politi_dome_light_blue", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_2":                   {"simpleFunction":"roofflasherFL", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+
+            "hansch_politi_light_1":              	   {"simpleFunction":"roofflasherR", "off":"policeparts_lights_blue_testing", "on":"politi_dome_light_blue_glow", "materialEmissiveScaling":{"on_max":1.0}},
+            "hansch_politi_glass_1":                   {"simpleFunction":"roofflasherR", "off":"politi_dome_glass_blue", "on":"politi_dome_glass_blue_glow", "materialEmissiveScaling":{"on_max":1.0}}
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -78,25 +80,25 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
 		//Oriented in left to right for the deform groups. Sorry.
-		["mod_beacon_base_fr", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+		["hansch_politi_base_3", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fr", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_3", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break_r", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fr", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
-		
-		["mod_beacon_base_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
-        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass_fl", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_3", ["vivace_beacon_r"], [], {"pos":{"x": -0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":-4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
 
-        ["mod_beacon_base", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+		["hansch_politi_base_2", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
+        ["hansch_politi_light_2", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"beaconlight_break_l", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        ["hansch_politi_glass_2", ["vivace_beacon_l"], [], {"pos":{"x": 0.38, "y":0.12, "z":1.406}, "rot":{"x":3.5, "y":4.2, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+
+        ["hansch_politi_base_1", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_lights_blue", "deformMaterialDamaged":"policeparts_lights_blue"},
-        ["mod_beacon_light", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_light_1", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"beaconlight_break", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
-        ["mod_beacon_glass", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.512}}],
+        ["hansch_politi_glass_1", ["vivace_lightbar_c"], [], {"pos":{"x": 0.0, "y":1.176, "z":1.401}, "rot":{"x":-4.7, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ],
      "nodes": [
@@ -338,6 +340,23 @@
         ["bl1r","bl2r","bl2l"],
         ["bl1r","bl2l","bl1l"],
         {"group":""}
+    ]
+},
+
+
+"vivace_politi_antenna": {
+    "information":{
+        "authors":"NickRyge",
+        "name":"GPS antenna",
+        "value":10
+    },
+    "slotType" : "vivace_politi_antenna",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+        ["politi_gps_fin",     ["vivace_body"], [], {"pos":{"x": 0, "y":0.94, "z":1.422}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["politi_gps_antenna", ["vivace_body"], [], {"pos":{"x": 0, "y":0.94, "z":1.422}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""}
     ]
 },
 

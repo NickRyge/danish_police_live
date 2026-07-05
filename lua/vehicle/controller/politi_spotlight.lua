@@ -131,7 +131,7 @@ function SetDirVec(vector)
     local hor, ver = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
     --local vect = UpdateSpotlight(posVec, dirVec, playerVehPos, playerVehDir)
 
-
+    print(prev_hor)
     prev_hor = takeStep(hor, localDt, prev_hor, 0, 360, 10)
     prev_ver = takeStep(ver, localDt, prev_ver, -90, 90, 10)
 

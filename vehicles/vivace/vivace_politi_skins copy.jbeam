@@ -1,0 +1,22 @@
+{
+//Skins
+"vivace_skin_politi_patrol": {
+   "information":{
+       "authors":"NickRyge",
+       "name":"Danish police unit",
+       "value":250
+   },
+   "slotType" : "paint_design",
+   "globalSkin" : "politi_patrol"
+},
+
+"vivace_skin_politi_dog": {
+   "information":{
+       "authors":"NickRyge",
+       "name":"Danish K9 police unit",
+       "value":250
+   },
+   "slotType" : "paint_design",
+   "globalSkin" : "politi_dog"
+}
+}
