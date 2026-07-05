@@ -16,8 +16,7 @@
         ["trunk_lights", "sunburst2_trunklights_sedan", "Trunk lights"],
         ["politi_lights_pattern", "politi_pattern_standard", "Lightbar pattern", {"coreSlot":true}]
         ["politi_antenna", "sunburst_politi_antenna_sedan", "roof-mounted GPS antenna"],
-        //WIP
-        //["politi_lightbar_spotlight","sunburst2_politi_spotlight", "Camera-controlled spotlight"],
+        ["politi_roofspot", "sunburst2_politi_spotlight", "Roof spotlight (camera)"],
     ],
     "soundscape": [
         ["name", "src"],

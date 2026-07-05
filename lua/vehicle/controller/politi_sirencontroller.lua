@@ -104,30 +104,41 @@ local function updateGFX(dt)
     -- The Chattiest of GPT code blocks. I wanted to do this myself, but prototyping is easier this way.
     -- ALso, there is nothing as permanent as temporary solutions.
     -- Basically tries to determine whether we are holding the horn or not. IRL the horn can be held without switching sirens.
-    -- This might create conflicting sounds for the multiplayer vehicles.
-    if horn == 1 then
-        if not isHornHeld then
-            isHornHeld = true
+    --
+    -- MULTIPLAYER (BeamMP): only the client whose local player is actually seated in
+    -- this vehicle may mutate currentSirenCount. On a remote player's car (their copy
+    -- running on our PC) playerInfo.firstPlayerSeated is false, so we skip the horn
+    -- logic and let the synced currentSirenCount electrics value drive the sound below.
+    -- Otherwise the horn edge would be counted once locally AND again on every remote
+    -- copy, double-stepping the siren. See MULTIPLAYER_SIREN_SYNC_NOTES.txt.
+    if playerInfo.firstPlayerSeated then
+        if horn == 1 then
+            if not isHornHeld then
+                isHornHeld = true
+                hornHoldTimer = 0
+                hasExceededHoldTime = false
+            else
+                hornHoldTimer = hornHoldTimer + dt
+                if hornHoldTimer > maxHornTapTime then
+                    hasExceededHoldTime = true
+                end
+            end
+        elseif horn == 0 and prevHornStatus == 1 then
+            if isHornHeld and not hasExceededHoldTime then
+                UpdateSirenCount(1)
+            end
+            -- Reset state
+            isHornHeld = false
             hornHoldTimer = 0
             hasExceededHoldTime = false
-        else
-            hornHoldTimer = hornHoldTimer + dt
-            if hornHoldTimer > maxHornTapTime then
-                hasExceededHoldTime = true
-            end
         end
-    elseif horn == 0 and prevHornStatus == 1 then
-        if isHornHeld and not hasExceededHoldTime then
-            UpdateSirenCount(1)
-        end
-        -- Reset state
-        isHornHeld = false
-        hornHoldTimer = 0
-        hasExceededHoldTime = false
     end
 
+    -- Runs on every client (seated or not): followers play the synced siren index.
     UpdateSirenSound(electrics.values.currentSirenCount)
 
+    -- Tracked every frame regardless of seating, so entering the vehicle can't
+    -- fire a stale horn edge from a press that happened while we weren't seated.
     prevHornStatus = horn
 end
 
